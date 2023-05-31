@@ -17,6 +17,7 @@ public class Enermy : MonoBehaviour
     void Update()
     {
         angle += Time.deltaTime * speed; 
-        transform.position = center.position + new Vector3(Mathf.Cos(angle) , Mathf.Sin(angle),0)*radius;
+        
+        transform.position = center.position + new Vector3(Mathf.Cos(angle)*1.5f , Mathf.Sin(angle),0)*radius;
     }
 }
