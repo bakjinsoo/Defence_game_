@@ -1,19 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Character_Manager : MonoBehaviour
-{
-    public GameObject button_management;
+{   
     Vector2 mousePos;//마우스로 찍은 좌표
+    public bool player_check;//플레이어인지 확인하는 변수
     int first_random;//처음 몇개의 캐릭터가 나올지 결정하는 랜덤변수
     int random_x;//캐릭터의 x좌표 랜덤변수
     int random_y;//캐릭터의 y좌표 랜덤변수
     int random_character;//캐릭터 유닛 종류 결정 랜덤변수
-    int [,]character=new int[12,7];//캐릭터의 유무 판단 배열
+    public int check_x;
+    public int check_y;
+    public int [,]character=new int[12,7];//캐릭터의 유무 판단 배열
     // Start is called before the first frame update
     void Start()
     {
+        
         first_random=Random.Range(1,5);
         Debug.Log(first_random);
         for(int i=0;i<12;i++)//처음배열에 모두 0을 넣어줌
@@ -43,17 +46,18 @@ public class Character_Manager : MonoBehaviour
                     random_character=Random.Range(0,3);
                     if(random_character==0)
                     {
+                        
                         GameObject tmp=Instantiate(Resources.Load<GameObject>("Prefabs/hamster_archer_1"));
                         tmp.transform.position=new Vector3(random_x,random_y,0);
                     }
                     else if(random_character==1)
                     {
-                        GameObject tmp=Instantiate(Resources.Load<GameObject>("Prefabs/hamster_magician"));
+                        GameObject tmp=Instantiate(Resources.Load<GameObject>("Prefabs/hamster_gunner_1"));
                         tmp.transform.position=new Vector3(random_x,random_y,0);
                     }
                     else if(random_character==2)
                     {
-                        GameObject tmp=Instantiate(Resources.Load<GameObject>("Prefabs/hamster_gunner_1"));
+                        GameObject tmp=Instantiate(Resources.Load<GameObject>("Prefabs/hamster_magician"));
                         tmp.transform.position=new Vector3(random_x,random_y,0);
                     }
                     
@@ -99,22 +103,25 @@ public class Character_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+       if(Input.GetMouseButtonDown(0))
         {
+            
             mousePos=Input.mousePosition;
-            mousePos=Camera.main.ScreenToWorldPoint(mousePos);
-            Debug.Log(mousePos);
+            mousePos=Camera.main.ScreenToWorldPoint(mousePos);         
             mousePos.x=Mathf.CeilToInt(mousePos.x);
             mousePos.y=Mathf.CeilToInt(mousePos.y);
             mousePos=new Vector2(mousePos.x,mousePos.y);
-            Debug.Log(mousePos);
-            if(character[(int)mousePos.x,(int)mousePos.y]==1)
+            if(character[(int)mousePos.x,(int)mousePos.y]==1)//클릭한곳에 캐릭터가 있을경우
             {
-                button_management.SetActive(true);
+                check_x=(int)mousePos.x;
+                check_y=(int)mousePos.y;
+                player_check=true;
             }
-            else{
-                button_management.SetActive(false);
+            else
+            {
+                player_check=false;
             }
+                
         }
     }
 }
