@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Click_Manager : MonoBehaviour
 {
+
     Coroutine coroutine;
     Coroutine coroutine2;
     GameObject target=null;
@@ -14,7 +15,7 @@ public class Click_Manager : MonoBehaviour
     Vector2 mousePos;
     bool btn_check;
     int btn_key=0;
-    bool once;
+    int ui_key=0;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,18 +32,55 @@ public class Click_Manager : MonoBehaviour
     
     IEnumerator first_click()
     {
-        
+        btn_check=false;
+        int tmp_x=character.GetComponent<Character_Manager>().check_x;
+        int tmp_y=character.GetComponent<Character_Manager>().check_y;
         yield return new WaitForSeconds(0.1f);
         while(true)
         {
             if(character.GetComponent<Character_Manager>().player_check==true)
             {
                 btn.SetActive(true);
-                btn.transform.position=new Vector2(character.GetComponent<Character_Manager>().check_x,character.GetComponent<Character_Manager>().check_y+1);           
+                if(tmp_y==6)
+                {
+                    tmp_y=5;
+                }
+                if(tmp_x==11)
+                {
+                    tmp_x=10;
+                }
+                if(tmp_x==0)
+                {
+                    tmp_x=1;
+                }
+                if(tmp_y==0)
+                {
+                    tmp_y=1;
+                }
+                if(character.GetComponent<Character_Manager>().character[tmp_x,tmp_y+1]==0)
+                {
+                    btn.transform.position=new Vector2(character.GetComponent<Character_Manager>().check_x,character.GetComponent<Character_Manager>().check_y+1); 
+                }
+                else if(character.GetComponent<Character_Manager>().character[tmp_x,tmp_y-1]==0)
+                {
+                    btn.transform.position=new Vector2(character.GetComponent<Character_Manager>().check_x,character.GetComponent<Character_Manager>().check_y-1);
+                }   
+                else if(character.GetComponent<Character_Manager>().character[tmp_x+1,tmp_y]==0)
+                {
+                    btn.transform.position=new Vector2(character.GetComponent<Character_Manager>().check_x+1,character.GetComponent<Character_Manager>().check_y);
+                }
+                else if(character.GetComponent<Character_Manager>().character[tmp_x-1,tmp_y]==0)
+                {
+                    btn.transform.position=new Vector2(character.GetComponent<Character_Manager>().check_x-1,character.GetComponent<Character_Manager>().check_y);
+                }
+                else
+                {
+                    btn.SetActive(false);
+                }
             }
             
             if(mousePos.x==btn.transform.position.x&&mousePos.y==btn.transform.position.y){
-                    btn_check=true;
+                btn_check=true;
             }
             else if(Input.GetMouseButtonDown(0))
             {
@@ -62,7 +100,7 @@ public class Click_Manager : MonoBehaviour
                     target=hit.collider.gameObject;
                     btn_key=1;
                     StopCoroutine(coroutine);
-                    coroutine=StartCoroutine(second_click());
+                    coroutine2=StartCoroutine(second_click());
                 }
                 else if(Input.GetMouseButtonDown(0))
                 {
@@ -79,9 +117,11 @@ public class Click_Manager : MonoBehaviour
     }
     IEnumerator second_click()
     {
+        
         yield return new WaitForSeconds(0.1f);
         while(true)
-        {    
+        {
+            btn.SetActive(false);    
             if(btn_key==1)
             {
                 if(character.GetComponent<Character_Manager>().character[(int)mousePos.x,(int)mousePos.y]==0)
@@ -92,6 +132,7 @@ public class Click_Manager : MonoBehaviour
                         btn_key=0;
                         StopCoroutine(coroutine2);
                         coroutine=StartCoroutine(first_click());
+                        
                 }
                 else if(Input.GetMouseButtonDown(0))
                 {
@@ -101,6 +142,7 @@ public class Click_Manager : MonoBehaviour
                     mousePos.y=Mathf.CeilToInt(mousePos.y);
                     mousePos=new Vector2(mousePos.x,mousePos.y);
                 }
+                
                 Debug.Log("플레이어 이동");
             }
             yield return null;

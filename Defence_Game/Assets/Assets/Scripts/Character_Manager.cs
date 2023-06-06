@@ -115,6 +115,7 @@ public class Character_Manager : MonoBehaviour
             {
                 check_x=(int)mousePos.x;
                 check_y=(int)mousePos.y;
+                Debug.Log("캐릭터좌표"+check_x+","+check_y);
                 player_check=true;
             }
             else
