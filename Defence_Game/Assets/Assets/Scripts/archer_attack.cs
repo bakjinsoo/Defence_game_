@@ -29,7 +29,6 @@ public class archer_attack : MonoBehaviour
             }
             else{
                 GameObject tmp=Instantiate(arrow,this.transform.position,this.transform.rotation);
-                
             }
             
             yield return new WaitForSeconds(2f);
