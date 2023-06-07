@@ -10,6 +10,7 @@ public class Reroll_Manager : MonoBehaviour
     public bool able_reroll = false;
     public void Awake()
     {
+        button = this.gameObject.GetComponent<Button>();
         button.onClick.AddListener(onclick_up_Reroll);
     }
     public void onclick_up_Reroll()
