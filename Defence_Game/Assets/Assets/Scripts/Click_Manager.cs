@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Click_Manager : MonoBehaviour
 {
-
+    public bool character_clicked=false;
     Coroutine coroutine;
     Coroutine coroutine2;
     GameObject target=null;
-    float max_distance=15f;
+    float max_distance=30f;
     Camera cam;
     public GameObject character;
     public GameObject btn;
@@ -33,12 +33,13 @@ public class Click_Manager : MonoBehaviour
     IEnumerator first_click()
     {
         btn_check=false;
+        character_clicked=false;
         int tmp_x=character.GetComponent<Character_Manager>().check_x;
         int tmp_y=character.GetComponent<Character_Manager>().check_y;
         yield return new WaitForSeconds(0.1f);
         while(true)
         {
-            if(character.GetComponent<Character_Manager>().player_check==true)
+            if(character.GetComponent<Character_Manager>().player_check==true&&btn.activeSelf==false)
             {
                 btn.SetActive(true);
                 if(tmp_y==6)
@@ -79,7 +80,7 @@ public class Click_Manager : MonoBehaviour
                 }
             }
             
-            if(mousePos.x==btn.transform.position.x&&mousePos.y==btn.transform.position.y){
+            if(mousePos.x==btn.transform.position.x&&mousePos.y==btn.transform.position.y&&btn.activeSelf==true){
                 btn_check=true;
             }
             else if(Input.GetMouseButtonDown(0))
@@ -96,6 +97,7 @@ public class Click_Manager : MonoBehaviour
                 RaycastHit2D hit=Physics2D.Raycast(mousePos,transform.forward,max_distance);
                 if(hit.collider!=null)
                 {
+                    character_clicked=true;
                     target=hit.collider.gameObject;
                     if(target.CompareTag("Player")&&target.transform.position.x==character.GetComponent<Character_Manager>().check_x&&target.transform.position.y==character.GetComponent<Character_Manager>().check_y)
                     {
@@ -106,6 +108,7 @@ public class Click_Manager : MonoBehaviour
                 }
                 else if(Input.GetMouseButtonDown(0))
                 {
+                    character_clicked=false;
                     mousePos=Input.mousePosition;
                     mousePos=Camera.main.ScreenToWorldPoint(mousePos);         
                     mousePos.x=Mathf.CeilToInt(mousePos.x);
@@ -119,7 +122,7 @@ public class Click_Manager : MonoBehaviour
     }
     IEnumerator second_click()
     {
-        
+        character_clicked=false;
         yield return new WaitForSeconds(0.1f);
         while(true)
         {

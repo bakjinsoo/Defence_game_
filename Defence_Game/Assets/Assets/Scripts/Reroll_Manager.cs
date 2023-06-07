@@ -33,7 +33,7 @@ public class Reroll_Manager : MonoBehaviour
     {
         if(isreroll==true)
         {
-            if(coin>50)
+            if(coin>=50)
             {
                 coin-=50;
                 able_reroll=true;
