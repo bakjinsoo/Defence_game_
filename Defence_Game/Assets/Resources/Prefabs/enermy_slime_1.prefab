@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   center: {fileID: 6920509752499997102, guid: a2a9019c082c0be4fb97c018f335e23c, type: 3}
-  speed: 2
+  speed: 1.6
   radius: 5.1
 --- !u!61 &6181725901551549899
 BoxCollider2D:

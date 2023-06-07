@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class gunner_attack : MonoBehaviour
 {
+    public GameObject enermy;
     public GameObject bullet;
     // Start is called before the first frame update
     void Start()
