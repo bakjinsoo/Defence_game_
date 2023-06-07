@@ -11,7 +11,7 @@ public class Coin : MonoBehaviour
     TextMeshProUGUI coin_Count;
     void Start()
     {
-        CoinGetter = GameObject.Find("Reroll_button").GetComponent<Reroll_Manager>();
+        CoinGetter = GameObject.Find("Reroll_Button").GetComponent<Reroll_Manager>();
         coin_Count = GameObject.Find("Coin_Count").GetComponent<TextMeshProUGUI>();
     }
 
