@@ -18,4 +18,4 @@ public class TimeManager : MonoBehaviour
         GameTime-=Time.deltaTime;
         GameTimeText.text="Time : "+(int)GameTime;
     }
-}
+}//push test
