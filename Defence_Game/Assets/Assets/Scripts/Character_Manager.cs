@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Character_Manager : MonoBehaviour
 {   
+    public GameObject reroll_manager;
     Vector2 mousePos;//마우스로 찍은 좌표
     public bool player_check;//플레이어인지 확인하는 변수
     int first_random;//처음 몇개의 캐릭터가 나올지 결정하는 랜덤변수
@@ -123,6 +124,53 @@ public class Character_Manager : MonoBehaviour
                 player_check=false;
             }
                 
+        }
+        if(reroll_manager.GetComponent<Reroll_Manager>().able_reroll==true)
+        {
+            Debug.Log("몬스터 생성");
+            reroll();
+            reroll_manager.GetComponent<Reroll_Manager>().able_reroll=false;
+        }
+    }
+    void reroll()
+    {
+        for(int i=0;i<1;i++)
+        {
+            random_x=Random.Range(0,12);
+            random_y=Random.Range(0,7);
+            character_rerandom();//범위 재지정함수
+            character[random_x,random_y]=1;
+            while(true)
+            {
+                if(character[random_x,random_y]==1)
+                {
+                    random_x=Random.Range(0,12);
+                    random_y=Random.Range(0,7);
+                    character_rerandom();
+                }
+                else
+                {
+                    character[random_x,random_y]=1;
+                    random_character=Random.Range(0,3);
+                    if(random_character==0)
+                    {
+                        GameObject tmp=Instantiate(Resources.Load<GameObject>("Prefabs/hamster_archer_1"));
+                        tmp.transform.position=new Vector3(random_x,random_y,0);
+                    }
+                    else if(random_character==1)
+                    {
+                        GameObject tmp=Instantiate(Resources.Load<GameObject>("Prefabs/hamster_gunner_1"));
+                        tmp.transform.position=new Vector3(random_x,random_y,0);
+                    }
+                    else if(random_character==2)
+                    {
+                        GameObject tmp=Instantiate(Resources.Load<GameObject>("Prefabs/hamster_magician"));
+                        tmp.transform.position=new Vector3(random_x,random_y,0);
+                    }
+                    
+                    break;
+                }
+            }
         }
     }
 }

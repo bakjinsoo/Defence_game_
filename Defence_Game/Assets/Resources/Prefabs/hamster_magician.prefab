@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 1004080282421672144}
   - component: {fileID: 6129800486881252122}
   - component: {fileID: 2886845541678423273}
-  - component: {fileID: 3671530784209555160}
-  - component: {fileID: -2368447157480218521}
+  - component: {fileID: 61189187525870286}
+  - component: {fileID: 7256184653059387701}
   m_Layer: 0
   m_Name: hamster_magician
   m_TagString: Player
@@ -107,20 +107,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3671530784209555160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6970258249651476110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fadd67b4092ad44ebfb4e9f6d92c159, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player_check: 0
---- !u!61 &-2368447157480218521
+--- !u!61 &61189187525870286
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,3 +133,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &7256184653059387701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6970258249651476110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 452a6db7ab29a4c4ba72745848263a10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireball: {fileID: 28378563055940959, guid: a3221f796e9d5824c941f37d138b20a6, type: 3}

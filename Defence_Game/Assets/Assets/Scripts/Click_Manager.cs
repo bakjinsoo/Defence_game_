@@ -94,13 +94,15 @@ public class Click_Manager : MonoBehaviour
             {
                 Debug.Log("버튼 클릭");
                 RaycastHit2D hit=Physics2D.Raycast(mousePos,transform.forward,max_distance);
-                if(hit.collider!=null&&btn_key==0)
+                if(hit.collider!=null)
                 {
-                    Debug.Log("레이 히트");
                     target=hit.collider.gameObject;
-                    btn_key=1;
-                    StopCoroutine(coroutine);
-                    coroutine2=StartCoroutine(second_click());
+                    if(target.CompareTag("Player")&&target.transform.position.x==character.GetComponent<Character_Manager>().check_x&&target.transform.position.y==character.GetComponent<Character_Manager>().check_y)
+                    {
+                        Debug.Log("레이 히트");
+                        coroutine2=StartCoroutine(second_click());
+                        StopCoroutine(coroutine);
+                    }
                 }
                 else if(Input.GetMouseButtonDown(0))
                 {
@@ -122,16 +124,16 @@ public class Click_Manager : MonoBehaviour
         while(true)
         {
             btn.SetActive(false);    
-            if(btn_key==1)
-            {
+            
                 if(character.GetComponent<Character_Manager>().character[(int)mousePos.x,(int)mousePos.y]==0)
                 {
                         character.GetComponent<Character_Manager>().character[(int)character.GetComponent<Character_Manager>().check_x,(int)character.GetComponent<Character_Manager>().check_y]=0;
                         character.GetComponent<Character_Manager>().character[(int)mousePos.x,(int)mousePos.y]=1;
                         target.transform.position=new Vector2(mousePos.x,mousePos.y);
                         btn_key=0;
-                        StopCoroutine(coroutine2);
+                        
                         coroutine=StartCoroutine(first_click());
+                        StopCoroutine(coroutine2);
                         
                 }
                 else if(Input.GetMouseButtonDown(0))
@@ -144,7 +146,7 @@ public class Click_Manager : MonoBehaviour
                 }
                 
                 Debug.Log("플레이어 이동");
-            }
+            
             yield return null;
         }
     }

@@ -8,7 +8,10 @@ public class Enermy : MonoBehaviour
     public float speed = 2f; 
     public float radius=4.8f;
     private float angle=0;
-
+    void OnColisionStay2D()
+    {
+        
+    }
     void Start()
     {
         
