@@ -9,13 +9,14 @@ public class Enermy : MonoBehaviour
     public float speed = 2f; 
     public float radius=4.8f;
     private float angle=0;
+    Spawn_Manager spawnManager;
     void OnColisionStay2D()
     {
-        
+
     }
     void Start()
     {
-        
+        spawnManager = GameObject.Find("SpawnManager").GetComponent<Spawn_Manager>();
     }
 
     void Update()
@@ -23,5 +24,8 @@ public class Enermy : MonoBehaviour
         angle += Time.deltaTime * speed; 
         
         transform.position = center.position + new Vector3(Mathf.Cos(angle)*1.6f , Mathf.Sin(angle)*0.9f,0)*radius;
+    }
+    private void OnDestroy() {
+        spawnManager.leftCount--; // 현재 몹 수를 하나 줄여준다.
     }
 }
