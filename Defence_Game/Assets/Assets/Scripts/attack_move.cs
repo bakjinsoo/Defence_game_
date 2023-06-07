@@ -16,7 +16,6 @@ public class attack_move : MonoBehaviour
     {
         if(this.transform.position.x<6)
         {
-            
             transform.Translate(Vector2.left*speed*Time.deltaTime);
         }
         else{

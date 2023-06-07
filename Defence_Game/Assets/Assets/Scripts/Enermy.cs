@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enermy : MonoBehaviour
 {
+    public float hp=100f;
     public Transform center;//enermy collider프리펩의 위치 조정을 통한 적의 타원형운동 반복
     public float speed = 2f; 
     public float radius=4.8f;
