@@ -21,6 +21,8 @@ public class Spawn_Manager : MonoBehaviour
     {
         if(isSpawnEnded && leftCount == 0){
             Debug.Log("Stage 이동합니다 : " + round);
+
+            Time.timeScale = 0.1f;
             //3지선다
             StartCoroutine(spawn());
         }
