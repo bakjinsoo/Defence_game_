@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 1207590556873954589}
   - component: {fileID: 8990179521133888343}
   - component: {fileID: 5501975344913688181}
-  - component: {fileID: 8015444605792351429}
+  - component: {fileID: 8859247188356047470}
+  - component: {fileID: 2517915686075250424}
   m_Layer: 0
   m_Name: fireball
   m_TagString: Untagged
@@ -141,7 +142,33 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8015444605792351429
+--- !u!61 &8859247188356047470
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28378563055940959}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.0034579337}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2, y: 0.5130972}
+  m_EdgeRadius: 0
+--- !u!114 &2517915686075250424
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -150,6 +177,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 28378563055940959}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 788a4a68059c0c14bbbc1f56f5e7580b, type: 3}
+  m_Script: {fileID: 11500000, guid: d496fb95021593449895fc4adb1d5e28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enermy: {fileID: 473233725591726437, guid: 3cb50544dde2f0e448db386acf7d1872, type: 3}
+  speed: 5

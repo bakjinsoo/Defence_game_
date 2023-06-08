@@ -8,7 +8,7 @@ public class Click_Manager : MonoBehaviour
     Coroutine coroutine;
     Coroutine coroutine2;
     GameObject target=null;
-    float max_distance=30f;
+    float max_distance=10f;
     Camera cam;
     public GameObject character;
     public GameObject btn;
@@ -94,7 +94,7 @@ public class Click_Manager : MonoBehaviour
             if(btn_check==true)
             {
                 Debug.Log("버튼 클릭");
-                RaycastHit2D hit=Physics2D.Raycast(mousePos,transform.forward,max_distance);
+                RaycastHit2D hit=Physics2D.Raycast(mousePos,transform.forward,max_distance,1<<LayerMask.NameToLayer("Player"));
                 if(hit.collider!=null)
                 {
                     character_clicked=true;

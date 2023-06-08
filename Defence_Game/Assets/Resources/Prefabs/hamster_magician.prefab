@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2886845541678423273}
   - component: {fileID: 61189187525870286}
   - component: {fileID: 7256184653059387701}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: hamster_magician
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -146,3 +146,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireball: {fileID: 28378563055940959, guid: a3221f796e9d5824c941f37d138b20a6, type: 3}
+  speed: 10
