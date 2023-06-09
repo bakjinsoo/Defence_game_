@@ -18,7 +18,7 @@ public class Coin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        Debug.Log(CoinGetter.coin.ToString());
+        // Debug.Log(CoinGetter.coin.ToString());
         coin_Count.text = CoinGetter.coin.ToString();
     }
 }
