@@ -14,6 +14,9 @@ public class Spawn_Manager : MonoBehaviour
     GameObject CardsList;
     private int cardNum;
     public int cardIndex; // resources폴더 내에 있는 카드 개수
+
+    [SerializeField]
+    private GameObject StageEndPanel;
     List<GameObject> cardList = new List<GameObject>();
     void Start()
     {
@@ -34,6 +37,7 @@ public class Spawn_Manager : MonoBehaviour
             
             if(round > 0){ //0라운드에는 카드뽑기 진행 X
                 Time.timeScale = 0.1f;
+                StageEndPanel.SetActive(true);
                 for(int i = 0; i < cardList.Count ; i++) {
                     GameObject Card = Instantiate(Resources.Load("Prefabs/Cards/Card"+Random.Range(0,cardIndex)) as GameObject, cardList[i].transform.position, Quaternion.identity);
                     Card.transform.parent = cardList[i].transform.parent;

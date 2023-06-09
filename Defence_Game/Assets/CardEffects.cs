@@ -8,6 +8,7 @@ public class CardEffects : MonoBehaviour
     public void TimeResetToOne(){
         Time.timeScale = 1;
         Destroy(GameObject.Find("CardsList"));
+        GameObject.Find("StageEnd").SetActive(false);
     }
 
 }
