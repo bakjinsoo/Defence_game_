@@ -10,15 +10,12 @@ public class Enermy : MonoBehaviour
     public float radius=4.8f;
     private float angle=0;
     Spawn_Manager spawnManager;
-    void OnColisionStay2D()
-    {
-
-    }
+    
     void Start()
     {
         spawnManager = GameObject.Find("SpawnManager").GetComponent<Spawn_Manager>();
     }
-
+    
     void Update()
     {
         angle += Time.deltaTime * speed; 
