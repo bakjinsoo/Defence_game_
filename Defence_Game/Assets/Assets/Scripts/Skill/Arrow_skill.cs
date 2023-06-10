@@ -4,32 +4,33 @@ using UnityEngine;
 
 public class Arrow_skill : MonoBehaviour
 {
+    
+    public GameObject archer;
     public GameObject enermy;
-    public float speed=5f;
+    public float speed=1f;
+    public int num;
+    
     // Start is called before the first frame update
     void Start()
     {
         
     }
-   void OnTriggerEnter2D()
+   void OnTriggerEnter2D(Collider2D other)
     {
-        if(enermy.GetComponent<Enermy>().hp>0)
+
+        if(other.gameObject.tag=="Enermy")
         {
             enermy.GetComponent<Enermy>().hp-=20;
             Debug.Log("현재 적 hp : "+enermy.GetComponent<Enermy>().hp);
+            Destroy(this.gameObject);
         }
         
     }
     // Update is called once per frame
     void Update()
-    {
-        if(this.transform.position.x<6)
-        {
-            transform.Translate(Vector2.left*speed*Time.deltaTime);
-        }
-        else{
-                
-            transform.Translate(Vector2.right*speed*Time.deltaTime);
-        }
+    {   
+        Debug.Log("num : "+num);
+        transform.Translate(enermy.transform.position*speed*Time.deltaTime);
     }
+
 }
