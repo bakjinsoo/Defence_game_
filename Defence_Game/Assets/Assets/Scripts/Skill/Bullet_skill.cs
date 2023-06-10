@@ -10,13 +10,13 @@ public class Bullet_skill : MonoBehaviour
     {
         
     }
-     void OnTriggerStay2D()
+     void OnTriggerStay2D(Collider2D other)
     {
         
-        if(enermy.GetComponent<Enermy>().hp>0)
+        if(other.GetComponent<Enermy>().hp>0)
         {
-            enermy.GetComponent<Enermy>().hp-=20;
-            Debug.Log("현재 적 hp : "+enermy.GetComponent<Enermy>().hp);
+            other.GetComponent<Enermy>().hp-=1.8f;
+            Debug.Log("현재 적 hp : "+other.GetComponent<Enermy>().hp);
         }
         
     }

@@ -196,3 +196,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enermy: {fileID: 473233725591726437, guid: 3cb50544dde2f0e448db386acf7d1872, type: 3}
   bullet: {fileID: 3573637319316132025, guid: 18e48c874b50142438940fa51f402a45, type: 3}
+  character_manger: {fileID: 9200226082968105372, guid: 65d35f5fffa888f4fb98930257dc99ef, type: 3}
+  Monster_List: []

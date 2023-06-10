@@ -9,13 +9,37 @@ public class gunner_attack : MonoBehaviour
     int trigger_key=0;
     public GameObject enermy;
     public GameObject bullet;
+    public GameObject character_manger;
     Coroutine coroutine;
     public List<GameObject> Monster_List=new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
         coroutine=StartCoroutine(gunnerattack());
-        
+       int unit_class=Random.Range(0,1000);
+        if(unit_class<3)
+        {
+            this.GetComponent<CircleCollider2D>().radius=5f;
+        }
+        else if(unit_class>=3&&unit_class<13)
+        {
+            this.GetComponent<CircleCollider2D>().radius=3.2f;
+        }
+        else if(unit_class>=13&&unit_class<51)
+        {
+            this.GetComponent<CircleCollider2D>().radius=2.5f;
+        }
+        else if(unit_class>=51&&unit_class<102)
+        {
+            this.GetComponent<CircleCollider2D>().radius=2f;
+        }
+        else if(unit_class>=102&&unit_class<331)
+        {
+            this.GetComponent<CircleCollider2D>().radius=1.5f;
+        }
+        else{
+            this.GetComponent<CircleCollider2D>().radius=1.2f;
+        }
     }
 
     // Update is called once per frame
@@ -33,38 +57,13 @@ public class gunner_attack : MonoBehaviour
             Monster_List.Add(other.gameObject);
         }
         
-        // if(trigger_key==0)
-        // {
-        //     trigger_key++;
-        //     Debug.Log("범위감지");
-        //     coroutine=StartCoroutine(gunnerattack());
-            
-        // }
-        // else if(coroutine==null)
-        // {
-        //     Debug.Log("트리거키 초기화");
-        //     trigger_key=0;
-        //     count=0;
-        // }
-        // trigger_key++;
-        
-        
     }
     void OnTriggerExit2D(Collider2D other)
     {
         if(other.gameObject.tag=="Enermy")
         {
             Monster_List.RemoveAt(0);
-        }
-        
-        // if(trigger_key>16)
-        // {
-        //     Debug.Log("트리거키 초기화");
-        //     trigger_key=0;
-        //     count=0;
-        // }
-        
-        
+        }        
     }
     IEnumerator gunnerattack()
     {
@@ -81,10 +80,7 @@ public class gunner_attack : MonoBehaviour
 
             }
             
-            // count++;
-            
-            // StopCoroutine(coroutine);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(3.5f);
             
         }
         
