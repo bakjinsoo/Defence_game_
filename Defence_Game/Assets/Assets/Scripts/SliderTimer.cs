@@ -7,9 +7,11 @@ public class SliderTimer : MonoBehaviour
     Slider slider;
     float sliderTime=60f;
     // Start is called before the first frame update
+    TimeManager timeManager;
     void Start()
     {
         slider=GetComponent<Slider>();
+        timeManager = GameObject.Find("TimeManager").GetComponent<TimeManager>();
     }
 
     // Update is called once per frame
@@ -17,7 +19,7 @@ public class SliderTimer : MonoBehaviour
     {
         if(slider.value>0)
         {
-            slider.value-=Time.deltaTime;
+            slider.value=timeManager.GameTime - Time.deltaTime;
         }
         else
         {
