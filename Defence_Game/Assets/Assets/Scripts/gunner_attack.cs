@@ -9,13 +9,37 @@ public class gunner_attack : MonoBehaviour
     int trigger_key=0;
     public GameObject enermy;
     public GameObject bullet;
+    public GameObject character_manger;
     Coroutine coroutine;
     public List<GameObject> Monster_List=new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
         coroutine=StartCoroutine(gunnerattack());
-        
+       int unit_class=Random.Range(0,1000);
+        if(unit_class<3)
+        {
+            this.GetComponent<CircleCollider2D>().radius=5f;
+        }
+        else if(unit_class>=3&&unit_class<13)
+        {
+            this.GetComponent<CircleCollider2D>().radius=3.2f;
+        }
+        else if(unit_class>=13&&unit_class<51)
+        {
+            this.GetComponent<CircleCollider2D>().radius=2.5f;
+        }
+        else if(unit_class>=51&&unit_class<102)
+        {
+            this.GetComponent<CircleCollider2D>().radius=2f;
+        }
+        else if(unit_class>=102&&unit_class<331)
+        {
+            this.GetComponent<CircleCollider2D>().radius=1.5f;
+        }
+        else{
+            this.GetComponent<CircleCollider2D>().radius=1.2f;
+        }
     }
 
     // Update is called once per frame
@@ -56,7 +80,7 @@ public class gunner_attack : MonoBehaviour
 
             }
             
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(3.5f);
             
         }
         

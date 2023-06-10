@@ -20,8 +20,8 @@ public class Arrow_skill : MonoBehaviour
 
         if(other.gameObject.tag=="Enermy")
         {
-            enermy.GetComponent<Enermy>().hp-=20;
-            Debug.Log("현재 적 hp : "+enermy.GetComponent<Enermy>().hp);
+            other.GetComponent<Enermy>().hp-=20;
+            Debug.Log("현재 적 hp : "+other.GetComponent<Enermy>().hp);
             Destroy(this.gameObject);
         }
         
@@ -29,7 +29,7 @@ public class Arrow_skill : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        Debug.Log("num : "+num);
+        
         transform.Translate(enermy.transform.position*speed*Time.deltaTime);
     }
 

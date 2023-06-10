@@ -48,7 +48,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: -0.35070038, y: 0}
   serializedVersion: 2
-  m_Radius: 2.7794678
+  m_Radius: 5
 --- !u!114 &2564105726269112795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,7 +62,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrow: {fileID: 1334431019449155468, guid: 6e017c96029fea8418226f986afda977, type: 3}
+  attack_trigger: 0
   speed: 10
+  character_manger: {fileID: 9200226082968105372, guid: 65d35f5fffa888f4fb98930257dc99ef, type: 3}
   Monster_List: []
 --- !u!1 &8221690389239697893
 GameObject:
