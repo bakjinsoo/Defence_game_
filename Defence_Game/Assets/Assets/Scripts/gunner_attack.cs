@@ -16,7 +16,7 @@ public class gunner_attack : MonoBehaviour
     void Start()
     {
         coroutine=StartCoroutine(gunnerattack());
-       int unit_class=Random.Range(0,1000);
+       int unit_class=Random.Range(0,10000);
         if(unit_class<3)
         {
             this.GetComponent<CircleCollider2D>().radius=5f;
@@ -25,15 +25,15 @@ public class gunner_attack : MonoBehaviour
         {
             this.GetComponent<CircleCollider2D>().radius=3.2f;
         }
-        else if(unit_class>=13&&unit_class<51)
+        else if(unit_class>=13&&unit_class<64)
         {
             this.GetComponent<CircleCollider2D>().radius=2.5f;
         }
-        else if(unit_class>=51&&unit_class<102)
+        else if(unit_class>=64&&unit_class<565)
         {
             this.GetComponent<CircleCollider2D>().radius=2f;
         }
-        else if(unit_class>=102&&unit_class<331)
+        else if(unit_class>=565&&unit_class<3566)
         {
             this.GetComponent<CircleCollider2D>().radius=1.5f;
         }
@@ -80,7 +80,7 @@ public class gunner_attack : MonoBehaviour
 
             }
             
-            yield return new WaitForSeconds(3.5f);
+            yield return new WaitForSeconds(0.5f);
             
         }
         
