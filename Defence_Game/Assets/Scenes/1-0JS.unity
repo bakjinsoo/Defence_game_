@@ -519,7 +519,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1728835421}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -6077,7 +6077,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2345732655157220572, guid: 657ecb3f5ac364b44990d5d3e78b8417, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2345732655157220572, guid: 657ecb3f5ac364b44990d5d3e78b8417, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7773,7 +7773,6 @@ GameObject:
   - component: {fileID: 1728835420}
   - component: {fileID: 1728835419}
   - component: {fileID: 1728835418}
-  - component: {fileID: 1728835422}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -7855,8 +7854,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1174954612}
-  - {fileID: 210631177}
   - {fileID: 195446392}
+  - {fileID: 210631177}
   - {fileID: 789014548}
   - {fileID: 1676946036}
   - {fileID: 48511}
@@ -7873,26 +7872,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!95 &1728835422
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1728835417}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: df3e8196acd375e4386a9d96a6a6767a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1959332560
 GameObject:
   m_ObjectHideFlags: 0
@@ -8133,6 +8112,56 @@ RectTransform:
   m_AnchoredPosition: {x: -174, y: 249}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2103839489
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2103839491}
+  - component: {fileID: 2103839490}
+  m_Layer: 0
+  m_Name: CharacterData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2103839490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103839489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 595acf6406e53ef4e95e2d705339fb0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gunner_AttackPoint: 2.5
+  Gunner_attackSpeed: 1.5
+  Archer_AttackPoint: 2.5
+  Archer_attackSpeed: 1.5
+  Magician_AttackPoint: 2.5
+  Magician_attackSpeed: 1.5
+--- !u!4 &2103839491
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103839489}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.2347476, y: 2.2214692, z: 73.95731}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2133158466
 GameObject:
   m_ObjectHideFlags: 0
@@ -8165,7 +8194,6 @@ MonoBehaviour:
   enemies:
   - {fileID: 473233725591726437, guid: 3cb50544dde2f0e448db386acf7d1872, type: 3}
   - {fileID: 473233725591726437, guid: f2e046a53065cd74e86aaf791b05baf6, type: 3}
-  - {fileID: 6970258249651476110, guid: 7e36b8e45c59ee5409739f4c12b2260b, type: 3}
   enermyCount: 50
   round: 0
   leftCount: 0

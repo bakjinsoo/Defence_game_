@@ -79,7 +79,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uAD81\uC218\uC758 \uACF5\uACA9\uC18D\uB3C4\uAC00 \uC99D\uAC00\uD569\uB2C8\uB2E4."
+  m_Text: "\uAD81\uC218\uC758 \uACF5\uACA9 \uACC4\uC218\uAC00 \uC99D\uAC00\uD569\uB2C8\uB2E4."
 --- !u!1 &4991495192613062721
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,6 +207,18 @@ MonoBehaviour:
       - m_Target: {fileID: 619017673705696624, guid: f3670cc52144e774ba8c111580dde394, type: 3}
         m_TargetAssemblyTypeName: CardEffects, Assembly-CSharp
         m_MethodName: TimeResetToOne
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -4580741427034756925}
+        m_TargetAssemblyTypeName: CardEffects, Assembly-CSharp
+        m_MethodName: ArcherAttackCoefficientUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

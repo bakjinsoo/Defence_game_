@@ -6,6 +6,7 @@ public class Bullet_skill : MonoBehaviour
 {
     public GameObject enermy;
     // Start is called before the first frame update
+    public int num;
     void Start()
     {
         
@@ -15,8 +16,8 @@ public class Bullet_skill : MonoBehaviour
         
         if(other.GetComponent<Enermy>().hp>0)
         {
-            other.GetComponent<Enermy>().hp-=1.8f;
-            // Debug.Log("현재 적 hp : "+other.GetComponent<Enermy>().hp);
+            other.GetComponent<Enermy>().hp -= characterData.Instance.GunnerAttackCoefficient * characterData.Instance.GunnerAttackPoints[num];
+            Debug.Log("현재 적 hp : "+other.GetComponent<Enermy>().hp);
         }
         
     }
