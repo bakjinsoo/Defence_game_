@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class archer_attack : MonoBehaviour
 {
+    public int unit;
     public GameObject arrow;
     public int attack_trigger=0;
     public float speed=10f;
@@ -13,29 +14,35 @@ public class archer_attack : MonoBehaviour
     void Start()
     {
         StartCoroutine(arrow_skill());
-        int unit_class=Random.Range(0,1000);
+         int unit_class=Random.Range(0,10000);
         if(unit_class<3)
         {
             this.GetComponent<CircleCollider2D>().radius=5f;
+            unit=5;
         }
         else if(unit_class>=3&&unit_class<13)
         {
             this.GetComponent<CircleCollider2D>().radius=3.2f;
+            unit=4;
         }
-        else if(unit_class>=13&&unit_class<51)
+        else if(unit_class>=13&&unit_class<64)
         {
             this.GetComponent<CircleCollider2D>().radius=2.5f;
+            unit=3;
         }
-        else if(unit_class>=51&&unit_class<102)
+        else if(unit_class>=64&&unit_class<565)
         {
             this.GetComponent<CircleCollider2D>().radius=2f;
+            unit=2;
         }
-        else if(unit_class>=102&&unit_class<331)
+        else if(unit_class>=565&&unit_class<3566)
         {
             this.GetComponent<CircleCollider2D>().radius=1.5f;
+            unit=1;
         }
         else{
             this.GetComponent<CircleCollider2D>().radius=1.2f;
+            unit=0;
         }
     }
 
@@ -76,6 +83,7 @@ public class archer_attack : MonoBehaviour
                     //    Quaternion rotation=Quaternion.AngleAxis(angle,Vector3.forward);
                     //    GameObject tmp=Instantiate(arrow,this.transform.position,new Quaternion(0,0,angle,0));
                     GameObject tmp=Instantiate(arrow,this.transform.position,Quaternion.identity);
+                    tmp.GetComponent<Arrow_skill>().num=unit;
                     if(Monster_List[num]==null)
                     {
                             num=Random.Range(0,Monster_List.Count);
