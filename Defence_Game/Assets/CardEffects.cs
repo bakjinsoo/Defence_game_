@@ -19,4 +19,18 @@ public class CardEffects : MonoBehaviour
         Destroy(tmp,3f);
     }
 
+    public void ArcherAttackCoefficientUp(){
+        characterData.Instance.ArcherAttackCoefficient += 0.5f;
+        Debug.Log("Effects 1");
+        
+    }
+    public void GunnerAttackCoefficientUp(){
+        characterData.Instance.GunnerAttackCoefficient += 0.5f;
+        Debug.Log("Effects 2");
+    }
+    public void MagicianAttackCoefficientUp(){
+        characterData.Instance.MagicianAttackCoefficient += 0.5f;
+        Debug.Log("Effects 3");
+    }
+
 }
