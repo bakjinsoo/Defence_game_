@@ -83,6 +83,7 @@ public class archer_attack : MonoBehaviour
                     //    Quaternion rotation=Quaternion.AngleAxis(angle,Vector3.forward);
                     //    GameObject tmp=Instantiate(arrow,this.transform.position,new Quaternion(0,0,angle,0));
                     GameObject tmp=Instantiate(arrow,this.transform.position,Quaternion.identity);
+                    tmp.GetComponent<Arrow_skill>().num=unit;
                     if(Monster_List[num]==null)
                     {
                             num=Random.Range(0,Monster_List.Count);
