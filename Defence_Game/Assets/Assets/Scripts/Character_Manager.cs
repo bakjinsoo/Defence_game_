@@ -130,7 +130,7 @@ public class Character_Manager : MonoBehaviour
         }
         if(reroll_manager.GetComponent<Reroll_Manager>().able_reroll==true)
         {
-            Debug.Log("몬스터 생성");
+            
             reroll();
             reroll_manager.GetComponent<Reroll_Manager>().able_reroll=false;
         }
