@@ -599,7 +599,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -2.6774902, y: 42}
+  m_AnchoredPosition: {x: -2.6774902, y: -8}
   m_SizeDelta: {x: 5.3549, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &259832137
@@ -4978,7 +4978,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300104, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 14ac7c48d63f08e429ffcc09b67aa285, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8141,12 +8141,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 595acf6406e53ef4e95e2d705339fb0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Gunner_AttackPoint: 2.5
   Gunner_attackSpeed: 1.5
-  Archer_AttackPoint: 2.5
   Archer_attackSpeed: 1.5
-  Magician_AttackPoint: 2.5
   Magician_attackSpeed: 1.5
+  GunnerAttackPoints:
+  - 2
+  - 4
+  - 8
+  - 10
+  - 18
+  - 26
+  MagicianAttackPoints:
+  - 2
+  - 4
+  - 8
+  - 10
+  - 18
+  - 26
+  ArcherAttackPoints:
+  - 4
+  - 8
+  - 16
+  - 32
+  - 50
+  - 100
+  GunnerAttackCoefficient: 1
+  MagicianAttackCoefficient: 1
+  ArcherAttackCoefficient: 1
 --- !u!4 &2103839491
 Transform:
   m_ObjectHideFlags: 0
@@ -8192,7 +8213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 473233725591726437, guid: 3cb50544dde2f0e448db386acf7d1872, type: 3}
+  - {fileID: 871293778955379310, guid: 4ecc9629b22d9a340803e670064b37a8, type: 3}
   - {fileID: 473233725591726437, guid: f2e046a53065cd74e86aaf791b05baf6, type: 3}
   enermyCount: 50
   round: 0
