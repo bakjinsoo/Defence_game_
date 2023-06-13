@@ -63,7 +63,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enermy: {fileID: 473233725591726437, guid: 3cb50544dde2f0e448db386acf7d1872, type: 3}
   fireball: {fileID: 8546022993141333073, guid: 77b259c26ff44cc4fb17d70676699af9, type: 3}
-  character_manger: {fileID: 9200226082968105372, guid: 65d35f5fffa888f4fb98930257dc99ef, type: 3}
   Monster_List: []
 --- !u!1 &6970258249651476110
 GameObject:
@@ -93,7 +92,7 @@ Transform:
   m_GameObject: {fileID: 6970258249651476110}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.9, y: 0.8, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4469522352118199921}
@@ -141,7 +140,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: e557d47744224264fb83fa4ce2c2cc0d, type: 3}
+  m_Sprite: {fileID: 2147387819, guid: b98ca5e4355ceaf4fa74d30f0eea392d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -162,7 +161,7 @@ Animator:
   m_GameObject: {fileID: 6970258249651476110}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 64cd4d0b27a48044bb9efcf921fb6735, type: 2}
+  m_Controller: {fileID: 9100000, guid: fc0f229d0accc0a458e308adf6cadd42, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -188,7 +187,7 @@ BoxCollider2D:
   m_Offset: {x: -0.23255831, y: -0.06459957}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.7325583, y: 0.5645996}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5

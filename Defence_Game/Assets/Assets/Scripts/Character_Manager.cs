@@ -105,21 +105,28 @@ public class Character_Manager : MonoBehaviour
             }
     }
     // Update is called once per frame
+    public GameObject MoveButton;
+    public GameObject SellButton;
     void Update()
     {
        if(Input.GetMouseButtonDown(0))
         {
             
             mousePos=Input.mousePosition;
-            mousePos=Camera.main.ScreenToWorldPoint(mousePos);         
+
+            mousePos=Camera.main.ScreenToWorldPoint(mousePos);      
+
             mousePos.x=Mathf.CeilToInt(mousePos.x);
             mousePos.y=Mathf.CeilToInt(mousePos.y);
-            mousePos=new Vector2(mousePos.x,mousePos.y);
+
             if(character[(int)mousePos.x,(int)mousePos.y]==1&&click_manager.GetComponent<Click_Manager>().character_clicked==false)//클릭한곳에 캐릭터가 있을경우
             {
+                
                 check_x=(int)mousePos.x;
                 check_y=(int)mousePos.y;
-                Debug.Log("캐릭터좌표"+check_x+","+check_y);
+                // Debug.Log("캐릭터좌표"+check_x+","+check_y);
+                MoveButton.SetActive(true);
+                SellButton.SetActive(true);
                 player_check=true;
             }
             else
