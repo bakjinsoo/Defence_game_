@@ -8,4 +8,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/CardAssets/DEMO.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: f7f295931f5378942834a9a1d61b5fdf, type: 2}
