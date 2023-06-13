@@ -124,6 +124,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 6668360961069309525, guid: 71bd48e2eb0e65d41bb7213bb60bc474, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6668360961069309525, guid: 71bd48e2eb0e65d41bb7213bb60bc474, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1cddbb1da8505da409aae35fc5707171, type: 3}
     - target: {fileID: 6668360961609851533, guid: 71bd48e2eb0e65d41bb7213bb60bc474, type: 3}
       propertyPath: m_Name
       value: StageStart
