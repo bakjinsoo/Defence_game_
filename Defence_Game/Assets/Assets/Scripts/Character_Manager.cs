@@ -19,7 +19,7 @@ public class Character_Manager : MonoBehaviour
     void Start()
     {
         
-        first_random=Random.Range(1,5);
+        first_random=Random.Range(2,5);
         Debug.Log(first_random);
         for(int i=0;i<12;i++)//처음배열에 모두 0을 넣어줌
         {
@@ -54,11 +54,13 @@ public class Character_Manager : MonoBehaviour
                     }
                     else if(random_character==1)
                     {
+                        
                         GameObject tmp=Instantiate(Resources.Load<GameObject>("Prefabs/hamster_gunner_1"));
                         tmp.transform.position=new Vector3(random_x,random_y,0);
                     }
                     else if(random_character==2)
                     {
+                        
                         GameObject tmp=Instantiate(Resources.Load<GameObject>("Prefabs/hamster_magician"));
                         tmp.transform.position=new Vector3(random_x,random_y,0);
                     }
@@ -128,7 +130,7 @@ public class Character_Manager : MonoBehaviour
         }
         if(reroll_manager.GetComponent<Reroll_Manager>().able_reroll==true)
         {
-            Debug.Log("몬스터 생성");
+            
             reroll();
             reroll_manager.GetComponent<Reroll_Manager>().able_reroll=false;
         }
@@ -155,16 +157,19 @@ public class Character_Manager : MonoBehaviour
                     random_character=Random.Range(0,3);
                     if(random_character==0)
                     {
+                        
                         GameObject tmp=Instantiate(Resources.Load<GameObject>("Prefabs/hamster_archer_1"));
                         tmp.transform.position=new Vector3(random_x,random_y,0);
                     }
                     else if(random_character==1)
                     {
+                        
                         GameObject tmp=Instantiate(Resources.Load<GameObject>("Prefabs/hamster_gunner_1"));
                         tmp.transform.position=new Vector3(random_x,random_y,0);
                     }
                     else if(random_character==2)
                     {
+                        
                         GameObject tmp=Instantiate(Resources.Load<GameObject>("Prefabs/hamster_magician"));
                         tmp.transform.position=new Vector3(random_x,random_y,0);
                     }
