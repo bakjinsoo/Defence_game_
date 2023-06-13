@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public class Character_Manager : MonoBehaviour
-{   
+{
+    public GameObject show_area;   
+    public GameObject ui_selected;
     public GameObject click_manager;
     public GameObject reroll_manager;
     Vector2 mousePos;//마우스로 찍은 좌표
@@ -115,8 +117,12 @@ public class Character_Manager : MonoBehaviour
             mousePos.x=Mathf.CeilToInt(mousePos.x);
             mousePos.y=Mathf.CeilToInt(mousePos.y);
             mousePos=new Vector2(mousePos.x,mousePos.y);
+            Debug.Log("mousepos.x : "+mousePos.x+"mouse.y : "+mousePos.y);
             if(character[(int)mousePos.x,(int)mousePos.y]==1&&click_manager.GetComponent<Click_Manager>().character_clicked==false)//클릭한곳에 캐릭터가 있을경우
             {
+                ui_selected.transform.position=new Vector2(mousePos.x,mousePos.y);
+                ui_selected.SetActive(true);
+                show_area.SetActive(true);
                 check_x=(int)mousePos.x;
                 check_y=(int)mousePos.y;
                 Debug.Log("캐릭터좌표"+check_x+","+check_y);
@@ -124,6 +130,8 @@ public class Character_Manager : MonoBehaviour
             }
             else
             {
+                ui_selected.SetActive(false);
+                show_area.SetActive(false);
                 player_check=false;
             }
                 
