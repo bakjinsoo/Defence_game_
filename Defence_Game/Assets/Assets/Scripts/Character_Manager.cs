@@ -16,14 +16,14 @@ public class Character_Manager : MonoBehaviour
     int random_character;//캐릭터 유닛 종류 결정 랜덤변수
     public int check_x;
     public int check_y;
-    public int [,]character=new int[12,7];//캐릭터의 유무 판단 배열
+    public int [,]character=new int[13,7];//캐릭터의 유무 판단 배열
     // Start is called before the first frame update
     void Start()
     {
         
         first_random=Random.Range(2,5);
         Debug.Log(first_random);
-        for(int i=0;i<12;i++)//처음배열에 모두 0을 넣어줌
+        for(int i=0;i<13;i++)//처음배열에 모두 0을 넣어줌
         {
             for(int j=0;j<7;j++)
             {
@@ -32,15 +32,14 @@ public class Character_Manager : MonoBehaviour
         }
         for(int i=0;i<first_random;i++)//처음 몇개의 캐릭터가 나올지 결정을 해줬으므로 그만큼 캐릭터를 생성해줌
         {
-            random_x=Random.Range(0,12);
+            random_x=Random.Range(0,13);
             random_y=Random.Range(0,7);
             character_rerandom();//범위 재지정함수
-            character[random_x,random_y]=1;
             while(true)
             {
                 if(character[random_x,random_y]==1)
                 {
-                    random_x=Random.Range(0,12);
+                    random_x=Random.Range(0,13);
                     random_y=Random.Range(0,7);
                     character_rerandom();
                 }
@@ -81,7 +80,7 @@ public class Character_Manager : MonoBehaviour
                 {
                     if(random_x<3||random_x>9)
                     {
-                        random_x=Random.Range(0,12);
+                        random_x=Random.Range(0,13);
                     }
                     else
                     {
@@ -96,7 +95,7 @@ public class Character_Manager : MonoBehaviour
                 {
                     if(random_x<2||random_x>10)
                     {
-                        random_x=Random.Range(0,12);
+                        random_x=Random.Range(0,13);
                     }
                     else
                     {
@@ -120,13 +119,28 @@ public class Character_Manager : MonoBehaviour
             Debug.Log("mousepos.x : "+mousePos.x+"mouse.y : "+mousePos.y);
             if(character[(int)mousePos.x,(int)mousePos.y]==1&&click_manager.GetComponent<Click_Manager>().character_clicked==false)//클릭한곳에 캐릭터가 있을경우
             {
+                player_check=true;
                 ui_selected.transform.position=new Vector2(mousePos.x,mousePos.y);
                 ui_selected.SetActive(true);
                 show_area.SetActive(true);
+                for(int i=0;i<13;i++)
+                {
+                    
+                    for(int j=0;j<7;j++)
+                    {
+                        if(character[i,j]==1)
+                        {
+                            Debug.Log("ui 생성");
+                            Debug.Log("i : "+i+", j : "+j);
+                            GameObject tmp=Instantiate(Resources.Load<GameObject>("Prefabs/character_area_ui"));
+                            tmp.transform.position=new Vector3(i,j,0);
+                        }
+                    }
+                }
                 check_x=(int)mousePos.x;
                 check_y=(int)mousePos.y;
                 Debug.Log("캐릭터좌표"+check_x+","+check_y);
-                player_check=true;
+                
             }
             else
             {
@@ -147,15 +161,14 @@ public class Character_Manager : MonoBehaviour
     {
         for(int i=0;i<1;i++)
         {
-            random_x=Random.Range(0,12);
+            random_x=Random.Range(0,13);
             random_y=Random.Range(0,7);
             character_rerandom();//범위 재지정함수
-            character[random_x,random_y]=1;
             while(true)
             {
                 if(character[random_x,random_y]==1)
                 {
-                    random_x=Random.Range(0,12);
+                    random_x=Random.Range(0,13);
                     random_y=Random.Range(0,7);
                     character_rerandom();
                 }

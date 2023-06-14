@@ -909,6 +909,71 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &514256374
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1262169895115495136, guid: 957585e7c2f6b2b4fbcdaa0dd6e426df, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1262169895115495136, guid: 957585e7c2f6b2b4fbcdaa0dd6e426df, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 1262169895115495136, guid: 957585e7c2f6b2b4fbcdaa0dd6e426df, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 1262169895115495136, guid: 957585e7c2f6b2b4fbcdaa0dd6e426df, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1262169895115495136, guid: 957585e7c2f6b2b4fbcdaa0dd6e426df, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1262169895115495136, guid: 957585e7c2f6b2b4fbcdaa0dd6e426df, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1262169895115495136, guid: 957585e7c2f6b2b4fbcdaa0dd6e426df, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1262169895115495136, guid: 957585e7c2f6b2b4fbcdaa0dd6e426df, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1262169895115495136, guid: 957585e7c2f6b2b4fbcdaa0dd6e426df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1262169895115495136, guid: 957585e7c2f6b2b4fbcdaa0dd6e426df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1262169895115495136, guid: 957585e7c2f6b2b4fbcdaa0dd6e426df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497335585156570329, guid: 957585e7c2f6b2b4fbcdaa0dd6e426df, type: 3}
+      propertyPath: m_Name
+      value: ui_seleted_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497335585156570329, guid: 957585e7c2f6b2b4fbcdaa0dd6e426df, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4374366755635275256, guid: 957585e7c2f6b2b4fbcdaa0dd6e426df, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 957585e7c2f6b2b4fbcdaa0dd6e426df, type: 3}
 --- !u!1 &518073621 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4087392482101551623, guid: 626ee643db879654daeea26dc00ad3c5, type: 3}
@@ -8768,6 +8833,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1866668245 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1497335585156570329, guid: 957585e7c2f6b2b4fbcdaa0dd6e426df, type: 3}
+  m_PrefabInstance: {fileID: 514256374}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1959332560
 GameObject:
   m_ObjectHideFlags: 0
@@ -9395,6 +9465,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9200226082968105374, guid: 65d35f5fffa888f4fb98930257dc99ef, type: 3}
+      propertyPath: show_area
+      value: 
+      objectReference: {fileID: 1494028485}
+    - target: {fileID: 9200226082968105374, guid: 65d35f5fffa888f4fb98930257dc99ef, type: 3}
+      propertyPath: ui_selected
+      value: 
+      objectReference: {fileID: 1866668245}
     - target: {fileID: 9200226082968105374, guid: 65d35f5fffa888f4fb98930257dc99ef, type: 3}
       propertyPath: click_manager
       value: 
