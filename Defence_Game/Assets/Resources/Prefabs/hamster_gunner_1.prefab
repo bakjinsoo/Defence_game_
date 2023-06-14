@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3510730149406501385}
   - component: {fileID: 7675759626255508574}
   - component: {fileID: -8155926614184237475}
+  - component: {fileID: 3832259885315996592}
   m_Layer: 6
   m_Name: hamster_gunner_1
   m_TagString: Player
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_Sprite: {fileID: 400016914, guid: f8b163ce629db9448b62df97f6ed67ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -133,6 +134,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3832259885315996592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3957089560799200205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e686fb62de0cab349bd42406575a8f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 3573637319316132025, guid: 18e48c874b50142438940fa51f402a45, type: 3}
 --- !u!1 &6422515269338721114
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,6 +158,7 @@ GameObject:
   - component: {fileID: 2147916456458253560}
   - component: {fileID: 5090293593555630595}
   - component: {fileID: 8376144980793416180}
+  - component: {fileID: 2132433645234472516}
   m_Layer: 0
   m_Name: Attack_Range
   m_TagString: Untagged
@@ -189,7 +204,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6422515269338721114}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c927951f8dd51934ea746fb2860b985e, type: 3}
   m_Name: 
@@ -197,4 +212,22 @@ MonoBehaviour:
   enermy: {fileID: 473233725591726437, guid: 3cb50544dde2f0e448db386acf7d1872, type: 3}
   bullet: {fileID: 3573637319316132025, guid: 18e48c874b50142438940fa51f402a45, type: 3}
   character_manger: {fileID: 9200226082968105372, guid: 65d35f5fffa888f4fb98930257dc99ef, type: 3}
+  Monster_List: []
+--- !u!114 &2132433645234472516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6422515269338721114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03edac6988985d34a9760cf8a59e03a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unit: 0
+  arrow: {fileID: 0}
+  attack_trigger: 0
+  speed: 10
+  character_manger: {fileID: 0}
   Monster_List: []

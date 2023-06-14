@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 6129800486881252122}
   - component: {fileID: 2886845541678423273}
   - component: {fileID: 61189187525870286}
+  - component: {fileID: 5085761520704667390}
   m_Layer: 6
   m_Name: hamster_magician
   m_TagString: Player
@@ -139,7 +140,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_Sprite: {fileID: 2147387819, guid: b98ca5e4355ceaf4fa74d30f0eea392d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -197,3 +198,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5085761520704667390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6970258249651476110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84f778df601d24b41af9bddb51708f8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireball: {fileID: 8546022993141333073, guid: 77b259c26ff44cc4fb17d70676699af9, type: 3}

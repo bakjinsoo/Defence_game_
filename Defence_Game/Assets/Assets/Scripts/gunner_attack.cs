@@ -12,33 +12,45 @@ public class gunner_attack : MonoBehaviour
     public GameObject character_manger;
     Coroutine coroutine;
     public List<GameObject> Monster_List=new List<GameObject>();
+    GameObject characterAura;
     // Start is called before the first frame update
     void Start()
     {
-        coroutine=StartCoroutine(gunnerattack());
+        // coroutine=StartCoroutine(gunnerattack());
        int unit_class=Random.Range(0,10000);
         if(unit_class<3)
         {
             this.GetComponent<CircleCollider2D>().radius=5f;
+            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", 3f);
+            characterAura = Instantiate(Resources.Load("Prefabs/Aura/BlackAura"), transform.position, Quaternion.identity) as GameObject;
         }
         else if(unit_class>=3&&unit_class<13)
         {
             this.GetComponent<CircleCollider2D>().radius=3.2f;
+            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", 2.5f);
+            characterAura = Instantiate(Resources.Load("Prefabs/Aura/RedAura"), transform.position, Quaternion.identity) as GameObject;
         }
         else if(unit_class>=13&&unit_class<64)
         {
             this.GetComponent<CircleCollider2D>().radius=2.5f;
+            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", 2f);
+            characterAura = Instantiate(Resources.Load("Prefabs/Aura/BlueAura"), transform.position, Quaternion.identity) as GameObject;
         }
         else if(unit_class>=64&&unit_class<565)
         {
             this.GetComponent<CircleCollider2D>().radius=2f;
+            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed",1.5f);
+            characterAura = Instantiate(Resources.Load("Prefabs/Aura/GreenAura"), transform.position, Quaternion.identity) as GameObject;
         }
         else if(unit_class>=565&&unit_class<3566)
         {
             this.GetComponent<CircleCollider2D>().radius=1.5f;
+            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", 1f);
+            characterAura = Instantiate(Resources.Load("Prefabs/Aura/PurpleAura"), transform.position, Quaternion.identity) as GameObject;
         }
         else{
             this.GetComponent<CircleCollider2D>().radius=1.2f;
+            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", 0.5f);
         }
     }
 
@@ -46,7 +58,7 @@ public class gunner_attack : MonoBehaviour
     void Update()
     {
         
-        
+        characterAura.transform.position = new Vector2(transform.position.x, transform.position.y+0.5f);
         
     }
     
