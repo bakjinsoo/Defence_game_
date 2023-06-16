@@ -914,6 +914,37 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4087392482101551623, guid: 626ee643db879654daeea26dc00ad3c5, type: 3}
   m_PrefabInstance: {fileID: 3227821279774907114}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &563945101
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 563945102}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &563945102
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563945101}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13.17, y: 3.16, z: -0.22252417}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &609221388
 GameObject:
   m_ObjectHideFlags: 0
@@ -9035,6 +9066,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2103839491}
   - component: {fileID: 2103839490}
+  - component: {fileID: 2103839492}
   m_Layer: 0
   m_Name: CharacterData
   m_TagString: Untagged
@@ -9096,6 +9128,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &2103839492
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103839489}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 03a17535e2aef4648bb8f12c76631ed2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2133158466
 GameObject:
   m_ObjectHideFlags: 0
@@ -9126,8 +9178,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 871293778955379310, guid: 4ecc9629b22d9a340803e670064b37a8, type: 3}
-  - {fileID: 473233725591726437, guid: f2e046a53065cd74e86aaf791b05baf6, type: 3}
+  - {fileID: 4954359523437767969, guid: 34213b812d3bc3444a4b9badece4a7b1, type: 3}
+  - {fileID: 4954359523437767969, guid: 34213b812d3bc3444a4b9badece4a7b1, type: 3}
+  - {fileID: 3638713509957821056, guid: 07171d48085423340be80c9d1ce24dd9, type: 3}
+  - {fileID: 1676155862721804013, guid: 985dbddccd4bea940bd053ad8a31a761, type: 3}
+  - {fileID: 3638713509957821056, guid: 07171d48085423340be80c9d1ce24dd9, type: 3}
+  - {fileID: 7498593564047144596, guid: 1c142326ac8418040afbd7a58ccc88d5, type: 3}
+  - {fileID: 7498593564047144596, guid: 1c142326ac8418040afbd7a58ccc88d5, type: 3}
   enermyCount: 50
   round: 0
   leftCount: 0

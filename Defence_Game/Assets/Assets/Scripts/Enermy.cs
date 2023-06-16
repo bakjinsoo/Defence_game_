@@ -11,12 +11,12 @@ public class Enermy : MonoBehaviour
     private float angle=0;
     Spawn_Manager spawnManager;
     Reroll_Manager CoinGetter;
-    
+    bool isFlip=false;
     
     void Start()
     {
-        hp=100;
         spawnManager = GameObject.Find("SpawnManager").GetComponent<Spawn_Manager>();
+        isFlip = GetComponent<SpriteRenderer>().flipX;
     }
     
     void Update()
@@ -33,6 +33,13 @@ public class Enermy : MonoBehaviour
                 CoinGetter.coin+=10;
             }
             
+        }
+        if(transform.position.y<3)
+        {
+
+            GetComponent<SpriteRenderer>().flipX=!isFlip;
+        }else{
+            GetComponent<SpriteRenderer>().flipX=isFlip;
         }
     }
     private void OnDestroy() {
