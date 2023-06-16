@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class gunner_attack : MonoBehaviour
 {
-    
     int count=0;
     int trigger_key=0;
     public GameObject enermy;
@@ -13,10 +12,11 @@ public class gunner_attack : MonoBehaviour
     Coroutine coroutine;
     public List<GameObject> Monster_List=new List<GameObject>();
     GameObject characterAura;
+    GameObject ui_class;
     // Start is called before the first frame update
     void Start()
     {
-        // coroutine=StartCoroutine(gunnerattack());
+        coroutine=StartCoroutine(gunnerattack());
        int unit_class=Random.Range(0,10000);
         if(unit_class<3)
         {
@@ -59,7 +59,43 @@ public class gunner_attack : MonoBehaviour
     {
         
         characterAura.transform.position = new Vector2(transform.position.x, transform.position.y+0.5f);
-        
+        if(GameObject.Find("Character_area")==null)
+        {
+            Destroy(ui_class);
+        }
+        else{
+            Debug.Log("ui클래스");
+            if(this.GetComponent<CircleCollider2D>().radius==1.2f)
+            {
+                ui_class=Instantiate(Resources.Load("Prefabs/Class/ui_class_1_3"), transform.position, Quaternion.identity) as GameObject;
+                ui_class.transform.position=new Vector3(this.transform.position.x,this.transform.position.y+2,0);
+            }
+            else if(this.GetComponent<CircleCollider2D>().radius==1.5f)
+            {
+                ui_class=Instantiate(Resources.Load("Prefabs/Class/ui_class_1_1"), transform.position, Quaternion.identity) as GameObject;
+                ui_class.transform.position=new Vector3(this.transform.position.x,this.transform.position.y+2,0);
+            }
+            else if(this.GetComponent<CircleCollider2D>().radius==2f)
+            {
+                ui_class=Instantiate(Resources.Load("Prefabs/Class/ui_class_1_2"), transform.position, Quaternion.identity) as GameObject;
+                ui_class.transform.position=new Vector3(this.transform.position.x,this.transform.position.y+2,0);
+            }
+            else if(this.GetComponent<CircleCollider2D>().radius==2.5f)
+            {
+                ui_class=Instantiate(Resources.Load("Prefabs/Class/ui_class_1_0"), transform.position, Quaternion.identity) as GameObject;
+                ui_class.transform.position=new Vector3(this.transform.position.x,this.transform.position.y+2,0);
+            }
+            else if(this.GetComponent<CircleCollider2D>().radius==3.2f)
+            {
+                ui_class=Instantiate(Resources.Load("Prefabs/Class/ui_class_2_1"), transform.position, Quaternion.identity) as GameObject;
+                ui_class.transform.position=new Vector3(this.transform.position.x,this.transform.position.y+2,0);
+            }
+            else if(this.GetComponent<CircleCollider2D>().radius==5f)
+            {
+                ui_class=Instantiate(Resources.Load("Prefabs/Class/ui_class_2_0"), transform.position, Quaternion.identity) as GameObject;
+                ui_class.transform.position=new Vector3(this.transform.position.x,this.transform.position.y+2,0);
+            }
+        }
     }
     
     void OnTriggerEnter2D(Collider2D other)

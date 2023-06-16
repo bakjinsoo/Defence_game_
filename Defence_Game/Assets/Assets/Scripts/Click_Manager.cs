@@ -117,6 +117,7 @@ public class Click_Manager : MonoBehaviour
                     target=hit.collider.gameObject;
                     if(target.CompareTag("Player")&&target.transform.position.x==character.GetComponent<Character_Manager>().check_x&&target.transform.position.y==character.GetComponent<Character_Manager>().check_y)
                     {
+                        GameObject.Find("ui_class_1_3(Clone)").GetComponent<Destroy_ui_class>().target_ui=target;
                         Debug.Log("레이 히트");
                         coroutine2=StartCoroutine(second_click());
                         StopCoroutine(coroutine);
