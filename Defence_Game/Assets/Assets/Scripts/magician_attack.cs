@@ -57,8 +57,12 @@ public class magician_attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        try{
         characterAura.transform.position = new Vector2(transform.position.x, transform.position.y+0.5f);
-        
+        }
+        catch{
+
+        }
     }
     
     void OnTriggerEnter2D(Collider2D other)

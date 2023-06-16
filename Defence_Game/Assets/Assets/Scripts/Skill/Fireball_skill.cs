@@ -17,6 +17,7 @@ public class Fireball_skill : MonoBehaviour
         if(other.GetComponent<Enermy>().hp>0)
         {
             other.GetComponent<Enermy>().hp -= characterData.Instance.MagicianAttackCoefficient * characterData.Instance.MagicianAttackPoints[num];
+            other.GetComponent<Animator>().SetTrigger("Hit");
             Debug.Log("현재 적 hp : "+other.GetComponent<Enermy>().hp);
             Destroy(gameObject,1f);
         }
