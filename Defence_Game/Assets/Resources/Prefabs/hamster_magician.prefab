@@ -43,7 +43,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.2748135, y: 0}
@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 2886845541678423273}
   - component: {fileID: 61189187525870286}
   - component: {fileID: 5085761520704667390}
+  - component: {fileID: 9067820769357735353}
   m_Layer: 6
   m_Name: hamster_magician
   m_TagString: Player
@@ -211,3 +212,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireball: {fileID: 8546022993141333073, guid: 77b259c26ff44cc4fb17d70676699af9, type: 3}
+--- !u!114 &9067820769357735353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6970258249651476110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8757af083497345469bd8963ca159d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player_id: 1

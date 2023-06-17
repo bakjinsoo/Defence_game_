@@ -80,6 +80,7 @@ GameObject:
   - component: {fileID: 5390914906037353041}
   - component: {fileID: -2441944041780096382}
   - component: {fileID: 3916615843499028814}
+  - component: {fileID: -1074156744597149625}
   m_Layer: 6
   m_Name: hamster_archer_1
   m_TagString: Player
@@ -214,3 +215,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrow: {fileID: 1334431019449155468, guid: 6e017c96029fea8418226f986afda977, type: 3}
+--- !u!114 &-1074156744597149625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8221690389239697893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8757af083497345469bd8963ca159d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player_id: 3

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7675759626255508574}
   - component: {fileID: -8155926614184237475}
   - component: {fileID: 3832259885315996592}
+  - component: {fileID: -1417035893433672020}
   m_Layer: 6
   m_Name: hamster_gunner_1
   m_TagString: Player
@@ -147,6 +148,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 3573637319316132025, guid: 18e48c874b50142438940fa51f402a45, type: 3}
+--- !u!114 &-1417035893433672020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3957089560799200205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8757af083497345469bd8963ca159d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player_id: 2
 --- !u!1 &6422515269338721114
 GameObject:
   m_ObjectHideFlags: 0

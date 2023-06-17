@@ -130,8 +130,6 @@ public class Character_Manager : MonoBehaviour
                     {
                         if(character[i,j]==1)
                         {
-                            Debug.Log("ui 생성");
-                            Debug.Log("i : "+i+", j : "+j);
                             GameObject tmp=Instantiate(Resources.Load<GameObject>("Prefabs/character_area_ui"));
                             tmp.transform.position=new Vector3(i,j,0);
                         }
