@@ -13,14 +13,14 @@ public class Fireball_skill : MonoBehaviour
     }
      void OnTriggerStay2D(Collider2D other)
     {
-        
+       
         if(other.GetComponent<Enermy>().hp>0)
         {
             other.GetComponent<Enermy>().hp -= characterData.Instance.MagicianAttackCoefficient * characterData.Instance.MagicianAttackPoints[num];
             other.GetComponent<Animator>().SetTrigger("Hit");
-            Debug.Log("현재 적 hp : "+other.GetComponent<Enermy>().hp);
             Destroy(gameObject,1f);
         }
+       
         
     }
     // Update is called once per frame

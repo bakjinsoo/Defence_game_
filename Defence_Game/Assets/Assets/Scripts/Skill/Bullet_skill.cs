@@ -18,7 +18,6 @@ public class Bullet_skill : MonoBehaviour
         {
             other.GetComponent<Enermy>().hp -= characterData.Instance.GunnerAttackCoefficient * characterData.Instance.GunnerAttackPoints[num];
             other.GetComponent<Animator>().SetTrigger("Hit");
-            Debug.Log("현재 적 hp : "+other.GetComponent<Enermy>().hp);
         }
         
     }

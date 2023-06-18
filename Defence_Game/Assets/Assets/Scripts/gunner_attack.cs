@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class gunner_attack : MonoBehaviour
 {
-    
+    public int ui_class_key=0;
+    public int gunner_grade;
     int count=0;
     int trigger_key=0;
     public GameObject enermy;
     public GameObject bullet;
     public GameObject character_manger;
     Coroutine coroutine;
+    public bool is_selected;
     public List<GameObject> Monster_List=new List<GameObject>();
     GameObject characterAura;
     // Start is called before the first frame update
@@ -21,35 +23,41 @@ public class gunner_attack : MonoBehaviour
         if(unit_class<3)
         {
             this.GetComponent<CircleCollider2D>().radius=5f;
+            gunner_grade=1;
             this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", 3f);
             characterAura = Instantiate(Resources.Load("Prefabs/Aura/BlackAura"), transform.position, Quaternion.identity) as GameObject;
         }
         else if(unit_class>=3&&unit_class<13)
         {
             this.GetComponent<CircleCollider2D>().radius=3.2f;
+            gunner_grade=2;
             this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", 2.5f);
             characterAura = Instantiate(Resources.Load("Prefabs/Aura/RedAura"), transform.position, Quaternion.identity) as GameObject;
         }
         else if(unit_class>=13&&unit_class<64)
         {
             this.GetComponent<CircleCollider2D>().radius=2.5f;
+            gunner_grade=3;
             this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", 2f);
             characterAura = Instantiate(Resources.Load("Prefabs/Aura/BlueAura"), transform.position, Quaternion.identity) as GameObject;
         }
         else if(unit_class>=64&&unit_class<565)
         {
             this.GetComponent<CircleCollider2D>().radius=2f;
+            gunner_grade=4;
             this.GetComponentInParent<Animator>().SetFloat("AttackSpeed",1.5f);
             characterAura = Instantiate(Resources.Load("Prefabs/Aura/GreenAura"), transform.position, Quaternion.identity) as GameObject;
         }
         else if(unit_class>=565&&unit_class<3566)
         {
             this.GetComponent<CircleCollider2D>().radius=1.5f;
+            gunner_grade=5;
             this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", 1f);
             characterAura = Instantiate(Resources.Load("Prefabs/Aura/PurpleAura"), transform.position, Quaternion.identity) as GameObject;
         }
         else{
             this.GetComponent<CircleCollider2D>().radius=1.2f;
+            gunner_grade=6;
             this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", 0.5f);
         }
     }
@@ -61,6 +69,88 @@ public class gunner_attack : MonoBehaviour
             characterAura.transform.position = new Vector2(transform.position.x, transform.position.y+0.5f);
         }catch{
 
+        }
+        if(GameObject.Find("Character_area")==null)
+        {
+            is_selected=false;
+            ui_class_key=0;
+        }
+        if(is_selected==true&&ui_class_key==0)
+        {
+             
+            Debug.Log("ui 선택됨");
+            if(gunner_grade==1)
+            {
+                GameObject ui_class_one=Instantiate(Resources.Load("Prefabs/Class/ui_class_2_0"), transform.position, Quaternion.identity) as GameObject;
+                ui_class_one.transform.position=new Vector3(this.transform.position.x,this.transform.position.y+1,0);
+                ui_class_key++;
+            }
+            else if(gunner_grade==2)
+            {
+                GameObject ui_class_two=Instantiate(Resources.Load("Prefabs/Class/ui_class_2_1"), this.transform.position, Quaternion.identity) as GameObject;
+                ui_class_two.transform.position=new Vector3(this.transform.position.x,this.transform.position.y+1,0);
+                ui_class_key++;
+            }
+            else if(gunner_grade==3)
+            {
+                GameObject ui_class_three=Instantiate(Resources.Load("Prefabs/Class/ui_class_1_0"), this.transform.position, Quaternion.identity) as GameObject;
+                ui_class_three.transform.position=new Vector3(this.transform.position.x,this.transform.position.y+1,0);
+                ui_class_key++;
+            }
+            else if(gunner_grade==4)
+            {
+                GameObject ui_class_four=Instantiate(Resources.Load("Prefabs/Class/ui_class_1_2"), this.transform.position, Quaternion.identity) as GameObject;
+                ui_class_four.transform.position=new Vector3(this.transform.position.x,this.transform.position.y+1,0);
+                Debug.Log("4등급 클래스 ui 생성");
+                ui_class_key++;
+            }
+            else if(gunner_grade==5)
+            {
+                GameObject ui_class_five=Instantiate(Resources.Load("Prefabs/Class/ui_class_1_1"), this.transform.position, Quaternion.identity) as GameObject;
+                ui_class_five.transform.position=new Vector3(this.transform.position.x,this.transform.position.y+1,0);
+                Debug.Log("5등급 클래스 ui 생성");
+                Debug.Log(ui_class_five.name);
+                ui_class_key++;
+            }
+            else if(gunner_grade==6)
+            {
+                GameObject ui_class_six=Instantiate(Resources.Load("Prefabs/Class/ui_class_1_3"), this.transform.position, Quaternion.identity) as GameObject;
+                ui_class_six.transform.position=new Vector3(this.transform.position.x,this.transform.position.y+1,0);
+                Debug.Log("6등급 클래스 ui 생성");
+                Debug.Log(ui_class_six.name);
+                ui_class_key++;
+            }
+        }
+        else if(is_selected==false&&GameObject.Find("Character_area")==null){
+            try{
+                if(gunner_grade==1)
+                {
+                    GameObject.Find("ui_class_2_0(Clone)").GetComponent<Destroy_ui_class>().is_deleted=true;
+                }
+                else if(gunner_grade==2)
+                {
+                    GameObject.Find("ui_class_2_1(Clone)").GetComponent<Destroy_ui_class>().is_deleted=true;
+                }
+                else if(gunner_grade==3)
+                {
+                    GameObject.Find("ui_class_1_0(Clone)").GetComponent<Destroy_ui_class>().is_deleted=true;
+                }
+                else if(gunner_grade==4)
+                {
+                    GameObject.Find("ui_class_1_2(Clone)").GetComponent<Destroy_ui_class>().is_deleted=true;
+                }
+                else if(gunner_grade==5)
+                {
+                    GameObject.Find("ui_class_1_1(Clone)").GetComponent<Destroy_ui_class>().is_deleted=true;
+                }
+                else if(gunner_grade==6)
+                {
+                    GameObject.Find("ui_class_1_3(Clone)").GetComponent<Destroy_ui_class>().is_deleted=true;
+                }
+            }
+            catch{
+
+            }
         }
     }
     
