@@ -66,7 +66,7 @@ public class gunner_attack : MonoBehaviour
     void Update()
     {
         try{
-            characterAura.transform.position = new Vector2(transform.position.x, transform.position.y+0.5f);
+            characterAura.transform.position = new Vector2(transform.position.x -0.5f, transform.position.y);
         }catch{
 
         }

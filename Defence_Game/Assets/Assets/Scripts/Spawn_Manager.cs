@@ -48,7 +48,7 @@ public class Spawn_Manager : MonoBehaviour
             if(round > 0){ //0라운드에는 카드뽑기 진행 X
                 Time.timeScale = 0.1f;
                 StageEndPanel.SetActive(true);
-                if(round % 5 != 0){ // 5의 배수가 아닐때 (즉 1,2,3,4,6,7,8,9 스테이지)
+                if((round+1) % 10 != 0){ // 5의 배수가 아닐때 (즉 1,2,3,4,6,7,8,9 스테이지)
                     enermyCount = 50;
                 }
                 else{ // 5,10,15,.. 스테이지
