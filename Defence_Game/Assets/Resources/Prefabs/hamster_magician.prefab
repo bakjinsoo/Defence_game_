@@ -43,7 +43,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.2748135, y: 0}
@@ -61,9 +61,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 452a6db7ab29a4c4ba72745848263a10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ui_class_key: 0
+  magician_grade: 0
   enermy: {fileID: 473233725591726437, guid: 3cb50544dde2f0e448db386acf7d1872, type: 3}
   fireball: {fileID: 8546022993141333073, guid: 77b259c26ff44cc4fb17d70676699af9, type: 3}
-  character_manger: {fileID: 9200226082968105372, guid: 65d35f5fffa888f4fb98930257dc99ef, type: 3}
+  is_selected: 0
   Monster_List: []
 --- !u!1 &6970258249651476110
 GameObject:
@@ -77,6 +79,8 @@ GameObject:
   - component: {fileID: 6129800486881252122}
   - component: {fileID: 2886845541678423273}
   - component: {fileID: 61189187525870286}
+  - component: {fileID: 5085761520704667390}
+  - component: {fileID: 9067820769357735353}
   m_Layer: 6
   m_Name: hamster_magician
   m_TagString: Player
@@ -93,7 +97,7 @@ Transform:
   m_GameObject: {fileID: 6970258249651476110}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.9, y: 0.8, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4469522352118199921}
@@ -140,8 +144,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: e557d47744224264fb83fa4ce2c2cc0d, type: 3}
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 2147387819, guid: b98ca5e4355ceaf4fa74d30f0eea392d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -162,7 +166,7 @@ Animator:
   m_GameObject: {fileID: 6970258249651476110}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 64cd4d0b27a48044bb9efcf921fb6735, type: 2}
+  m_Controller: {fileID: 9100000, guid: fc0f229d0accc0a458e308adf6cadd42, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -185,10 +189,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.23255831, y: -0.06459957}
+  m_Offset: {x: 0.01573512, y: 0.044540405}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.7325583, y: 0.5645996}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -196,5 +200,31 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.50341314, y: 0.5852682}
   m_EdgeRadius: 0
+--- !u!114 &5085761520704667390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6970258249651476110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84f778df601d24b41af9bddb51708f8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireball: {fileID: 8546022993141333073, guid: 77b259c26ff44cc4fb17d70676699af9, type: 3}
+--- !u!114 &9067820769357735353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6970258249651476110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8757af083497345469bd8963ca159d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player_id: 1

@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 3510730149406501385}
   - component: {fileID: 7675759626255508574}
   - component: {fileID: -8155926614184237475}
+  - component: {fileID: 3832259885315996592}
+  - component: {fileID: -1417035893433672020}
   m_Layer: 6
   m_Name: hamster_gunner_1
   m_TagString: Player
@@ -28,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 3957089560799200205}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 2.2, y: 2.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2147916456458253560}
@@ -75,8 +77,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 79c3cccfcce0d8445b4a8108a4410110, type: 3}
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 400016914, guid: f8b163ce629db9448b62df97f6ed67ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,7 +99,7 @@ Animator:
   m_GameObject: {fileID: 3957089560799200205}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: de27320b0abfdd44a8c187a41c0b4574, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2a13d5964937a4f459d03e06940da225, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -120,19 +122,45 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.006501615, y: -0.019505009}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.5, y: 0.5}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.3628369, y: 0.46686342}
   m_EdgeRadius: 0
+--- !u!114 &3832259885315996592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3957089560799200205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e686fb62de0cab349bd42406575a8f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 3573637319316132025, guid: 18e48c874b50142438940fa51f402a45, type: 3}
+--- !u!114 &-1417035893433672020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3957089560799200205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8757af083497345469bd8963ca159d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player_id: 2
 --- !u!1 &6422515269338721114
 GameObject:
   m_ObjectHideFlags: 0

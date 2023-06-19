@@ -61,6 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03edac6988985d34a9760cf8a59e03a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unit: 0
   arrow: {fileID: 1334431019449155468, guid: 6e017c96029fea8418226f986afda977, type: 3}
   attack_trigger: 0
   speed: 10
@@ -78,6 +79,8 @@ GameObject:
   - component: {fileID: 2688146129649824988}
   - component: {fileID: 5390914906037353041}
   - component: {fileID: -2441944041780096382}
+  - component: {fileID: 3916615843499028814}
+  - component: {fileID: -1074156744597149625}
   m_Layer: 6
   m_Name: hamster_archer_1
   m_TagString: Player
@@ -94,7 +97,7 @@ Transform:
   m_GameObject: {fileID: 8221690389239697893}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5229480685596936656}
@@ -141,8 +144,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: cad32068b26247b419013047afb597ff, type: 3}
+  m_SortingOrder: 5
+  m_Sprite: {fileID: -1730318914, guid: 3967482f5698fa34cae532c13dc55cfc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -163,7 +166,7 @@ Animator:
   m_GameObject: {fileID: 8221690389239697893}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2cdbb5fa803a35e42afeabd77c4e824c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5980e245c910e4844ad1b2fd95724b6d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -186,10 +189,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.2923825, y: -0.118681416}
+  m_Offset: {x: -0.0083883405, y: 0.07370168}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.6711888, y: 0.7906984}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -197,5 +200,31 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9765431, y: 1.0781891}
+  m_Size: {x: 0.4085548, y: 0.6934228}
   m_EdgeRadius: 0
+--- !u!114 &3916615843499028814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8221690389239697893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7632bcbf7a0ef74f8327991bdda2916, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrow: {fileID: 1334431019449155468, guid: 6e017c96029fea8418226f986afda977, type: 3}
+--- !u!114 &-1074156744597149625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8221690389239697893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8757af083497345469bd8963ca159d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player_id: 3

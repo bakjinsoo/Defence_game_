@@ -23,6 +23,7 @@ public class Click_Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         move_btn_check=false;
         cam=GetComponent<Camera>();
         coroutine=StartCoroutine(first_click());
@@ -43,6 +44,7 @@ public class Click_Manager : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         while(true)
         {
+            
             // if(character.GetComponent<Character_Manager>().player_check==true&&move_btn.activeSelf==false)
             // {
             //     move_btn.SetActive(true);
@@ -90,6 +92,7 @@ public class Click_Manager : MonoBehaviour
             // if(GameObject.Find("Sell_Button").GetComponent<Move_Button_Manager>().is_move==true)
             if(character.GetComponent<Character_Manager>().player_check==true&&Move_Button.GetComponent<Move_Button_Manager>().is_move==true)
             {
+                
                 move_btn_check=true;
             }
             else if(character.GetComponent<Character_Manager>().player_check==true&&Sell_Button.GetComponent<Sell_Button_Manager>().is_sell==true)
@@ -107,13 +110,15 @@ public class Click_Manager : MonoBehaviour
             if(move_btn_check==true)
             {
                 Debug.Log("버튼 클릭");
-                RaycastHit2D hit=Physics2D.Raycast(mousePos,transform.forward,max_distance,1<<LayerMask.NameToLayer("Player"));
+                RaycastHit2D hit=Physics2D.Raycast(mousePos,transform.forward,max_distance,LayerMask.GetMask("Player"));
                 if(hit.collider!=null)
                 {
                     character_clicked=true;
                     target=hit.collider.gameObject;
+                    Debug.Log(target);
                     if(target.CompareTag("Player")&&target.transform.position.x==character.GetComponent<Character_Manager>().check_x&&target.transform.position.y==character.GetComponent<Character_Manager>().check_y)
                     {
+                        
                         Debug.Log("레이 히트");
                         coroutine2=StartCoroutine(second_click());
                         StopCoroutine(coroutine);
@@ -131,7 +136,7 @@ public class Click_Manager : MonoBehaviour
             }
             else if(sell_btn_check==true)
             {
-                RaycastHit2D hit=Physics2D.Raycast(mousePos,transform.forward,max_distance,1<<LayerMask.NameToLayer("Player"));
+                RaycastHit2D hit=Physics2D.Raycast(mousePos,transform.forward,max_distance,LayerMask.GetMask("Player"));
                 if(hit.collider!=null)
                 {
                     character_clicked=true;
@@ -168,6 +173,7 @@ public class Click_Manager : MonoBehaviour
             
                 if(character.GetComponent<Character_Manager>().character[(int)mousePos.x,(int)mousePos.y]==0)
                 {
+                    
                         character.GetComponent<Character_Manager>().character[(int)character.GetComponent<Character_Manager>().check_x,(int)character.GetComponent<Character_Manager>().check_y]=0;
                         character.GetComponent<Character_Manager>().character[(int)mousePos.x,(int)mousePos.y]=1;
                         target.transform.position=new Vector2(mousePos.x,mousePos.y);

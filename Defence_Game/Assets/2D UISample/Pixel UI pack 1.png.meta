@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -6023,8 +6023,8 @@ TextureImporter:
       Pixel UI pack 1_21: 1716769792
       Pixel UI pack 1_234: -760303495
       Pixel UI pack 1_258: -937067719
-      Pixel UI pack 1_242: -1752026364
       Pixel UI pack 1_259: 1019037596
+      Pixel UI pack 1_242: -1752026364
       Pixel UI pack 1_137: 837211587
       Pixel UI pack 1_115: 1641945313
       Pixel UI pack 1_226: -595585222
@@ -6044,10 +6044,10 @@ TextureImporter:
       Pixel UI pack 1_125: -32332505
       Pixel UI pack 1_90: 1094307299
       Pixel UI pack 1_257: 1771820329
-      Pixel UI pack 1_25: -128654051
       Pixel UI pack 1_45: -540472398
-      Pixel UI pack 1_170: -1610699249
       Pixel UI pack 1_181: -1817058855
+      Pixel UI pack 1_170: -1610699249
+      Pixel UI pack 1_25: -128654051
       Pixel UI pack 1_20: 1127623491
       Pixel UI pack 1_266: -1362767571
       Pixel UI pack 1_33: 1990783440
@@ -6056,10 +6056,10 @@ TextureImporter:
       Pixel UI pack 1_278: -1705150797
       Pixel UI pack 1_273: 699659791
       Pixel UI pack 1_52: 693578627
+      Pixel UI pack 1_250: -97166024
       Pixel UI pack 1_74: -1742703962
       Pixel UI pack 1_31: -949367275
       Pixel UI pack 1_129: -268970781
-      Pixel UI pack 1_250: -97166024
       Pixel UI pack 1_184: -949214612
       Pixel UI pack 1_199: 835599650
       Pixel UI pack 1_77: -2005055707
@@ -6069,8 +6069,8 @@ TextureImporter:
       Pixel UI pack 1_208: -1504200256
       Pixel UI pack 1_50: -1645902256
       Pixel UI pack 1_41: -1597015136
-      Pixel UI pack 1_97: 1978834510
       Pixel UI pack 1_267: 641847639
+      Pixel UI pack 1_97: 1978834510
       Pixel UI pack 1_73: -435175369
       Pixel UI pack 1_136: 120578086
       Pixel UI pack 1_98: -183090169
@@ -6124,8 +6124,9 @@ TextureImporter:
       Pixel UI pack 1_156: 654679254
       Pixel UI pack 1_2: 250983904
       Pixel UI pack 1_101: 1859089283
-      Pixel UI pack 1_22: 1714664801
+      Pixel UI pack 1_271: 210378304
       Pixel UI pack 1_126: 193070482
+      Pixel UI pack 1_22: 1714664801
       Pixel UI pack 1_203: 28311060
       Pixel UI pack 1_133: -1530887636
       Pixel UI pack 1_110: 885075309
@@ -6133,9 +6134,8 @@ TextureImporter:
       Pixel UI pack 1_169: -1559857719
       Pixel UI pack 1_24: -1607900887
       Pixel UI pack 1_196: -1771620088
-      Pixel UI pack 1_26: 316150357
-      Pixel UI pack 1_271: 210378304
       Pixel UI pack 1_218: 2081019729
+      Pixel UI pack 1_26: 316150357
       Pixel UI pack 1_235: 2087350976
       Pixel UI pack 1_236: 2018508214
       Pixel UI pack 1_34: 1295847428
@@ -6151,15 +6151,15 @@ TextureImporter:
       Pixel UI pack 1_261: -1557925951
       Pixel UI pack 1_252: 1277861947
       Pixel UI pack 1_84: -2080529813
-      Pixel UI pack 1_173: -1082318133
       Pixel UI pack 1_185: 832086464
-      Pixel UI pack 1_117: -623168577
+      Pixel UI pack 1_173: -1082318133
       Pixel UI pack 1_223: 1862836435
       Pixel UI pack 1_46: 796288604
       Pixel UI pack 1_38: 1396311010
       Pixel UI pack 1_58: -1905124032
-      Pixel UI pack 1_270: -1762710557
+      Pixel UI pack 1_117: -623168577
       Pixel UI pack 1_27: 317472902
+      Pixel UI pack 1_270: -1762710557
       Pixel UI pack 1_118: 1558614013
       Pixel UI pack 1_151: 415360529
       Pixel UI pack 1_66: 167403918
