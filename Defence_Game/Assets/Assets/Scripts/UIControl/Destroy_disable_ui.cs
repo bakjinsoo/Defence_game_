@@ -17,7 +17,6 @@ public class Destroy_disable_ui : MonoBehaviour
     {
        if(GameObject.Find("Character_area")==null)
        {
-            Debug.Log("플레이어체크 false");
             Destroy(this.gameObject);
        }
     }

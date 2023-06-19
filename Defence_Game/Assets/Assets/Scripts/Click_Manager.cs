@@ -110,14 +110,15 @@ public class Click_Manager : MonoBehaviour
             if(move_btn_check==true)
             {
                 Debug.Log("버튼 클릭");
-                RaycastHit2D hit=Physics2D.Raycast(mousePos,transform.forward,max_distance,1<<LayerMask.NameToLayer("Player"));
+                RaycastHit2D hit=Physics2D.Raycast(mousePos,transform.forward,max_distance,LayerMask.GetMask("Player"));
                 if(hit.collider!=null)
                 {
                     character_clicked=true;
                     target=hit.collider.gameObject;
+                    Debug.Log(target);
                     if(target.CompareTag("Player")&&target.transform.position.x==character.GetComponent<Character_Manager>().check_x&&target.transform.position.y==character.GetComponent<Character_Manager>().check_y)
                     {
-                        GameObject.Find("ui_class_1_3(Clone)").GetComponent<Destroy_ui_class>().target_ui=target;
+                        
                         Debug.Log("레이 히트");
                         coroutine2=StartCoroutine(second_click());
                         StopCoroutine(coroutine);
@@ -135,7 +136,7 @@ public class Click_Manager : MonoBehaviour
             }
             else if(sell_btn_check==true)
             {
-                RaycastHit2D hit=Physics2D.Raycast(mousePos,transform.forward,max_distance,1<<LayerMask.NameToLayer("Player"));
+                RaycastHit2D hit=Physics2D.Raycast(mousePos,transform.forward,max_distance,LayerMask.GetMask("Player"));
                 if(hit.collider!=null)
                 {
                     character_clicked=true;

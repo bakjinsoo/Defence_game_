@@ -17,10 +17,14 @@ public class Character_Manager : MonoBehaviour
     public int check_x;
     public int check_y;
     public int [,]character=new int[13,7];//캐릭터의 유무 판단 배열
+    Camera cam;
+    float max_distance=30f;
+    int ui_class_key=0;
+    GameObject target;
     // Start is called before the first frame update
     void Start()
     {
-        
+        cam=GetComponent<Camera>();
         first_random=Random.Range(2,5);
         Debug.Log(first_random);
         for(int i=0;i<13;i++)//처음배열에 모두 0을 넣어줌
@@ -117,35 +121,65 @@ public class Character_Manager : MonoBehaviour
             mousePos.y=Mathf.CeilToInt(mousePos.y);
             mousePos=new Vector2(mousePos.x,mousePos.y);
             Debug.Log("mousepos.x : "+mousePos.x+"mouse.y : "+mousePos.y);
-            if(character[(int)mousePos.x,(int)mousePos.y]==1&&click_manager.GetComponent<Click_Manager>().character_clicked==false)//클릭한곳에 캐릭터가 있을경우
+            RaycastHit2D hit=Physics2D.Raycast(mousePos,transform.forward,max_distance,LayerMask.GetMask("Player"));
+            if(hit.collider!=null)
             {
-                player_check=true;
-                ui_selected.transform.position=new Vector2(mousePos.x,mousePos.y);
-                ui_selected.SetActive(true);
-                show_area.SetActive(true);
-                for(int i=0;i<13;i++)
+                target=hit.collider.gameObject;
+                if(target.CompareTag("Player")&&target.transform.position.x==mousePos.x&&target.transform.position.y==mousePos.y)
                 {
-                    
-                    for(int j=0;j<7;j++)
+                    if(target.GetComponent<Player_id>().player_id==1)
                     {
-                        if(character[i,j]==1)
-                        {
-                            GameObject tmp=Instantiate(Resources.Load<GameObject>("Prefabs/character_area_ui"));
-                            tmp.transform.position=new Vector3(i,j,0);
-                        }
+                        Debug.Log("클래스 bool 변수 반환");
+                        target.GetComponentInChildren<magician_attack>().ui_class_key=0;
+                        target.GetComponentInChildren<magician_attack>().is_selected=true;
+                    }
+                    else if(target.GetComponent<Player_id>().player_id==2)
+                    {
+                        target.GetComponentInChildren<gunner_attack>().ui_class_key=0;
+                        target.GetComponentInChildren<gunner_attack>().is_selected=true;
+                    }
+                    else if(target.GetComponent<Player_id>().player_id==3)
+                    {
+                        target.GetComponentInChildren<archer_attack>().ui_class_key=0;
+                        target.GetComponentInChildren<archer_attack>().is_selected=true;
                     }
                 }
-                check_x=(int)mousePos.x;
-                check_y=(int)mousePos.y;
-                Debug.Log("캐릭터좌표"+check_x+","+check_y);
-                
             }
-            else
-            {
-                ui_selected.SetActive(false);
-                show_area.SetActive(false);
-                player_check=false;
+            try{
+                if(character[(int)mousePos.x,(int)mousePos.y]==1&&click_manager.GetComponent<Click_Manager>().character_clicked==false)//클릭한곳에 캐릭터가 있을경우
+                {
+                    player_check=true;
+                    ui_selected.transform.position=new Vector2(mousePos.x,mousePos.y);
+                    ui_selected.SetActive(true);
+                    show_area.SetActive(true);
+                    for(int i=0;i<13;i++)
+                    {
+                        
+                        for(int j=0;j<7;j++)
+                        {
+                            if(character[i,j]==1)
+                            {
+                                GameObject tmp=Instantiate(Resources.Load<GameObject>("Prefabs/character_area_ui"));
+                                tmp.transform.position=new Vector3(i,j,0);
+                            }
+                        }
+                    }
+                    check_x=(int)mousePos.x;
+                    check_y=(int)mousePos.y;
+                    Debug.Log("캐릭터좌표"+check_x+","+check_y);
+                    
+                }
+                else
+                {
+                    ui_selected.SetActive(false);
+                    show_area.SetActive(false);
+                    player_check=false;
+                }
             }
+            catch{
+
+            }
+            
                 
         }
         if(reroll_manager.GetComponent<Reroll_Manager>().able_reroll==true)
