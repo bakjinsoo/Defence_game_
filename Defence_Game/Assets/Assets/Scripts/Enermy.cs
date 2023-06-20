@@ -28,12 +28,14 @@ public class Enermy : MonoBehaviour
             GetComponent<Animator>().SetTrigger("Death"); // 죽음 애니메이션
             speed = 0;
             int random = Random.Range(0,100); // 10%확률로 코인 획득
-            if(random<10 && OneTime)
+
+            if(random < characterData.Instance.goldGetPercentage && OneTime) // 골드획득 확률보다 낮은수면 골드획득
             {
                 CoinGetter = GameObject.Find("Reroll_Button").GetComponent<Reroll_Manager>();
-                CoinGetter.coin+=10;
-                OneTime = false;
-            }
+                CoinGetter.coin+= GameObject.Find("SpawnManager").GetComponent<Spawn_Manager>().round + 1;
+                
+            }            
+            OneTime = false;   
             
         }
         if(transform.position.y<3)

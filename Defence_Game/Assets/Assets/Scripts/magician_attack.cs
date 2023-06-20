@@ -24,7 +24,7 @@ public class magician_attack : MonoBehaviour
         {
             this.GetComponent<CircleCollider2D>().radius=5f;
             magician_grade=1;
-            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", 3f);
+            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", characterData.Instance.Magician_attackSpeed * 1.5f);
             characterAura = Instantiate(Resources.Load("Prefabs/Aura/BlackAura"), transform.position, Quaternion.identity) as GameObject;
             
         }
@@ -32,7 +32,7 @@ public class magician_attack : MonoBehaviour
         {
             this.GetComponent<CircleCollider2D>().radius=3.2f;
             magician_grade=2;
-            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", 2.5f);
+            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", characterData.Instance.Magician_attackSpeed * 1.25f);
             characterAura = Instantiate(Resources.Load("Prefabs/Aura/RedAura"), transform.position, Quaternion.identity) as GameObject;
            
         }
@@ -40,7 +40,7 @@ public class magician_attack : MonoBehaviour
         {
             this.GetComponent<CircleCollider2D>().radius=2.5f;
             magician_grade=3;
-            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", 2f);
+            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", characterData.Instance.Magician_attackSpeed);
             characterAura = Instantiate(Resources.Load("Prefabs/Aura/BlueAura"), transform.position, Quaternion.identity) as GameObject;
             
         }
@@ -48,7 +48,7 @@ public class magician_attack : MonoBehaviour
         {
             this.GetComponent<CircleCollider2D>().radius=2f;
             magician_grade=4;
-            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", 1.5f);
+            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", characterData.Instance.Magician_attackSpeed * 0.75f);
             characterAura = Instantiate(Resources.Load("Prefabs/Aura/GreenAura"), transform.position, Quaternion.identity) as GameObject;
             
         }
@@ -56,12 +56,12 @@ public class magician_attack : MonoBehaviour
         {
             this.GetComponent<CircleCollider2D>().radius=1.5f;
             magician_grade=5;
-            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", 1.0f);
+            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", characterData.Instance.Magician_attackSpeed * 0.5f);
             characterAura = Instantiate(Resources.Load("Prefabs/Aura/PurpleAura"), transform.position, Quaternion.identity) as GameObject;
            
         }
         else{
-            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", 0.5f);
+            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", characterData.Instance.Magician_attackSpeed * 0.25f);
             this.GetComponent<CircleCollider2D>().radius=1.2f;
             magician_grade=6;
              

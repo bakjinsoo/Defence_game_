@@ -9033,6 +9033,9 @@ MonoBehaviour:
   GunnerAttackCoefficient: 1
   MagicianAttackCoefficient: 1
   ArcherAttackCoefficient: 1
+  goldGetPercentage: 10
+  BerserkerMode: 0
+  burserkerAmount: 1.5
 --- !u!4 &2103839491
 Transform:
   m_ObjectHideFlags: 0
@@ -9141,7 +9144,7 @@ MonoBehaviour:
   round: 0
   leftCount: 0
   leftMob: {fileID: 876742577}
-  cardIndex: 3
+  cardIndex: 9
   StageEndPanel: {fileID: 1174954611}
   StageStartPanel: {fileID: 8953349584321225510, guid: f8104517db749224d82627bacd559717, type: 3}
 --- !u!4 &2133158468
