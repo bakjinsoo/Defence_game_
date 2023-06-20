@@ -24,41 +24,41 @@ public class gunner_attack : MonoBehaviour
         {
             this.GetComponent<CircleCollider2D>().radius=5f;
             gunner_grade=1;
-            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", 3f);
+            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", characterData.Instance.Gunner_attackSpeed * 1.5f);
             characterAura = Instantiate(Resources.Load("Prefabs/Aura/BlackAura"), transform.position, Quaternion.identity) as GameObject;
         }
         else if(unit_class>=3&&unit_class<13)
         {
             this.GetComponent<CircleCollider2D>().radius=3.2f;
             gunner_grade=2;
-            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", 2.5f);
+            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", characterData.Instance.Gunner_attackSpeed * 1.25f);
             characterAura = Instantiate(Resources.Load("Prefabs/Aura/RedAura"), transform.position, Quaternion.identity) as GameObject;
         }
         else if(unit_class>=13&&unit_class<64)
         {
             this.GetComponent<CircleCollider2D>().radius=2.5f;
             gunner_grade=3;
-            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", 2f);
+            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", characterData.Instance.Gunner_attackSpeed);
             characterAura = Instantiate(Resources.Load("Prefabs/Aura/BlueAura"), transform.position, Quaternion.identity) as GameObject;
         }
         else if(unit_class>=64&&unit_class<565)
         {
             this.GetComponent<CircleCollider2D>().radius=2f;
             gunner_grade=4;
-            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed",1.5f);
+            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed",  characterData.Instance.Gunner_attackSpeed * 0.75f);
             characterAura = Instantiate(Resources.Load("Prefabs/Aura/GreenAura"), transform.position, Quaternion.identity) as GameObject;
         }
         else if(unit_class>=565&&unit_class<3566)
         {
             this.GetComponent<CircleCollider2D>().radius=1.5f;
             gunner_grade=5;
-            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", 1f);
+            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", characterData.Instance.Gunner_attackSpeed * 0.5f);
             characterAura = Instantiate(Resources.Load("Prefabs/Aura/PurpleAura"), transform.position, Quaternion.identity) as GameObject;
         }
         else{
             this.GetComponent<CircleCollider2D>().radius=1.2f;
             gunner_grade=6;
-            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", 0.5f);
+            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed",  characterData.Instance.Gunner_attackSpeed * 0.25f);
         }
     }
 

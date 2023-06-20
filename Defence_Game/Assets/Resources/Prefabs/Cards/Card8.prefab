@@ -142,7 +142,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a8f706a2e0f6e8844bb16b4f39cc3292, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3458c119c69e9bc4f9647599c2901dee, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -187,8 +187,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.67111206, y: -188}
-  m_SizeDelta: {x: -320.6577, y: -482.0624}
+  m_AnchoredPosition: {x: 10.911987, y: -189.13788}
+  m_SizeDelta: {x: -300.176, y: -479.7867}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1999866575075369472
 CanvasRenderer:
@@ -231,7 +231,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uB9C8\uBC95\uC0AC\uC758 \uACC4\uC218\uAC00 \uC99D\uAC00\uD569\uB2C8\uB2E4."
+  m_Text: "\uC801\uC744 \uC7A1\uC558\uC744\uB54C \uB3C8\uC744 \uD68D\uB4DD\uD560
+    \uD655\uB960\uC744 \uC99D\uAC00\uD574\uC90D\uB2C8\uB2E4."
 --- !u!1 &3984117393275932117
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,7 +400,7 @@ GameObject:
   - component: {fileID: -8801075561372385385}
   - component: {fileID: 7570985269813824885}
   m_Layer: 5
-  m_Name: Card2
+  m_Name: Card8
   m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -526,7 +527,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: -8801075561372385385}
         m_TargetAssemblyTypeName: CardEffects, Assembly-CSharp
-        m_MethodName: MagicianAttackCoefficientUp
+        m_MethodName: CoinPercentageUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

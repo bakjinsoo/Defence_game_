@@ -231,7 +231,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uB9C8\uBC95\uC0AC\uC758 \uACC4\uC218\uAC00 \uC99D\uAC00\uD569\uB2C8\uB2E4."
+  m_Text: "\uB9C8\uBC95\uC0AC\uC758 \uACF5\uACA9\uC18D\uB3C4\uAC00 \uC99D\uAC00\uD569\uB2C8\uB2E4 "
 --- !u!1 &3984117393275932117
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,7 +399,7 @@ GameObject:
   - component: {fileID: -8801075561372385385}
   - component: {fileID: 7570985269813824885}
   m_Layer: 5
-  m_Name: Card2
+  m_Name: Card3
   m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -526,7 +526,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: -8801075561372385385}
         m_TargetAssemblyTypeName: CardEffects, Assembly-CSharp
-        m_MethodName: MagicianAttackCoefficientUp
+        m_MethodName: MagicianAttackSpeedUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

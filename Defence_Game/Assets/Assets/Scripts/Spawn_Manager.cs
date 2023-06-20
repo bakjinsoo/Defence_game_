@@ -57,7 +57,7 @@ public class Spawn_Manager : MonoBehaviour
                 }
 
                 for(int i = 0; i < cardList.Count ; i++) {
-                    GameObject Card = Instantiate(Resources.Load("Prefabs/Cards/Card"+Random.Range(0,cardIndex)) as GameObject, cardList[i].transform.position, Quaternion.identity);
+                    GameObject Card = Instantiate(Resources.Load("Prefabs/Cards/Card"+Random.Range(0,cardIndex + 1)) as GameObject, cardList[i].transform.position, Quaternion.identity);
                     Card.transform.parent = cardList[i].transform.parent;
                 }
             }
