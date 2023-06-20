@@ -20,8 +20,11 @@ public class Gunner : MonoBehaviour
     void gunAttack(){
         try
         {
-            int num=Random.Range(0,gameObject.GetComponentInChildren<gunner_attack>().Monster_List.Count);
-            Instantiate(bullet,gameObject.GetComponentInChildren<gunner_attack>().Monster_List[num].transform.position,Quaternion.identity);
+            if(gameObject.GetComponentInChildren<gunner_attack>().gunner_grade!=1)
+            {
+                int num=Random.Range(0,gameObject.GetComponentInChildren<gunner_attack>().Monster_List.Count);
+                Instantiate(bullet,gameObject.GetComponentInChildren<gunner_attack>().Monster_List[num].transform.position,Quaternion.identity);
+            }
         }
         catch{
 

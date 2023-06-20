@@ -13,6 +13,7 @@ public class magician_attack : MonoBehaviour
     Coroutine coroutine;
     GameObject characterAura;
     public bool is_selected;
+    public GameObject Legendary_Spell;
     public List<GameObject> Monster_List=new List<GameObject>();
     // Start is called before the first frame update
     void Start()
@@ -186,8 +187,16 @@ public class magician_attack : MonoBehaviour
         {
             try
             {
-                int num=Random.Range(0,Monster_List.Count);
-               Instantiate(fireball,Monster_List[num].transform.position,Quaternion.identity);
+                if(magician_grade==1){
+                    for(int i=0;i<Monster_List.Count;i++)
+                    {
+                        Instantiate(Legendary_Spell,Monster_List[i].transform.position,Quaternion.identity);
+                    }
+                }
+                else if(magician_grade!=1){
+                    int num=Random.Range(0,Monster_List.Count);
+                    Instantiate(fireball,Monster_List[num].transform.position,Quaternion.identity);
+                }
             }
             catch{
 

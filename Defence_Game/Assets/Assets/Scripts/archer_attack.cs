@@ -12,6 +12,7 @@ public class archer_attack : MonoBehaviour
     public float speed=10f;
     public GameObject character_manger;
     public bool is_selected;
+    
     public List<GameObject> Monster_List=new List<GameObject>();
     // Start is called before the first frame update
     GameObject characterAura;

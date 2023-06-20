@@ -66,6 +66,7 @@ MonoBehaviour:
   enermy: {fileID: 473233725591726437, guid: 3cb50544dde2f0e448db386acf7d1872, type: 3}
   fireball: {fileID: 8546022993141333073, guid: 77b259c26ff44cc4fb17d70676699af9, type: 3}
   is_selected: 0
+  Legendary_Spell: {fileID: 4474015230499086401, guid: 5a5e56492fdcd264182524c64af4580c, type: 3}
   Monster_List: []
 --- !u!1 &6970258249651476110
 GameObject:
