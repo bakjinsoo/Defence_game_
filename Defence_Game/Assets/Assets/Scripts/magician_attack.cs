@@ -18,7 +18,7 @@ public class magician_attack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        coroutine=StartCoroutine(magicattack());
+        // coroutine=StartCoroutine(magicattack());
          int unit_class=Random.Range(0,10000);
         if(unit_class<3)
         {
@@ -72,12 +72,19 @@ public class magician_attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        for(int i=0;i<Monster_List.Count;i++)
+        {
+            if(Monster_List[i]==null)
+            {
+                Monster_List.RemoveAt(i);
+            }
+        }
         try
         {
             characterAura.transform.position = new Vector2(transform.position.x -0.5f, transform.position.y);
         }
         catch{
-
+            
         }
         if(GameObject.Find("Character_area")==null)
         {
@@ -177,34 +184,35 @@ public class magician_attack : MonoBehaviour
         if(other.gameObject.tag=="Enermy")
         {
             Monster_List.RemoveAt(0);
+            Debug.Log("EXIT" + other.gameObject.GetInstanceID());
         }        
     }
-    IEnumerator magicattack()
-    {
-        yield return new WaitForSeconds(0.1f);
+    // IEnumerator magicattack()
+    // {
+    //     yield return new WaitForSeconds(0.1f);
         
-        while(count==0)
-        {
-            try
-            {
-                if(magician_grade==1){
-                    for(int i=0;i<Monster_List.Count;i++)
-                    {
-                        Instantiate(Legendary_Spell,Monster_List[i].transform.position,Quaternion.identity);
-                    }
-                }
-                else if(magician_grade!=1){
-                    int num=Random.Range(0,Monster_List.Count);
-                    Instantiate(fireball,Monster_List[num].transform.position,Quaternion.identity);
-                }
-            }
-            catch{
+    //     while(count==0)
+    //     {
+    //         try
+    //         {
+    //             if(magician_grade==1){
+    //                 for(int i=0;i<Monster_List.Count;i++)
+    //                 {
+    //                     Instantiate(Legendary_Spell,Monster_List[i].transform.position,Quaternion.identity);
+    //                 }
+    //             }
+    //             else if(magician_grade!=1){
+    //                 int num=Random.Range(0,Monster_List.Count);
+    //                 Instantiate(fireball,Monster_List[num].transform.position,Quaternion.identity);
+    //             }
+    //         }
+    //         catch{
 
-            }
+    //         }
             
-            yield return new WaitForSeconds(2.5f);
+    //         yield return new WaitForSeconds(2.5f);
             
-        }
+    //     }
         
-    }
+    // }
 }
