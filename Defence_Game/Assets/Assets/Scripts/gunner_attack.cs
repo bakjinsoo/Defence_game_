@@ -15,50 +15,51 @@ public class gunner_attack : MonoBehaviour
     public bool is_selected;
     public List<GameObject> Monster_List=new List<GameObject>();
     GameObject characterAura;
+    public GameObject Legendary_bullet;
     // Start is called before the first frame update
     void Start()
     {
-        // coroutine=StartCoroutine(gunnerattack());
+        coroutine=StartCoroutine(gunnerattack());
        int unit_class=Random.Range(0,10000);
         if(unit_class<3)
         {
             this.GetComponent<CircleCollider2D>().radius=5f;
             gunner_grade=1;
-            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", 3f);
+            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", characterData.Instance.Gunner_attackSpeed * 1.5f);
             characterAura = Instantiate(Resources.Load("Prefabs/Aura/BlackAura"), transform.position, Quaternion.identity) as GameObject;
         }
         else if(unit_class>=3&&unit_class<13)
         {
             this.GetComponent<CircleCollider2D>().radius=3.2f;
             gunner_grade=2;
-            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", 2.5f);
+            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", characterData.Instance.Gunner_attackSpeed * 1.25f);
             characterAura = Instantiate(Resources.Load("Prefabs/Aura/RedAura"), transform.position, Quaternion.identity) as GameObject;
         }
         else if(unit_class>=13&&unit_class<64)
         {
             this.GetComponent<CircleCollider2D>().radius=2.5f;
             gunner_grade=3;
-            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", 2f);
+            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", characterData.Instance.Gunner_attackSpeed);
             characterAura = Instantiate(Resources.Load("Prefabs/Aura/BlueAura"), transform.position, Quaternion.identity) as GameObject;
         }
         else if(unit_class>=64&&unit_class<565)
         {
             this.GetComponent<CircleCollider2D>().radius=2f;
             gunner_grade=4;
-            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed",1.5f);
+            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed",  characterData.Instance.Gunner_attackSpeed * 0.75f);
             characterAura = Instantiate(Resources.Load("Prefabs/Aura/GreenAura"), transform.position, Quaternion.identity) as GameObject;
         }
         else if(unit_class>=565&&unit_class<3566)
         {
             this.GetComponent<CircleCollider2D>().radius=1.5f;
             gunner_grade=5;
-            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", 1f);
+            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", characterData.Instance.Gunner_attackSpeed * 0.5f);
             characterAura = Instantiate(Resources.Load("Prefabs/Aura/PurpleAura"), transform.position, Quaternion.identity) as GameObject;
         }
         else{
             this.GetComponent<CircleCollider2D>().radius=1.2f;
             gunner_grade=6;
-            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", 0.5f);
+            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed",  characterData.Instance.Gunner_attackSpeed * 0.25f);
         }
     }
 
@@ -177,8 +178,17 @@ public class gunner_attack : MonoBehaviour
         {
             try
             {
-                int num=Random.Range(0,Monster_List.Count);
-               Instantiate(bullet,Monster_List[num].transform.position,Quaternion.identity);
+                if(gunner_grade==1){
+                    for(int i=0;i<Monster_List.Count;i++)
+                    {
+                        Instantiate(Legendary_bullet,Monster_List[i].transform.position,Quaternion.identity);
+                    }
+                }
+                else{
+                    Debug.Log("일반 공격 생성");
+                    int num=Random.Range(0,Monster_List.Count);
+                    Instantiate(bullet,Monster_List[num].transform.position,Quaternion.identity);
+                }
             }
             catch{
 

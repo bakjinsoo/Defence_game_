@@ -610,7 +610,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      DarkKnight_6: -2141563526
+      DarkKnight_11: -1667824839
       DarkKnight_21: 394438240
       DarkKnight_14: 156814279
       DarkKnight_17: -1940858491
@@ -631,8 +631,8 @@ TextureImporter:
       DarkKnight_7: 1268639569
       DarkKnight_9: 2079013000
       DarkKnight_16: 2129829548
-      DarkKnight_11: -1667824839
       DarkKnight_15: 613439717
+      DarkKnight_6: -2141563526
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -13,17 +13,18 @@ public class magician_attack : MonoBehaviour
     Coroutine coroutine;
     GameObject characterAura;
     public bool is_selected;
+    public GameObject Legendary_Spell;
     public List<GameObject> Monster_List=new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
-        coroutine=StartCoroutine(magicattack());
+        // coroutine=StartCoroutine(magicattack());
          int unit_class=Random.Range(0,10000);
         if(unit_class<3)
         {
             this.GetComponent<CircleCollider2D>().radius=5f;
             magician_grade=1;
-            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", 3f);
+            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", characterData.Instance.Magician_attackSpeed * 1.5f);
             characterAura = Instantiate(Resources.Load("Prefabs/Aura/BlackAura"), transform.position, Quaternion.identity) as GameObject;
             
         }
@@ -31,7 +32,7 @@ public class magician_attack : MonoBehaviour
         {
             this.GetComponent<CircleCollider2D>().radius=3.2f;
             magician_grade=2;
-            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", 2.5f);
+            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", characterData.Instance.Magician_attackSpeed * 1.25f);
             characterAura = Instantiate(Resources.Load("Prefabs/Aura/RedAura"), transform.position, Quaternion.identity) as GameObject;
            
         }
@@ -39,7 +40,7 @@ public class magician_attack : MonoBehaviour
         {
             this.GetComponent<CircleCollider2D>().radius=2.5f;
             magician_grade=3;
-            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", 2f);
+            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", characterData.Instance.Magician_attackSpeed);
             characterAura = Instantiate(Resources.Load("Prefabs/Aura/BlueAura"), transform.position, Quaternion.identity) as GameObject;
             
         }
@@ -47,7 +48,7 @@ public class magician_attack : MonoBehaviour
         {
             this.GetComponent<CircleCollider2D>().radius=2f;
             magician_grade=4;
-            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", 1.5f);
+            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", characterData.Instance.Magician_attackSpeed * 0.75f);
             characterAura = Instantiate(Resources.Load("Prefabs/Aura/GreenAura"), transform.position, Quaternion.identity) as GameObject;
             
         }
@@ -55,12 +56,12 @@ public class magician_attack : MonoBehaviour
         {
             this.GetComponent<CircleCollider2D>().radius=1.5f;
             magician_grade=5;
-            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", 1.0f);
+            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", characterData.Instance.Magician_attackSpeed * 0.5f);
             characterAura = Instantiate(Resources.Load("Prefabs/Aura/PurpleAura"), transform.position, Quaternion.identity) as GameObject;
            
         }
         else{
-            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", 0.5f);
+            this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", characterData.Instance.Magician_attackSpeed * 0.25f);
             this.GetComponent<CircleCollider2D>().radius=1.2f;
             magician_grade=6;
              
@@ -71,12 +72,19 @@ public class magician_attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        for(int i=0;i<Monster_List.Count;i++)
+        {
+            if(Monster_List[i]==null)
+            {
+                Monster_List.RemoveAt(i);
+            }
+        }
         try
         {
             characterAura.transform.position = new Vector2(transform.position.x -0.5f, transform.position.y);
         }
         catch{
-
+            
         }
         if(GameObject.Find("Character_area")==null)
         {
@@ -176,26 +184,35 @@ public class magician_attack : MonoBehaviour
         if(other.gameObject.tag=="Enermy")
         {
             Monster_List.RemoveAt(0);
+            Debug.Log("EXIT" + other.gameObject.GetInstanceID());
         }        
     }
-    IEnumerator magicattack()
-    {
-        yield return new WaitForSeconds(0.1f);
+    // IEnumerator magicattack()
+    // {
+    //     yield return new WaitForSeconds(0.1f);
         
-        while(count==0)
-        {
-            try
-            {
-                int num=Random.Range(0,Monster_List.Count);
-               Instantiate(fireball,Monster_List[num].transform.position,Quaternion.identity);
-            }
-            catch{
+    //     while(count==0)
+    //     {
+    //         try
+    //         {
+    //             if(magician_grade==1){
+    //                 for(int i=0;i<Monster_List.Count;i++)
+    //                 {
+    //                     Instantiate(Legendary_Spell,Monster_List[i].transform.position,Quaternion.identity);
+    //                 }
+    //             }
+    //             else if(magician_grade!=1){
+    //                 int num=Random.Range(0,Monster_List.Count);
+    //                 Instantiate(fireball,Monster_List[num].transform.position,Quaternion.identity);
+    //             }
+    //         }
+    //         catch{
 
-            }
+    //         }
             
-            yield return new WaitForSeconds(2.5f);
+    //         yield return new WaitForSeconds(2.5f);
             
-        }
+    //     }
         
-    }
+    // }
 }

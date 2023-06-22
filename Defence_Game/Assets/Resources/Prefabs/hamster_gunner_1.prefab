@@ -222,7 +222,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c927951f8dd51934ea746fb2860b985e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ui_class_key: 0
+  gunner_grade: 0
   enermy: {fileID: 473233725591726437, guid: 3cb50544dde2f0e448db386acf7d1872, type: 3}
   bullet: {fileID: 3573637319316132025, guid: 18e48c874b50142438940fa51f402a45, type: 3}
   character_manger: {fileID: 9200226082968105372, guid: 65d35f5fffa888f4fb98930257dc99ef, type: 3}
+  is_selected: 0
   Monster_List: []
+  Legendary_bullet: {fileID: 4299101532805235725, guid: fb4b4f46b0f1e8847bbff44f6da2fe2f, type: 3}
