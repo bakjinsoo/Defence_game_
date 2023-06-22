@@ -15,10 +15,11 @@ public class gunner_attack : MonoBehaviour
     public bool is_selected;
     public List<GameObject> Monster_List=new List<GameObject>();
     GameObject characterAura;
+    public GameObject Legendary_bullet;
     // Start is called before the first frame update
     void Start()
     {
-        // coroutine=StartCoroutine(gunnerattack());
+        coroutine=StartCoroutine(gunnerattack());
        int unit_class=Random.Range(0,10000);
         if(unit_class<3)
         {
@@ -177,8 +178,17 @@ public class gunner_attack : MonoBehaviour
         {
             try
             {
-                int num=Random.Range(0,Monster_List.Count);
-               Instantiate(bullet,Monster_List[num].transform.position,Quaternion.identity);
+                if(gunner_grade==1){
+                    for(int i=0;i<Monster_List.Count;i++)
+                    {
+                        Instantiate(Legendary_bullet,Monster_List[i].transform.position,Quaternion.identity);
+                    }
+                }
+                else{
+                    Debug.Log("일반 공격 생성");
+                    int num=Random.Range(0,Monster_List.Count);
+                    Instantiate(bullet,Monster_List[num].transform.position,Quaternion.identity);
+                }
             }
             catch{
 

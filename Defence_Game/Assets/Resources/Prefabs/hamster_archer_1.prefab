@@ -61,11 +61,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03edac6988985d34a9760cf8a59e03a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ui_class_key: 0
+  archer_grade: 0
   unit: 0
   arrow: {fileID: 1334431019449155468, guid: 6e017c96029fea8418226f986afda977, type: 3}
   attack_trigger: 0
   speed: 10
   character_manger: {fileID: 9200226082968105372, guid: 65d35f5fffa888f4fb98930257dc99ef, type: 3}
+  is_selected: 0
   Monster_List: []
 --- !u!1 &8221690389239697893
 GameObject:
@@ -214,6 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7632bcbf7a0ef74f8327991bdda2916, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Legendary_Arrow: {fileID: 3628308205063201977, guid: ab44179797ee7ca4988269c6d5812cba, type: 3}
   arrow: {fileID: 1334431019449155468, guid: 6e017c96029fea8418226f986afda977, type: 3}
 --- !u!114 &-1074156744597149625
 MonoBehaviour:

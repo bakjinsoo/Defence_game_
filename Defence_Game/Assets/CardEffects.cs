@@ -78,7 +78,7 @@ public class CardEffects : MonoBehaviour
             transform.GetChild(i + 2).gameObject.SetActive(true);
         }
     }
-    void berserkerMode(){
+    public void berserkerMode(){
         characterData.Instance.BerserkerMode = true;
     }
     public void rerollAll(){ // 생성되어있는 모든애들을 reroll 해줌
@@ -116,6 +116,14 @@ public class CardEffects : MonoBehaviour
             GameObject tmp=Instantiate(Resources.Load<GameObject>("Prefabs/hamster_magician"));
             tmp.transform.position=new Vector3(transform_x,transform_y,0);
         }
+    }
+
+    public void sellMoneyUpgrade(){
+        characterData.Instance.moneyGet += 2*level;
+    }
+
+    public void freeRerollPercent(){
+        characterData.Instance.freeReroll += 3*level;
     }
 
 }

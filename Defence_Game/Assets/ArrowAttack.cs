@@ -5,6 +5,7 @@ using UnityEngine;
 public class ArrowAttack : MonoBehaviour
 {
     // Start is called before the first frame update
+    public GameObject Legendary_Arrow;
     void Start()
     {
         
@@ -20,7 +21,7 @@ public class ArrowAttack : MonoBehaviour
     {
         // gameObject.GetComponentInChildren<archer_attack>().Monster_List;
 
-
+            GameObject tmp=null;
             int num=Random.Range(0,gameObject.GetComponentInChildren<archer_attack>().Monster_List.Count);
             //    Vector3 pos=Monster_List[num].transform.position-this.transform.position;
             //    float angle=Mathf.Atan2(pos.y,pos.x)*Mathf.Rad2Deg;
@@ -28,7 +29,13 @@ public class ArrowAttack : MonoBehaviour
             //    GameObject tmp=Instantiate(arrow,this.transform.position,new Quaternion(0,0,angle,0));
             gameObject.GetComponent<Animator>().SetTrigger("attack");
             if(gameObject.GetComponentInChildren<archer_attack>().Monster_List.Count>0){
-                GameObject tmp=Instantiate(arrow,this.transform.position,Quaternion.identity);
+                if(gameObject.GetComponentInChildren<archer_attack>().archer_grade==1)
+                {
+                    tmp=Instantiate(Legendary_Arrow,this.transform.position,Quaternion.identity);
+                }
+                else{
+                    tmp=Instantiate(arrow,this.transform.position,Quaternion.identity);
+                }
                 tmp.GetComponent<Arrow_skill>().num=gameObject.GetComponentInChildren<archer_attack>().unit;
                 
                 if(gameObject.GetComponentInChildren<archer_attack>().Monster_List[num]==null)
