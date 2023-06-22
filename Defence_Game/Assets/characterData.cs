@@ -24,6 +24,7 @@ public class characterData : Singleton<characterData>
     public bool BerserkerMode = false;
     private TimeManager timeManager;
     public float burserkerAmount = 1.5f;
+    public int moneyGet = 10;
     void Start(){
         timeManager = GameObject.Find("TimeManager").GetComponent<TimeManager>();
     }
