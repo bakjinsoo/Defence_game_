@@ -78,7 +78,7 @@ public class CardEffects : MonoBehaviour
             transform.GetChild(i + 2).gameObject.SetActive(true);
         }
     }
-    void berserkerMode(){
+    public void berserkerMode(){
         characterData.Instance.BerserkerMode = true;
     }
     public void rerollAll(){ // 생성되어있는 모든애들을 reroll 해줌
