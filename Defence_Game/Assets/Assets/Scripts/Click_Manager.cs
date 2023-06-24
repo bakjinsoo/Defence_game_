@@ -133,7 +133,7 @@ public class Click_Manager : MonoBehaviour
                     if(target.CompareTag("Player")&&target.transform.position.x==character.GetComponent<Character_Manager>().check_x&&target.transform.position.y==character.GetComponent<Character_Manager>().check_y)
                     {
                         Debug.Log("레이 히트");
-                        Reroll_Manager.GetComponent<Reroll_Manager>().coin+=30;
+                        Reroll_Manager.GetComponent<Reroll_Manager>().coin+= characterData.Instance.moneyGet;
                         character.GetComponent<Character_Manager>().character[(int)character.GetComponent<Character_Manager>().check_x,(int)character.GetComponent<Character_Manager>().check_y]=0;
                         Destroy(target);
                     }

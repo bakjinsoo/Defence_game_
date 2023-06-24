@@ -32,9 +32,15 @@ public class Reroll_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isreroll==true)
-        {
-            if(coin>=50)
+        if(isreroll)
+        {   
+            int r = Random.Range(0,100);
+            if(characterData.Instance.freeReroll > r){
+                able_reroll=true;
+                isreroll=false;
+                Debug.Log("사건발생");
+            }
+            else if(coin>=50)
             {
                 coin-=50;
                 able_reroll=true;
