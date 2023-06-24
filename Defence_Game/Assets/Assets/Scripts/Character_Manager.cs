@@ -127,43 +127,43 @@ public class Character_Manager : MonoBehaviour
                 target=hit.collider.gameObject;
                 if(target.CompareTag("Player")&&target.transform.position.x==mousePos.x&&target.transform.position.y==mousePos.y)
                 {
-                    if(target.GetComponent<Player_id>().player_id==1)
-                    {
-                        Debug.Log("클래스 bool 변수 반환");
-                        target.GetComponentInChildren<magician_attack>().ui_class_key=0;
-                        target.GetComponentInChildren<magician_attack>().is_selected=true;
-                    }
-                    else if(target.GetComponent<Player_id>().player_id==2)
-                    {
-                        target.GetComponentInChildren<gunner_attack>().ui_class_key=0;
-                        target.GetComponentInChildren<gunner_attack>().is_selected=true;
-                    }
-                    else if(target.GetComponent<Player_id>().player_id==3)
-                    {
-                        target.GetComponentInChildren<archer_attack>().ui_class_key=0;
-                        target.GetComponentInChildren<archer_attack>().is_selected=true;
-                    }
+                    click_manager.GetComponent<Click_Manager>().tmp=target;
+                    // if(target.GetComponent<Player_id>().player_id==1)
+                    // {
+                    //     Debug.Log("클래스 bool 변수 반환");
+                    //     target.GetComponentInChildren<magician_attack>().ui_class_key=0;
+                    //     target.GetComponentInChildren<magician_attack>().is_selected=true;
+                    // }
+                    // else if(target.GetComponent<Player_id>().player_id==2)
+                    // {
+                    //     target.GetComponentInChildren<gunner_attack>().ui_class_key=0;
+                    //     target.GetComponentInChildren<gunner_attack>().is_selected=true;
+                    // }
+                    // else if(target.GetComponent<Player_id>().player_id==3)
+                    // {
+                    //     target.GetComponentInChildren<archer_attack>().ui_class_key=0;
+                    //     target.GetComponentInChildren<archer_attack>().is_selected=true;
+                    // }
                 }
             }
-            try{
                 if(character[(int)mousePos.x,(int)mousePos.y]==1&&click_manager.GetComponent<Click_Manager>().character_clicked==false)//클릭한곳에 캐릭터가 있을경우
                 {
                     player_check=true;
-                    ui_selected.transform.position=new Vector2(mousePos.x,mousePos.y);
-                    ui_selected.SetActive(true);
-                    show_area.SetActive(true);
-                    for(int i=0;i<13;i++)
-                    {
+                    // ui_selected.transform.position=new Vector2(mousePos.x,mousePos.y);
+                    // ui_selected.SetActive(true);
+                    // show_area.SetActive(true);
+                    // for(int i=0;i<13;i++)
+                    // {
                         
-                        for(int j=0;j<7;j++)
-                        {
-                            if(character[i,j]==1)
-                            {
-                                GameObject tmp=Instantiate(Resources.Load<GameObject>("Prefabs/character_area_ui"));
-                                tmp.transform.position=new Vector3(i,j,0);
-                            }
-                        }
-                    }
+                    //     for(int j=0;j<7;j++)
+                    //     {
+                    //         if(character[i,j]==1)
+                    //         {
+                    //             GameObject tmp=Instantiate(Resources.Load<GameObject>("Prefabs/character_area_ui"));
+                    //             tmp.transform.position=new Vector3(i,j,0);
+                    //         }
+                    //     }
+                    // }
                     check_x=(int)mousePos.x;
                     check_y=(int)mousePos.y;
                     Debug.Log("캐릭터좌표"+check_x+","+check_y);
@@ -175,10 +175,7 @@ public class Character_Manager : MonoBehaviour
                     show_area.SetActive(false);
                     player_check=false;
                 }
-            }
-            catch{
-
-            }
+            
             
                 
         }
