@@ -45,6 +45,13 @@ public class Click_Manager : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         while(true)
         {
+            if(character.GetComponent<Character_Manager>().player_check==true)
+            {
+                Move_Button.transform.position=new Vector2(tmp.transform.position.x,tmp.transform.position.y+1);
+            }
+            else{
+                Move_Button.transform.position=new Vector2(100,100);
+            }
             if(character.GetComponent<Character_Manager>().player_check==true&&Move_Button.GetComponent<Move_Button_Manager>().is_move==true)
             {
                 move_btn_check=true;
@@ -82,7 +89,7 @@ public class Click_Manager : MonoBehaviour
                         tmp.GetComponentInChildren<archer_attack>().ui_class_key=0;
                         tmp.GetComponentInChildren<archer_attack>().is_selected=true;
                     }
-                    ui_selected.transform.position=new Vector2(mousePos.x,mousePos.y);
+                    ui_selected.transform.position=new Vector2(tmp.transform.position.x,tmp.transform.position.y);
                     ui_selected.SetActive(true);
                     show_area.SetActive(true);
                     for(int i=0;i<13;i++)
