@@ -7,8 +7,14 @@ public class Move_Button_Manager : MonoBehaviour
 {
     public bool is_move=false;
     public Button button;
+    public void Awake()
+    {
+        button = this.gameObject.GetComponent<Button>();
+        button.onClick.AddListener(onClick_up_move);
+    }
     public void onClick_up_move()
     {
+        Debug.Log("버튼다운");
         is_move=true;
     }
     public void onClick_down_move()
@@ -18,8 +24,8 @@ public class Move_Button_Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        button = this.gameObject.GetComponent<Button>();
-        button.onClick.AddListener(onClick_up_move);
+        // button = gameObject.GetComponent<Button>();
+        // button.onClick.AddListener(onClick_up_move);
     }
 
     // Update is called once per frame
