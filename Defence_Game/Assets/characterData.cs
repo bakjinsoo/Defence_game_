@@ -42,6 +42,11 @@ public class characterData : Singleton<characterData>
     private float _tmpArcherAttackSpeed;
     private float _tmpMagicianAttackSpeed;
 
+    /*유닛 판매 시 획득 골드 */
+    public int moneyGet = 20;
+
+    /*15%확률로 무료 리롤*/
+    public int freeReroll = 0;
 
     void Update(){
         if(BerserkerMode){

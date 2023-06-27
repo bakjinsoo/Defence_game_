@@ -118,5 +118,13 @@ public class CardEffects : MonoBehaviour
         }
     }
 
+    public void sellMoneyUpgrade(){
+        characterData.Instance.moneyGet += 2*level;
+    }
+
+    public void freeRerollPercent(){
+        characterData.Instance.freeReroll += 3*level;
+    }
+
 }
 

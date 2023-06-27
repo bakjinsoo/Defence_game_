@@ -15,6 +15,9 @@ public class Click_Manager : MonoBehaviour
     Camera cam;
     public GameObject character;
     public GameObject move_btn;
+    public GameObject tmp;
+    public GameObject show_area;   
+    public GameObject ui_selected;
     Vector2 mousePos;
     bool move_btn_check;
     bool sell_btn_check;
@@ -39,100 +42,86 @@ public class Click_Manager : MonoBehaviour
     {
         move_btn_check=false;
         character_clicked=false;
-        // int tmp_x=character.GetComponent<Character_Manager>().check_x;
-        // int tmp_y=character.GetComponent<Character_Manager>().check_y;
         yield return new WaitForSeconds(0.1f);
         while(true)
         {
-            
-            // if(character.GetComponent<Character_Manager>().player_check==true&&move_btn.activeSelf==false)
-            // {
-            //     move_btn.SetActive(true);
-            //     // if(tmp_y==6)
-            //     // {
-            //     //     tmp_y=5;
-            //     // }
-            //     // if(tmp_x==11)
-            //     // {
-            //     //     tmp_x=10;
-            //     // }
-            //     // if(tmp_x==0)
-            //     // {
-            //     //     tmp_x=1;
-            //     // }
-            //     // if(tmp_y==0)
-            //     // {
-            //     //     tmp_y=1;
-            //     // }
-            //     // if(character.GetComponent<Character_Manager>().character[tmp_x,tmp_y+1]==0)
-            //     // {
-            //     //     btn.transform.position=new Vector2(character.GetComponent<Character_Manager>().check_x,character.GetComponent<Character_Manager>().check_y+1); 
-            //     // }
-            //     // else if(character.GetComponent<Character_Manager>().character[tmp_x,tmp_y-1]==0)
-            //     // {
-            //     //     btn.transform.position=new Vector2(character.GetComponent<Character_Manager>().check_x,character.GetComponent<Character_Manager>().check_y-1);
-            //     // }   
-            //     // else if(character.GetComponent<Character_Manager>().character[tmp_x+1,tmp_y]==0)
-            //     // {
-            //     //     btn.transform.position=new Vector2(character.GetComponent<Character_Manager>().check_x+1,character.GetComponent<Character_Manager>().check_y);
-            //     // }
-            //     // else if(character.GetComponent<Character_Manager>().character[tmp_x-1,tmp_y]==0)
-            //     // {
-            //     //     btn.transform.position=new Vector2(character.GetComponent<Character_Manager>().check_x-1,character.GetComponent<Character_Manager>().check_y);
-            //     // }
-            //     // else
-            //     // {
-            //     //     btn.SetActive(false);
-            //     // }
-            // }
-            
-            // if(mousePos.x==move_btn.transform.position.x&&mousePos.y==move_btn.transform.position.y&&move_btn.activeSelf==true){
-            //     move_btn_check=true;
-            // }
-            // if(GameObject.Find("Sell_Button").GetComponent<Move_Button_Manager>().is_move==true)
             if(character.GetComponent<Character_Manager>().player_check==true&&Move_Button.GetComponent<Move_Button_Manager>().is_move==true)
             {
-                
                 move_btn_check=true;
             }
             else if(character.GetComponent<Character_Manager>().player_check==true&&Sell_Button.GetComponent<Sell_Button_Manager>().is_sell==true)
             {
                 sell_btn_check=true;
             }
-            else if(Input.GetMouseButtonDown(0))
-            {
-                mousePos=Input.mousePosition;
-                mousePos=Camera.main.ScreenToWorldPoint(mousePos);         
-                mousePos.x=Mathf.CeilToInt(mousePos.x);
-                mousePos.y=Mathf.CeilToInt(mousePos.y);
-                mousePos=new Vector2(mousePos.x,mousePos.y);
-            }
+            // else if(Input.GetMouseButtonDown(0))
+            // {
+            //     mousePos=Input.mousePosition;
+            //     mousePos=Camera.main.ScreenToWorldPoint(mousePos);         
+            //     mousePos.x=Mathf.CeilToInt(mousePos.x);
+            //     mousePos.y=Mathf.CeilToInt(mousePos.y);
+            //     mousePos=new Vector2(mousePos.x,mousePos.y);
+            //     ui_selected.SetActive(false);
+            //     show_area.SetActive(false);
+            // }
             if(move_btn_check==true)
             {
                 Debug.Log("버튼 클릭");
-                RaycastHit2D hit=Physics2D.Raycast(mousePos,transform.forward,max_distance,LayerMask.GetMask("Player"));
-                if(hit.collider!=null)
-                {
-                    character_clicked=true;
-                    target=hit.collider.gameObject;
-                    Debug.Log(target);
-                    if(target.CompareTag("Player")&&target.transform.position.x==character.GetComponent<Character_Manager>().check_x&&target.transform.position.y==character.GetComponent<Character_Manager>().check_y)
+                if(tmp.GetComponent<Player_id>().player_id==1)
+                    {
+                        Debug.Log("클래스 bool 변수 반환");
+                        tmp.GetComponentInChildren<magician_attack>().ui_class_key=0;
+                        tmp.GetComponentInChildren<magician_attack>().is_selected=true;
+                    }
+                    else if(tmp.GetComponent<Player_id>().player_id==2)
+                    {
+                        tmp.GetComponentInChildren<gunner_attack>().ui_class_key=0;
+                        tmp.GetComponentInChildren<gunner_attack>().is_selected=true;
+                    }
+                    else if(tmp.GetComponent<Player_id>().player_id==3)
+                    {
+                        tmp.GetComponentInChildren<archer_attack>().ui_class_key=0;
+                        tmp.GetComponentInChildren<archer_attack>().is_selected=true;
+                    }
+                    ui_selected.transform.position=new Vector2(mousePos.x,mousePos.y);
+                    ui_selected.SetActive(true);
+                    show_area.SetActive(true);
+                    for(int i=0;i<13;i++)
                     {
                         
-                        Debug.Log("레이 히트");
-                        coroutine2=StartCoroutine(second_click());
-                        StopCoroutine(coroutine);
+                        for(int j=0;j<7;j++)
+                        {
+                            if(character.GetComponent<Character_Manager>().character[i,j]==1)
+                            {
+                                GameObject tmp2=Instantiate(Resources.Load<GameObject>("Prefabs/character_area_ui"));
+                                tmp2.transform.position=new Vector3(i,j,0);
+                            }
+                        }
                     }
-                }
-                else if(Input.GetMouseButtonDown(0))
-                {
-                    character_clicked=false;
-                    mousePos=Input.mousePosition;
-                    mousePos=Camera.main.ScreenToWorldPoint(mousePos);         
-                    mousePos.x=Mathf.CeilToInt(mousePos.x);
-                    mousePos.y=Mathf.CeilToInt(mousePos.y);
-                    mousePos=new Vector2(mousePos.x,mousePos.y);
-                }
+                    coroutine2=StartCoroutine(second_click());
+                    StopCoroutine(coroutine);
+                // RaycastHit2D hit=Physics2D.Raycast(mousePos,transform.forward,max_distance,LayerMask.GetMask("Player"));
+                // if(hit.collider!=null)
+                // {
+                //     character_clicked=true;
+                //     target=hit.collider.gameObject;
+                //     Debug.Log(target);
+                //     if(target.CompareTag("Player")&&target.transform.position.x==character.GetComponent<Character_Manager>().check_x&&target.transform.position.y==character.GetComponent<Character_Manager>().check_y)
+                //     {
+                        
+                //         Debug.Log("레이 히트");
+                //         coroutine2=StartCoroutine(second_click());
+                //         StopCoroutine(coroutine);
+                //     }
+                // }
+                // else if(Input.GetMouseButtonDown(0))
+                // {
+                //     character_clicked=false;
+                //     mousePos=Input.mousePosition;
+                //     mousePos=Camera.main.ScreenToWorldPoint(mousePos);         
+                //     mousePos.x=Mathf.CeilToInt(mousePos.x);
+                //     mousePos.y=Mathf.CeilToInt(mousePos.y);
+                //     mousePos=new Vector2(mousePos.x,mousePos.y);
+                // }
             }
             else if(sell_btn_check==true)
             {
@@ -144,7 +133,7 @@ public class Click_Manager : MonoBehaviour
                     if(target.CompareTag("Player")&&target.transform.position.x==character.GetComponent<Character_Manager>().check_x&&target.transform.position.y==character.GetComponent<Character_Manager>().check_y)
                     {
                         Debug.Log("레이 히트");
-                        Reroll_Manager.GetComponent<Reroll_Manager>().coin+=30;
+                        Reroll_Manager.GetComponent<Reroll_Manager>().coin+= characterData.Instance.moneyGet;
                         character.GetComponent<Character_Manager>().character[(int)character.GetComponent<Character_Manager>().check_x,(int)character.GetComponent<Character_Manager>().check_y]=0;
                         Destroy(target);
                     }
@@ -170,28 +159,26 @@ public class Click_Manager : MonoBehaviour
         while(true)
         {
             // move_btn.SetActive(false);    
-            
+            if(Input.GetMouseButtonDown(0))
+            {
+                mousePos=Input.mousePosition;
+                mousePos=Camera.main.ScreenToWorldPoint(mousePos);         
+                mousePos.x=Mathf.CeilToInt(mousePos.x);
+                mousePos.y=Mathf.CeilToInt(mousePos.y);
+                mousePos=new Vector2(mousePos.x,mousePos.y);
                 if(character.GetComponent<Character_Manager>().character[(int)mousePos.x,(int)mousePos.y]==0)
                 {
                     
                         character.GetComponent<Character_Manager>().character[(int)character.GetComponent<Character_Manager>().check_x,(int)character.GetComponent<Character_Manager>().check_y]=0;
                         character.GetComponent<Character_Manager>().character[(int)mousePos.x,(int)mousePos.y]=1;
-                        target.transform.position=new Vector2(mousePos.x,mousePos.y);
+                        tmp.transform.position=new Vector2(mousePos.x,mousePos.y);
                         move_btn_key=0;
-                        
                         coroutine=StartCoroutine(first_click());
                         StopCoroutine(coroutine2);
                         Move_Button.GetComponent<Move_Button_Manager>().is_move=false;
                         
                 }
-                else if(Input.GetMouseButtonDown(0))
-                {
-                    mousePos=Input.mousePosition;
-                    mousePos=Camera.main.ScreenToWorldPoint(mousePos);         
-                    mousePos.x=Mathf.CeilToInt(mousePos.x);
-                    mousePos.y=Mathf.CeilToInt(mousePos.y);
-                    mousePos=new Vector2(mousePos.x,mousePos.y);
-                }
+            }
                 
                 Debug.Log("플레이어 이동");
             

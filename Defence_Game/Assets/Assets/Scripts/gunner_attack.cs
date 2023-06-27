@@ -19,7 +19,6 @@ public class gunner_attack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        coroutine=StartCoroutine(gunnerattack());
        int unit_class=Random.Range(0,10000);
         if(unit_class<3)
         {
@@ -66,6 +65,13 @@ public class gunner_attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        for(int i=0;i<Monster_List.Count;i++)
+        {
+            if(Monster_List[i]==null)
+            {
+                Monster_List.RemoveAt(i);
+            }
+        }
         try{
             characterAura.transform.position = new Vector2(transform.position.x -0.5f, transform.position.y);
         }catch{
@@ -170,33 +176,5 @@ public class gunner_attack : MonoBehaviour
             Monster_List.RemoveAt(0);
         }        
     }
-    IEnumerator gunnerattack()
-    {
-        yield return new WaitForSeconds(0.1f);
-        
-        while(count==0)
-        {
-            try
-            {
-                if(gunner_grade==1){
-                    for(int i=0;i<Monster_List.Count;i++)
-                    {
-                        Instantiate(Legendary_bullet,Monster_List[i].transform.position,Quaternion.identity);
-                    }
-                }
-                else{
-                    Debug.Log("일반 공격 생성");
-                    int num=Random.Range(0,Monster_List.Count);
-                    Instantiate(bullet,Monster_List[num].transform.position,Quaternion.identity);
-                }
-            }
-            catch{
-
-            }
-            
-            yield return new WaitForSeconds(0.5f);
-            
-        }
-        
-    }
+    
 }
