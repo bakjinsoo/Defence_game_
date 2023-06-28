@@ -6,9 +6,10 @@ public class ArrowAttack : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject Legendary_Arrow;
+    AudioSource audio;
     void Start()
     {
-        
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -32,9 +33,11 @@ public class ArrowAttack : MonoBehaviour
                 if(gameObject.GetComponentInChildren<archer_attack>().archer_grade==1)
                 {
                     tmp=Instantiate(Legendary_Arrow,this.transform.position,Quaternion.identity);
+                    GetComponent<AudioSource>().Play();
                 }
                 else{
                     tmp=Instantiate(arrow,this.transform.position,Quaternion.identity);
+                    GetComponent<AudioSource>().Play();
                 }
                 tmp.GetComponent<Arrow_skill>().num=gameObject.GetComponentInChildren<archer_attack>().unit;
                 

@@ -5,7 +5,11 @@ using UnityEngine;
 public class Magician : MonoBehaviour
 {
     public GameObject fireball;
-    public GameObject Legendary_Spell;
+    AudioSource audio;
+    void Start(){
+        audio = GetComponent<AudioSource>();
+    }
+
     public void fireballAttack(){
         try
         {
@@ -13,21 +17,19 @@ public class Magician : MonoBehaviour
             {
                 int tmp=gameObject.GetComponentInChildren<magician_attack>().Monster_List.Count;
                 if(tmp == 1){
+
                     Instantiate(fireball,gameObject.GetComponentInChildren<magician_attack>().Monster_List[0].transform.position,Quaternion.identity);
-                }
+                    audio.Play();
+                }   
                 else{
                     int num=Random.Range(1,gameObject.GetComponentInChildren<magician_attack>().Monster_List.Count);
                     if(tmp>0)
                     {
                         Instantiate(fireball,gameObject.GetComponentInChildren<magician_attack>().Monster_List[num].transform.position,Quaternion.identity);
+                        audio.Play();
+
                     }
                 }
-            }
-            else{
-                for(int i=0;i<gameObject.GetComponentInChildren<magician_attack>().Monster_List.Count;i++)
-                    {
-                        Instantiate(Legendary_Spell,gameObject.GetComponentInChildren<magician_attack>().Monster_List[i].transform.position,Quaternion.identity);
-                    }
             }
         }
         catch{
