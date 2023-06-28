@@ -5,7 +5,7 @@ using UnityEngine;
 public class Magician : MonoBehaviour
 {
     public GameObject fireball;
-
+    public GameObject Legendary_Spell;
     public void fireballAttack(){
         try
         {
@@ -22,6 +22,12 @@ public class Magician : MonoBehaviour
                         Instantiate(fireball,gameObject.GetComponentInChildren<magician_attack>().Monster_List[num].transform.position,Quaternion.identity);
                     }
                 }
+            }
+            else{
+                for(int i=0;i<gameObject.GetComponentInChildren<magician_attack>().Monster_List.Count;i++)
+                    {
+                        Instantiate(Legendary_Spell,gameObject.GetComponentInChildren<magician_attack>().Monster_List[i].transform.position,Quaternion.identity);
+                    }
             }
         }
         catch{

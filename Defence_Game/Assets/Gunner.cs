@@ -6,6 +6,7 @@ public class Gunner : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject bullet;
+    public GameObject Legendary_bullet;
     void Start()
     {
         
@@ -32,6 +33,12 @@ public class Gunner : MonoBehaviour
                     {
                         Instantiate(bullet,gameObject.GetComponentInChildren<gunner_attack>().Monster_List[num].transform.position,Quaternion.identity);
                     }
+                }
+            }
+            else{
+                for(int i=0;i<GetComponentInChildren<gunner_attack>().Monster_List.Count;i++)
+                {
+                    Instantiate(Legendary_bullet,GetComponentInChildren<gunner_attack>().Monster_List[i].transform.position,Quaternion.identity);
                 }
             }
         }
