@@ -59,11 +59,16 @@ public class characterData : Singleton<characterData>
             }
         }
         if(BerserkerMode && timeManager.GameTime <= 10){
-            if(oneTime){
+            if(oneTime){ // 버서커 모드
 
                 Gunner_attackSpeed *= burserkerAmount; // 곱해줌
                 Archer_attackSpeed *= burserkerAmount;
                 Magician_attackSpeed *= burserkerAmount;
+                GameObject[] lists = GameObject.FindGameObjectsWithTag("Player");
+                foreach(GameObject list in lists){   
+                    GameObject tmp = Instantiate(Resources.Load("Prefabs/BerserkerMode") as GameObject, list.transform.position, Quaternion.identity);
+                    tmp.transform.position = new Vector3(tmp.transform.position.x -0.5f, tmp.transform.position.y -0.5f, tmp.transform.position.z);
+                }
                 oneTime = false; // update 문이지만 한번만 돌게
             }
 
@@ -72,6 +77,10 @@ public class characterData : Singleton<characterData>
             Gunner_attackSpeed = _tmpGunnerAttackSpeed;
             Archer_attackSpeed = _tmpArcherAttackSpeed;
             Magician_attackSpeed = _tmpMagicianAttackSpeed;
+            GameObject[] lists = GameObject.FindGameObjectsWithTag("Berserker");
+            foreach(GameObject list in lists){   
+                Destroy(list);
+            }
             oneTime = true;
         }
     }
