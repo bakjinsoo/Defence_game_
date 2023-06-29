@@ -51,6 +51,7 @@ public class CardEffects : MonoBehaviour
 
     public void GetGold(){
         GameObject.Find("Reroll_Button").GetComponent<Reroll_Manager>().coin += 100 * level; 
+        GetComponent<AudioSource>().Play();
     }
     
     public void CoinPercentageUp(){
