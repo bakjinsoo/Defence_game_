@@ -69,6 +69,10 @@ public class magician_attack : MonoBehaviour
         
     }
 
+    void OnDestroy()
+    {
+        Destroy(characterAura);
+    }
     // Update is called once per frame
     void Update()
     {

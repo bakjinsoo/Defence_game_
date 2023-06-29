@@ -131,6 +131,8 @@ public class CardEffects : MonoBehaviour
             Destroy(aura);
         }
         foreach(GameObject player in Players){
+            GameObject tmp = Instantiate(Resources.Load("Prefabs/Smoke") as GameObject, player.transform.position, Quaternion.identity);
+            tmp.transform.position = new Vector3(tmp.transform.position.x-0.5f, tmp.transform.position.y-0.5f, tmp.transform.position.z);
             Destroy(player);
         }
     }

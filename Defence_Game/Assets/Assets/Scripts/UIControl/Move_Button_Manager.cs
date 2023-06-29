@@ -24,8 +24,8 @@ public class Move_Button_Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // button = gameObject.GetComponent<Button>();
-        // button.onClick.AddListener(onClick_up_move);
+        button = gameObject.GetComponent<Button>();
+        button.onClick.AddListener(onClick_up_move);
     }
 
     // Update is called once per frame

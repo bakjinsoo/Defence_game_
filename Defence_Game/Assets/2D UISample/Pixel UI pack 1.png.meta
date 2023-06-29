@@ -2304,10 +2304,10 @@ TextureImporter:
       name: Pixel UI pack 1_104
       rect:
         serializedVersion: 2
-        x: 577
-        y: 289
-        width: 94
-        height: 30
+        x: 582
+        y: 295
+        width: 84
+        height: 20
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2325,10 +2325,10 @@ TextureImporter:
       name: Pixel UI pack 1_105
       rect:
         serializedVersion: 2
-        x: 705
-        y: 289
-        width: 94
-        height: 30
+        x: 710
+        y: 295
+        width: 84
+        height: 20
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2346,10 +2346,10 @@ TextureImporter:
       name: Pixel UI pack 1_106
       rect:
         serializedVersion: 2
-        x: 833
-        y: 289
-        width: 94
-        height: 30
+        x: 839
+        y: 295
+        width: 82
+        height: 19
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6044,12 +6044,12 @@ TextureImporter:
       Pixel UI pack 1_125: -32332505
       Pixel UI pack 1_90: 1094307299
       Pixel UI pack 1_257: 1771820329
-      Pixel UI pack 1_25: -128654051
       Pixel UI pack 1_45: -540472398
-      Pixel UI pack 1_170: -1610699249
-      Pixel UI pack 1_266: -1362767571
-      Pixel UI pack 1_20: 1127623491
       Pixel UI pack 1_181: -1817058855
+      Pixel UI pack 1_170: -1610699249
+      Pixel UI pack 1_25: -128654051
+      Pixel UI pack 1_20: 1127623491
+      Pixel UI pack 1_266: -1362767571
       Pixel UI pack 1_33: 1990783440
       Pixel UI pack 1_92: -340061770
       Pixel UI pack 1_248: -1949565224
