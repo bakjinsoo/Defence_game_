@@ -398,7 +398,7 @@ GameObject:
   - component: {fileID: 3915224536797893716}
   - component: {fileID: -8801075561372385385}
   - component: {fileID: 7570985269813824885}
-  - component: {fileID: -2779422455583284233}
+  - component: {fileID: -1051830101106329453}
   m_Layer: 5
   m_Name: Card7
   m_TagString: Card
@@ -569,7 +569,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!82 &-2779422455583284233
+--- !u!82 &-1051830101106329453
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -582,7 +582,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 943351ee13d204e28b78c89936ad2e9b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 1.54
   Loop: 0
   Mute: 0
   Spatialize: 0

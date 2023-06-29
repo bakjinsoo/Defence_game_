@@ -46,8 +46,7 @@ public class Spawn_Manager : MonoBehaviour
             timeManager.GameTime = 60f;
             
             if(round > 0){ //0라운드에는 카드뽑기 진행 X
-                Time.timeScale = 0.1f;
-                StageEndPanel.SetActive(true);
+
                 if((round+1) % 10 != 0){ // 5의 배수가 아닐때 (즉 1,2,3,4,6,7,8,9 스테이지)
                     enermyCount = 50;
                 }
@@ -55,10 +54,22 @@ public class Spawn_Manager : MonoBehaviour
                     // 보스 portrait등록해주기
                     enermyCount = 1;
                 }
-
-                for(int i = 0; i < cardList.Count ; i++) {
-                    GameObject Card = Instantiate(Resources.Load("Prefabs/Cards/Card"+Random.Range(0,cardIndex + 1)) as GameObject, cardList[i].transform.position, Quaternion.identity);
-                    Card.transform.parent = cardList[i].transform.parent;
+                if(round % 3 == 0){
+                    Time.timeScale = 0.1f;
+                    StageEndPanel.SetActive(true);
+                    for(int i = 0; i < cardList.Count ; i++) {
+                        GameObject Card = Instantiate(Resources.Load("Prefabs/Cards/Card"+Random.Range(0,cardIndex + 1)) as GameObject, cardList[i].transform.position, Quaternion.identity);
+                        Card.transform.parent = cardList[i].transform.parent;
+                    }
+                }else{
+                    if((round+1) % 10 != 0){ // 일반몹 Stage
+                        GameObject tmp = Instantiate(Resources.Load("Prefabs/StartStagePanel") as GameObject);
+                        GameObject.Find("StageIndicateText").GetComponent<Text>().text = "Stage " + (GameObject.Find("SpawnManager").GetComponent<Spawn_Manager>().round + 1).ToString(); // 스테이지 시작 패널에 스테이지 표시
+                        Destroy(tmp,3f);
+                    }else{
+                        GameObject tmp = Instantiate(Resources.Load("Prefabs/BOSSStageStart") as GameObject);
+                        Destroy(tmp,3f);
+                    }
                 }
             }
             StartCoroutine(spawn());

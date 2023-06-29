@@ -217,6 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireball: {fileID: 8546022993141333073, guid: 77b259c26ff44cc4fb17d70676699af9, type: 3}
+  Legendary_Spell: {fileID: 4474015230499086401, guid: 5a5e56492fdcd264182524c64af4580c, type: 3}
 --- !u!114 &9067820769357735353
 MonoBehaviour:
   m_ObjectHideFlags: 0

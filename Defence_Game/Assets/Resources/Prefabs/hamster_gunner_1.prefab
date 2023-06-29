@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 3573637319316132025, guid: 18e48c874b50142438940fa51f402a45, type: 3}
+  Legendary_bullet: {fileID: 4299101532805235725, guid: fb4b4f46b0f1e8847bbff44f6da2fe2f, type: 3}
 --- !u!114 &-1417035893433672020
 MonoBehaviour:
   m_ObjectHideFlags: 0

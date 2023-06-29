@@ -7,7 +7,8 @@ public class CardEffects : MonoBehaviour
     Spawn_Manager spawnManager;
 
      void OnEnable() {
-        level = GetLevel();    
+        level = GetLevel(); 
+        lists = GameObject.FindGameObjectsWithTag("Player");
     }
 
     public void TimeResetToOne(){
@@ -30,28 +31,66 @@ public class CardEffects : MonoBehaviour
         }
     }
     int level;
+    GameObject[] lists;
     public void ArcherAttackCoefficientUp(){ // 궁수 공격력 증가
         characterData.Instance.ArcherAttackCoefficient += 0.5f * level;  
+        
+        foreach(GameObject list in lists){
+            if(list.GetComponent<Player_id>().player_id == 3){
+                GameObject tmp = Instantiate(Resources.Load("Prefabs/PowerUp") as GameObject, list.transform.position, Quaternion.identity);
+                tmp.transform.position = new Vector3(tmp.transform.position.x-0.5f, tmp.transform.position.y-0.5f, tmp.transform.position.z);
+            }
+        }
     }
     public void GunnerAttackCoefficientUp(){ // 거너 공격력 증가
         characterData.Instance.GunnerAttackCoefficient += 0.5f * level;
+        foreach(GameObject list in lists){
+            if(list.GetComponent<Player_id>().player_id == 2){
+                GameObject tmp = Instantiate(Resources.Load("Prefabs/PowerUp") as GameObject, list.transform.position, Quaternion.identity);
+                tmp.transform.position = new Vector3(tmp.transform.position.x-0.5f, tmp.transform.position.y-0.5f, tmp.transform.position.z);
+            }
+        }
     }
     public void MagicianAttackCoefficientUp(){ // 마법사 공격력 증가
         characterData.Instance.MagicianAttackCoefficient += 0.5f * level;
+        foreach(GameObject list in lists){
+            if(list.GetComponent<Player_id>().player_id == 1){
+                GameObject tmp = Instantiate(Resources.Load("Prefabs/PowerUp") as GameObject, list.transform.position, Quaternion.identity);
+                tmp.transform.position = new Vector3(tmp.transform.position.x -0.5f, tmp.transform.position.y -0.5f, tmp.transform.position.z);
+            }
+        }
     }
     public void ArcherAttackSpeedUp(){ // 궁수 공격속도 증가
         characterData.Instance.Archer_attackSpeed += 0.1f * level;
+        foreach(GameObject list in lists){
+            if(list.GetComponent<Player_id>().player_id == 3){
+                GameObject tmp = Instantiate(Resources.Load("Prefabs/PowerUp") as GameObject, list.transform.position, Quaternion.identity);
+                tmp.transform.position = new Vector3(tmp.transform.position.x-0.5f, tmp.transform.position.y-0.5f, tmp.transform.position.z);
+            }
+        }
     }
     public void GunnerAttackSpeedUp(){ // 거너 공격속도 증가
         characterData.Instance.Gunner_attackSpeed += 0.1f * level;
+        foreach(GameObject list in lists){
+            if(list.GetComponent<Player_id>().player_id == 2){
+                GameObject tmp = Instantiate(Resources.Load("Prefabs/PowerUp") as GameObject, list.transform.position, Quaternion.identity);
+                tmp.transform.position = new Vector3(tmp.transform.position.x-0.5f, tmp.transform.position.y-0.5f, tmp.transform.position.z);
+            }
+        }
     }
     public void MagicianAttackSpeedUp(){ // 마법사 공격속도 증가
         characterData.Instance.Magician_attackSpeed += 0.1f * level;
+        foreach(GameObject list in lists){
+            if(list.GetComponent<Player_id>().player_id == 1){
+                GameObject tmp = Instantiate(Resources.Load("Prefabs/PowerUp") as GameObject, list.transform.position, Quaternion.identity);
+                tmp.transform.position = new Vector3(tmp.transform.position.x -0.5f, tmp.transform.position.y -0.5f, tmp.transform.position.z);
+            }
+        }
     }
 
     public void GetGold(){
         GameObject.Find("Reroll_Button").GetComponent<Reroll_Manager>().coin += 100 * level; 
-        GetComponent<AudioSource>().Play();
+        Instantiate(Resources.Load("Prefabs/CoinEffects") as GameObject);
     }
     
     public void CoinPercentageUp(){
