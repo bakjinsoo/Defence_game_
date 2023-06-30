@@ -112,11 +112,159 @@ public class Character_Manager : MonoBehaviour
                 
             }
     }
+    void reroll()
+    {
+        for(int i=0;i<1;i++)
+        {
+            random_x=Random.Range(0,13);
+            random_y=Random.Range(0,7);
+            character_rerandom();//범위 재지정함수
+            while(true)
+            {
+                if(character[random_x,random_y]==1)
+                {
+                    random_x=Random.Range(0,13);
+                    random_y=Random.Range(0,7);
+                    character_rerandom();
+                }
+                else
+                {
+                    character[random_x,random_y]=1;
+                    random_character=Random.Range(0,3);
+                    if(random_character==0)
+                    {
+                        
+                        GameObject tmp=Instantiate(Resources.Load<GameObject>("Prefabs/hamster_archer_1"));
+                        tmp.transform.position=new Vector3(random_x,random_y,0);
+                    }
+                    else if(random_character==1)
+                    {
+                        
+                        GameObject tmp=Instantiate(Resources.Load<GameObject>("Prefabs/hamster_gunner_1"));
+                        tmp.transform.position=new Vector3(random_x,random_y,0);
+                    }
+                    else if(random_character==2)
+                    {
+                        
+                        GameObject tmp=Instantiate(Resources.Load<GameObject>("Prefabs/hamster_magician"));
+                        tmp.transform.position=new Vector3(random_x,random_y,0);
+                    }
+                    
+                    break;
+                }
+            }
+        }
+        
+    }
     // Update is called once per frame
     public bool btn_exist_key=false;
     void Update()
     {
+        // if(Input.touchCount>0) 터치함수
+        // {
+        //     Touch touch=Input.GetTouch(0);
+        //     if(touch.phase==TouchPhase.Began){
+        //         mousePos=touch.position;
+        //         mousePos=Camera.main.ScreenToWorldPoint(mousePos);
+        //         mousePos.x=Mathf.CeilToInt(mousePos.x);
+        //         mousePos.y=Mathf.CeilToInt(mousePos.y);
+        //         mousePos=new Vector2(mousePos.x,mousePos.y);
+        //         RaycastHit2D hit=Physics2D.Raycast(mousePos,transform.forward,max_distance,LayerMask.GetMask("Player"));
+        //         for(int i=0;i<13;i++)
+        //         {
+        //             for(int j=0;j<7;j++)
+        //             {
+        //                 Vector2 player_tmp_pos=new Vector2(i,j);
+        //                 RaycastHit2D playerhit=Physics2D.Raycast(player_tmp_pos,transform.forward,max_distance,LayerMask.GetMask("Player"));
+        //                 if(playerhit.collider!=null){
+        //                     character[i,j]=1;
+        //                 }
+        //                 else{
+        //                     character[i,j]=0;
+        //                 }
+        //             }
+        //         }
+        //         if(click_manager.GetComponent<Click_Manager>().sell_key>0){
+        //             click_manager.GetComponent<Click_Manager>().sell_btn_check=false;
+        //         }
+        //         Debug.Log("mousepos.x : "+mousePos.x+"mouse.y : "+mousePos.y);
+        //         if(hit.collider!=null&&first_target_key==0&&btn_exist_key==false)
+        //         {
+        //             target=hit.collider.gameObject;
+        //             if(target.CompareTag("Player")&&target.transform.position.x==mousePos.x&&target.transform.position.y==mousePos.y&&click_manager.GetComponent<Click_Manager>().move_btn_check==false&&btn_exist_key==false)
+        //             {
+        //                 click_manager.GetComponent<Click_Manager>().tmp=target;
+        //             }
+        //         }
+        //         try{
+        //             if(player_check==true)
+        //             {
+        //                 if(target.transform.position.x==(int)mousePos.x&&target.transform.position.y+1==(int)mousePos.y){
+        //                     click_manager.GetComponent<Click_Manager>().move_btn_check=true;
+        //                 }
+        //                 else if(target.transform.position.x+1==(int)mousePos.x&&target.transform.position.y+1==(int)mousePos.y){
+        //                     click_manager.GetComponent<Click_Manager>().sell_btn_check=true;
+        //                     target=null;
+        //                 }
+        //             }
+        //             else{
+        //                 click_manager.GetComponent<Click_Manager>().sell_btn_check=false;
+        //             }
+        //         }
+        //         catch{
 
+        //         }
+                
+        //         if(character[(int)mousePos.x,(int)mousePos.y]==1&&click_manager.GetComponent<Click_Manager>().character_clicked==false&&btn_exist_key==false)//클릭한곳에 캐릭터가 있을경우
+        //         {
+        //             player_check=true;
+        //             click_manager.GetComponent<Click_Manager>().sell_btn_check=false;
+        //             click_manager.GetComponent<Click_Manager>().sell_key=0;
+        //             if(click_manager.GetComponent<Click_Manager>().move_btn_first==false&&click_manager.GetComponent<Click_Manager>().move_btn_check==false){
+        //                 check_x=(int)mousePos.x;
+        //                 check_y=(int)mousePos.y;
+        //                 Debug.Log("캐릭터좌표"+check_x+","+check_y);
+        //             }
+                        
+        //         }
+        //         else
+        //         {
+        //             ui_selected.SetActive(false);
+        //             show_area.SetActive(false);
+        //             player_check=false;
+        //         }
+        //         try{
+        //             if(click_manager.GetComponent<Click_Manager>().move_btn_first==true&&character[(int)mousePos.x,(int)mousePos.y+1]==1){
+                    
+        //                 btn_exist_key=true;
+        //                 player_check=true;
+        //                 check_x=(int)mousePos.x;
+        //                 check_y=(int)mousePos.y;
+        //                 Debug.Log("캐릭터좌표"+check_x+","+check_y);
+        //             }
+        //             else if(click_manager.GetComponent<Click_Manager>().move_btn_first==true&&character[(int)mousePos.x+1,(int)mousePos.y+1]==1)
+        //             {
+        //                 click_manager.GetComponent<Click_Manager>().sell_btn_check=true;
+        //                 target=null;
+        //             }
+        //             else{
+        //                 btn_exist_key=false;
+        //             }
+        //         }
+        //         catch{
+
+        //         }
+                
+                    
+        //     }
+        //     if(reroll_manager.GetComponent<Reroll_Manager>().able_reroll==true)
+        //     {
+                    
+        //         reroll();
+        //         reroll_manager.GetComponent<Reroll_Manager>().able_reroll=false;
+        //     }
+        // }
+        
        if(Input.GetMouseButtonDown(0))
         {
             mousePos=Input.mousePosition;
@@ -218,48 +366,6 @@ public class Character_Manager : MonoBehaviour
             reroll();
             reroll_manager.GetComponent<Reroll_Manager>().able_reroll=false;
         }
-    }
-    void reroll()
-    {
-        for(int i=0;i<1;i++)
-        {
-            random_x=Random.Range(0,13);
-            random_y=Random.Range(0,7);
-            character_rerandom();//범위 재지정함수
-            while(true)
-            {
-                if(character[random_x,random_y]==1)
-                {
-                    random_x=Random.Range(0,13);
-                    random_y=Random.Range(0,7);
-                    character_rerandom();
-                }
-                else
-                {
-                    character[random_x,random_y]=1;
-                    random_character=Random.Range(0,3);
-                    if(random_character==0)
-                    {
-                        
-                        GameObject tmp=Instantiate(Resources.Load<GameObject>("Prefabs/hamster_archer_1"));
-                        tmp.transform.position=new Vector3(random_x,random_y,0);
-                    }
-                    else if(random_character==1)
-                    {
-                        
-                        GameObject tmp=Instantiate(Resources.Load<GameObject>("Prefabs/hamster_gunner_1"));
-                        tmp.transform.position=new Vector3(random_x,random_y,0);
-                    }
-                    else if(random_character==2)
-                    {
-                        
-                        GameObject tmp=Instantiate(Resources.Load<GameObject>("Prefabs/hamster_magician"));
-                        tmp.transform.position=new Vector3(random_x,random_y,0);
-                    }
-                    
-                    break;
-                }
-            }
-        }
+    
     }
 }
