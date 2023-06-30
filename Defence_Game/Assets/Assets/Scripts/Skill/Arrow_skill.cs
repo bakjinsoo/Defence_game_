@@ -19,7 +19,8 @@ public class Arrow_skill : MonoBehaviour
     {
 
         if(other.gameObject.tag=="Enermy")
-        {
+        {   
+            Debug.Log(num);
             other.GetComponent<Enermy>().hp -= characterData.Instance.ArcherAttackCoefficient * characterData.Instance.ArcherAttackPoints[num];
             other.GetComponent<Animator>().SetTrigger("Hit");
             Destroy(this.gameObject);

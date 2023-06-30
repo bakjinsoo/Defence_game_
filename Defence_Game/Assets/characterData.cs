@@ -13,12 +13,12 @@ public class characterData : Singleton<characterData>
     /* 공격력 */
     public float[] GunnerAttackPoints = {2, 4, 8, 10, 18, 26};
     public float[] MagicianAttackPoints = {2, 4, 8, 10, 18, 26};
-    public float[] ArcherAttackPoints = {4, 8, 16, 32, 50, 100};
+    public float[] ArcherAttackPoints = {16, 20, 24, 30, 50, 100};
 
     /* 공격계수 */
     public float GunnerAttackCoefficient = 1.0f; 
     public float MagicianAttackCoefficient = 1.0f;
-    public float ArcherAttackCoefficient = 1.0f;
+    public float ArcherAttackCoefficient = 1.5f;
 
     /* 골드획득확률 */
     public int goldGetPercentage = 10;

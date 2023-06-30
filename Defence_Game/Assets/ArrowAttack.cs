@@ -33,10 +33,12 @@ public class ArrowAttack : MonoBehaviour
                 if(gameObject.GetComponentInChildren<archer_attack>().archer_grade==1)
                 {
                     tmp=Instantiate(Legendary_Arrow,this.transform.position,Quaternion.identity);
+                    tmp.GetComponent<Arrow_skill>().num=gameObject.GetComponentInChildren<archer_attack>().unit;
                     GetComponent<AudioSource>().Play();
                 }
                 else{
                     tmp=Instantiate(arrow,this.transform.position,Quaternion.identity);
+                    tmp.GetComponent<Arrow_skill>().num=gameObject.GetComponentInChildren<archer_attack>().unit;
                     GetComponent<AudioSource>().Play();
                 }
                 tmp.GetComponent<Arrow_skill>().num=gameObject.GetComponentInChildren<archer_attack>().unit;

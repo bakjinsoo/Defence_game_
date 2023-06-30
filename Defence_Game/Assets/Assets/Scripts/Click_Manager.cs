@@ -36,7 +36,7 @@ public class Click_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        show_area = GameObject.FindGameObjectWithTag("Map").transform.GetChild(3).gameObject;
     }
     Vector2 savepos;
     public int sell_key;
@@ -127,6 +127,7 @@ public class Click_Manager : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         while(true)
         {
+            
             // move_btn.SetActive(false);    
             if(Input.GetMouseButtonDown(0))
             {
@@ -135,22 +136,50 @@ public class Click_Manager : MonoBehaviour
                 mousePos.x=Mathf.CeilToInt(mousePos.x);
                 mousePos.y=Mathf.CeilToInt(mousePos.y);
                 mousePos=new Vector2(mousePos.x,mousePos.y);
-                if(character.GetComponent<Character_Manager>().character[(int)mousePos.x,(int)mousePos.y]==0)
-                {
-                    
-                        character.GetComponent<Character_Manager>().character[(int)character.GetComponent<Character_Manager>().check_x,(int)character.GetComponent<Character_Manager>().check_y]=0;
-                        character.GetComponent<Character_Manager>().character[(int)mousePos.x,(int)mousePos.y]=1;
-                        tmp.transform.position=new Vector2(mousePos.x,mousePos.y);
-                        move_btn_key=0;
-                        coroutine=StartCoroutine(first_click());
+            if((int)mousePos.x < 13 && (int)mousePos.y < 7 && (int)mousePos.x >= 0 && (int)mousePos.y >= 0){
+                    if(character.GetComponent<Character_Manager>().character[(int)mousePos.x,(int)mousePos.y]==0)
+                    {
+                        
+                            character.GetComponent<Character_Manager>().character[(int)character.GetComponent<Character_Manager>().check_x,(int)character.GetComponent<Character_Manager>().check_y]=0;
+                            character.GetComponent<Character_Manager>().character[(int)mousePos.x,(int)mousePos.y]=1;
+                            tmp.transform.position=new Vector2(mousePos.x,mousePos.y);
+                            move_btn_key=0;
+                            coroutine=StartCoroutine(first_click());
+                            StopCoroutine(coroutine2);
+                            Move_Button.GetComponent<Move_Button_Manager>().is_move=false;
+                            character.GetComponent<Character_Manager>().first_target_key=0;
+                            character.GetComponent<Character_Manager>().btn_exist_key=false;
+                            character.GetComponent<Character_Manager>().player_check=false;
+                    }
+                } 
+            }
+            // 윗 부분을 모바일 터치로 변경
+            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+            {
+                Touch touch = Input.GetTouch(0);
+                Vector3 touchPos = touch.position;
+                touchPos = Camera.main.ScreenToWorldPoint(touchPos);
+                touchPos.x = Mathf.CeilToInt(touchPos.x);
+                touchPos.y = Mathf.CeilToInt(touchPos.y);
+                Vector2 touchPos2D = new Vector2(touchPos.x, touchPos.y);
+                if((int)touchPos.x < 13 && (int)touchPos.y < 7 && (int)touchPos.x >= 0 && (int)touchPos.y >= 0){
+                    if (character.GetComponent<Character_Manager>().character[(int)touchPos.x, (int)touchPos.y] == 0)
+                    {
+                        character.GetComponent<Character_Manager>().character[(int)character.GetComponent<Character_Manager>().check_x, (int)character.GetComponent<Character_Manager>().check_y] = 0;
+                        character.GetComponent<Character_Manager>().character[(int)touchPos.x, (int)touchPos.y] = 1;
+                        tmp.transform.position = new Vector2(touchPos.x, touchPos.y);
+                        move_btn_key = 0;
+                        coroutine = StartCoroutine(first_click());
                         StopCoroutine(coroutine2);
-                        Move_Button.GetComponent<Move_Button_Manager>().is_move=false;
-                        character.GetComponent<Character_Manager>().first_target_key=0;
-                        character.GetComponent<Character_Manager>().btn_exist_key=false;
-                        character.GetComponent<Character_Manager>().player_check=false;
+                        Move_Button.GetComponent<Move_Button_Manager>().is_move = false;
+                        character.GetComponent<Character_Manager>().first_target_key = 0;
+                        character.GetComponent<Character_Manager>().btn_exist_key = false;
+                        character.GetComponent<Character_Manager>().player_check = false;
+                    }
                 }
-            } 
-            Debug.Log("플레이어 이동");
+            }
+
+
             yield return null;
         }
     }

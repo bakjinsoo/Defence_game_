@@ -176,5 +176,11 @@ public class gunner_attack : MonoBehaviour
             Monster_List.RemoveAt(0);
         }        
     }
-    
+
+    void OnDestroy()
+    {
+        Destroy(characterAura);
+    }
+
 }
+

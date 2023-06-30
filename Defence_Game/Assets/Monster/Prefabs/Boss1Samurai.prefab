@@ -170,4 +170,4 @@ MonoBehaviour:
   hp: 100000
   center: {fileID: 6920509752499997102, guid: a2a9019c082c0be4fb97c018f335e23c, type: 3}
   speed: 2
-  radius: 4.8
+  radius: 5.5

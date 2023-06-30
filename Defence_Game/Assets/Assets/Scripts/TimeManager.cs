@@ -11,11 +11,15 @@ public class TimeManager : MonoBehaviour
     {
         
     }
-
+    public GameObject GameOverPanel;
     // Update is called once per frame
     void Update()
     {
         GameTime-=Time.deltaTime;
         GameTimeText.text="Time : "+(int)GameTime;
+        if(GameTime <= 0){
+            Time.timeScale=0;
+            GameOverPanel.SetActive(true);
+        }
     }
 }//push test

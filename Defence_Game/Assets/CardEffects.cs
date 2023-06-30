@@ -21,6 +21,10 @@ public class CardEffects : MonoBehaviour
         }
         
         GameObject.Find("StageEnd").SetActive(false);
+        if(spawnManager.round + 1 == 31)
+        {
+            Instantiate(Resources.Load("Prefabs/FadeOut") as GameObject);
+        }
         if((spawnManager.round+1) % 10 != 0){ // 일반몹 Stage
             GameObject tmp = Instantiate(Resources.Load("Prefabs/StartStagePanel") as GameObject);
             GameObject.Find("StageIndicateText").GetComponent<Text>().text = "Stage " + (GameObject.Find("SpawnManager").GetComponent<Spawn_Manager>().round + 1).ToString(); // 스테이지 시작 패널에 스테이지 표시
@@ -131,6 +135,8 @@ public class CardEffects : MonoBehaviour
             Destroy(aura);
         }
         foreach(GameObject player in Players){
+            GameObject tmp = Instantiate(Resources.Load("Prefabs/Smoke") as GameObject, player.transform.position, Quaternion.identity);
+            tmp.transform.position = new Vector3(tmp.transform.position.x-0.5f, tmp.transform.position.y-0.5f, tmp.transform.position.z);
             Destroy(player);
         }
     }

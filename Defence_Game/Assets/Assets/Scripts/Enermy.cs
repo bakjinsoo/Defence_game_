@@ -7,7 +7,7 @@ public class Enermy : MonoBehaviour
     public float hp=100;
     public Transform center;//enermy collider프리펩의 위치 조정을 통한 적의 타원형운동 반복
     public float speed = 2f; 
-    public float radius=4.8f;
+    public float radius=5.5f;
     private float angle=0;
     Spawn_Manager spawnManager;
     Reroll_Manager CoinGetter;
