@@ -8,6 +8,7 @@ TagManager:
   - Card
   - Aura
   - Berserker
+  - Map
   layers:
   - Default
   - TransparentFX

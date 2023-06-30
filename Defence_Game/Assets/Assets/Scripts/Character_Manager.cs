@@ -117,7 +117,8 @@ public class Character_Manager : MonoBehaviour
     void Update()
     {
 
-       if(Input.GetMouseButtonDown(0))
+        show_area = GameObject.FindGameObjectWithTag("Map").transform.GetChild(3).gameObject;
+        if(Input.GetMouseButtonDown(0))
         {
             mousePos=Input.mousePosition;
             mousePos=Camera.main.ScreenToWorldPoint(mousePos);         

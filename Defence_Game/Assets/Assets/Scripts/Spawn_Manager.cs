@@ -25,7 +25,7 @@ public class Spawn_Manager : MonoBehaviour
     {
         // StartCoroutine(spawn());
         GameObject tmp = Instantiate(StageStartPanel);
-        GameObject.Find("StageIndicateText").GetComponent<Text>().text = "Stage " + (round + 1).ToString(); // 스테이지 시작 패널에 스테이지 표시
+        GameObject.Find("StageIndicateText").GetComponent<Text>().text =stageName[stageIdx] + "\n Stage " + (round + 1).ToString(); // 스테이지 시작 패널에 스테이지 표시
         Destroy(tmp,3f);
         CardsList = GameObject.Find("CardsList");
         cardNum = CardsList.transform.childCount;
@@ -34,26 +34,33 @@ public class Spawn_Manager : MonoBehaviour
             cardList.Add(CardsList.transform.GetChild(i).gameObject);
         }
         timeManager = GameObject.Find("TimeManager").GetComponent<TimeManager>();
-    }
 
+    }
+    public string[] stageName;
+    public int stageIdx = 0;
     // Update is called once per frame
     void Update()
     {
         if(isSpawnEnded && leftCount == 0){ // 스폰이 전부 종료되었을때 몹이 0마리면 스테이지 종료 판정
-            Debug.Log("Stage 이동합니다 : " + round);
+
 
 
             timeManager.GameTime = 60f;
             
-            if(round > 0){ //0라운드에는 카드뽑기 진행 X
 
-                if((round+1) % 10 != 0){ // 5의 배수가 아닐때 (즉 1,2,3,4,6,7,8,9 스테이지)
-                    enermyCount = 50;
+            if(round > 0){ //0라운드에는 카드뽑기 진행 X
+                if((round+1) == 11 || (round+1) == 21 || (round+1) == 31){ // 맵 변경 스테이지
+                    Instantiate(Resources.Load("Prefabs/FadeOut") as GameObject); // 삭제는 애니메이션 끝나면 자동으로 삭제된다.
+                } 
+
+                if((round+1) % 10 != 0){ // 10의 배수가 아닐때 (즉 1,2,3,4,6,7,8,9 스테이지)
+                    enermyCount = 1;
                 }
                 else{ // 5,10,15,.. 스테이지
                     // 보스 portrait등록해주기
                     enermyCount = 1;
                 }
+
                 if(round % 3 == 0){
                     Time.timeScale = 0.1f;
                     StageEndPanel.SetActive(true);
@@ -62,9 +69,12 @@ public class Spawn_Manager : MonoBehaviour
                         Card.transform.parent = cardList[i].transform.parent;
                     }
                 }else{
-                    if((round+1) % 10 != 0){ // 일반몹 Stage
+                    // if(GameObject.Find("StageEnd") != null){
+                    //     GameObject.Find("StageEnd").SetActive(false);
+                    // }
+                    if((round+1) % 10 != 0 ){ // 일반몹 Stage
                         GameObject tmp = Instantiate(Resources.Load("Prefabs/StartStagePanel") as GameObject);
-                        GameObject.Find("StageIndicateText").GetComponent<Text>().text = "Stage " + (GameObject.Find("SpawnManager").GetComponent<Spawn_Manager>().round + 1).ToString(); // 스테이지 시작 패널에 스테이지 표시
+                        GameObject.Find("StageIndicateText").GetComponent<Text>().text = stageName[stageIdx] +"\n Stage " + (GameObject.Find("SpawnManager").GetComponent<Spawn_Manager>().round + 1).ToString(); // 스테이지 시작 패널에 스테이지 표시
                         Destroy(tmp,3f);
                     }else{
                         GameObject tmp = Instantiate(Resources.Load("Prefabs/BOSSStageStart") as GameObject);
