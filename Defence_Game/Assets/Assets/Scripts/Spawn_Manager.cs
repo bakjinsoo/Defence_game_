@@ -41,6 +41,15 @@ public class Spawn_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(round >= 21 && round <= 30)
+        {
+            GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+            foreach(GameObject player in players) // 
+            {
+                player.GetComponent<SpriteRenderer>().color =  Color.grey; 
+            }
+        }
+
         if(isSpawnEnded && leftCount == 0){ // 스폰이 전부 종료되었을때 몹이 0마리면 스테이지 종료 판정
 
 
@@ -49,7 +58,7 @@ public class Spawn_Manager : MonoBehaviour
             
 
             if(round > 0){ //0라운드에는 카드뽑기 진행 X
-                if((round+1) == 11 || (round+1) == 21 || (round+1) == 31){ // 맵 변경 스테이지
+                if((round+1) == 11 || (round+1) == 21){ // 맵 변경 스테이지
                     Instantiate(Resources.Load("Prefabs/FadeOut") as GameObject); // 삭제는 애니메이션 끝나면 자동으로 삭제된다.
                 } 
 

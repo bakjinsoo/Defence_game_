@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class MapDescription : MonoBehaviour
 {
     
@@ -13,6 +12,11 @@ public class MapDescription : MonoBehaviour
         if(stageNum == 11)
         {
             Debug.Log("MapChange to BrightForest");
+            GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+            foreach(GameObject player in players) // HSV 값에서 V 값 70으로 변경
+            {
+                player.GetComponent<SpriteRenderer>().color =  Color.grey;
+            }
             GameObject tmp = GameObject.Find("BrightForest");
             Debug.Log("MapName" + tmp.name);
             Destroy(tmp);
@@ -20,13 +24,22 @@ public class MapDescription : MonoBehaviour
         }
         else if(stageNum == 21)
         {
-            GameObject.Find("BrightForest").SetActive(false);
-            GameObject.Find("DarkForest").SetActive(true);
+            GameObject tmp = GameObject.Find("DarkForest(Clone)");
+            Debug.Log("MapName" + tmp.name);
+                GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+            foreach(GameObject player in players) // 
+            {
+                player.GetComponent<SpriteRenderer>().color =  Color.white; 
+            }
+            Destroy(tmp);
+            Instantiate(Resources.Load("Prefabs/Temple") as GameObject);
         }
         else if(stageNum == 31)
         {
-            GameObject.Find("BrightForest").SetActive(false);
-            GameObject.Find("DarkForest").SetActive(true);
+            GameObject tmp = GameObject.Find("Temple(Clone)");
+            Debug.Log("MapName" + tmp.name);
+            Destroy(tmp);
+            Instantiate(Resources.Load("Prefabs/devilDungeon") as GameObject);
         }
     }
 

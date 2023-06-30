@@ -21,6 +21,10 @@ public class CardEffects : MonoBehaviour
         }
         
         GameObject.Find("StageEnd").SetActive(false);
+        if(spawnManager.round + 1 == 31)
+        {
+            Instantiate(Resources.Load("Prefabs/FadeOut") as GameObject);
+        }
         if((spawnManager.round+1) % 10 != 0){ // 일반몹 Stage
             GameObject tmp = Instantiate(Resources.Load("Prefabs/StartStagePanel") as GameObject);
             GameObject.Find("StageIndicateText").GetComponent<Text>().text = "Stage " + (GameObject.Find("SpawnManager").GetComponent<Spawn_Manager>().round + 1).ToString(); // 스테이지 시작 패널에 스테이지 표시

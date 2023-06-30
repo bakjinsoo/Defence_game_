@@ -170,24 +170,28 @@ public class Character_Manager : MonoBehaviour
             catch{
 
             }
-            
-            if(character[(int)mousePos.x,(int)mousePos.y]==1&&click_manager.GetComponent<Click_Manager>().character_clicked==false&&btn_exist_key==false)//클릭한곳에 캐릭터가 있을경우
-            {
-                player_check=true;
-                click_manager.GetComponent<Click_Manager>().sell_btn_check=false;
-                click_manager.GetComponent<Click_Manager>().sell_key=0;
-                if(click_manager.GetComponent<Click_Manager>().move_btn_first==false&&click_manager.GetComponent<Click_Manager>().move_btn_check==false){
-                    check_x=(int)mousePos.x;
-                    check_y=(int)mousePos.y;
-                    Debug.Log("캐릭터좌표"+check_x+","+check_y);
+            try{            
+                if(character[(int)mousePos.x,(int)mousePos.y]==1&&click_manager.GetComponent<Click_Manager>().character_clicked==false&&btn_exist_key==false)//클릭한곳에 캐릭터가 있을경우
+                {
+                    player_check=true;
+                    click_manager.GetComponent<Click_Manager>().sell_btn_check=false;
+                    click_manager.GetComponent<Click_Manager>().sell_key=0;
+                    if(click_manager.GetComponent<Click_Manager>().move_btn_first==false&&click_manager.GetComponent<Click_Manager>().move_btn_check==false){
+                        check_x=(int)mousePos.x;
+                        check_y=(int)mousePos.y;
+                        Debug.Log("캐릭터좌표"+check_x+","+check_y);
+                    }
+                        
                 }
-                    
+                else
+                {
+                    ui_selected.SetActive(false);
+                    show_area.SetActive(false);
+                    player_check=false;
+                }
             }
-            else
-            {
-                ui_selected.SetActive(false);
-                show_area.SetActive(false);
-                player_check=false;
+            catch{
+                
             }
             try{
                 if(click_manager.GetComponent<Click_Manager>().move_btn_first==true&&character[(int)mousePos.x,(int)mousePos.y+1]==1){
