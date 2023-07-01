@@ -11,7 +11,7 @@ public class Character_Manager : MonoBehaviour
     public GameObject reroll_manager;
     public Vector2 mousePos;//마우스로 찍은 좌표
     public bool player_check;//플레이어인지 확인하는 변수
-    int first_random;//처음 몇개의 캐릭터가 나올지 결정하는 랜덤변수
+    public int first_random;//처음 몇개의 캐릭터가 나올지 결정하는 랜덤변수
     int random_x;//캐릭터의 x좌표 랜덤변수
     int random_y;//캐릭터의 y좌표 랜덤변수
     int random_character;//캐릭터 유닛 종류 결정 랜덤변수
@@ -241,6 +241,7 @@ public class Character_Manager : MonoBehaviour
                 }
                 else
                 {
+                    Debug.Log("리롤 성공");
                     character[random_x,random_y]=1;
                     random_character=Random.Range(0,3);
                     if(random_character==0)

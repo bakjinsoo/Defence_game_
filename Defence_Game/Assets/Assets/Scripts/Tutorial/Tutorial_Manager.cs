@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class Tutorial_Manager : MonoBehaviour
 {
     public GameObject range;
@@ -10,15 +11,26 @@ public class Tutorial_Manager : MonoBehaviour
     public GameObject archer_ui_selected;
     public GameObject gunner_ui_selected;
     public GameObject magician_ui_selected;
+    public GameObject character_manager;
+    public GameObject click_manager;
     GameObject characterAura;
     public GameObject spawn_manager;
     public Text text;
+    public GameObject time_table;
+    public GameObject time_text;
+    [SerializeField]
+    private GameObject StageEndPanel;
+    public GameObject arrow_ui;
+    public List<GameObject> cardList = new List<GameObject>();
+    public int cardIndex;
     // Start is called before the first frame update
     void Start()
     {
-        GameObject.Find("hamster_magician").GetComponentInChildren<magician_attack>().magician_grade=6;
-        GameObject.Find("hamster_archer_1").GetComponentInChildren<archer_attack>().archer_grade=6;
-        GameObject.Find("hamster_gunner_1").GetComponentInChildren<gunner_attack>().gunner_grade=6;
+        GameObject[] auras=GameObject.FindGameObjectsWithTag("Aura");
+        foreach(GameObject aura in auras)
+        {
+            Destroy(aura);
+        }
         characterAura.transform.position=new Vector2(GameObject.Find("hamster_gunner_1").transform.position.x,GameObject.Find("hamster_gunner_1").transform.position.y);
     }
     GameObject ui_class_one;
@@ -32,7 +44,12 @@ public class Tutorial_Manager : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
-            
+            try{
+                GameObject.Find("StartStagePanel(Clone)").SetActive(false);
+            }
+            catch{
+                
+            }
             tutorial_key++;
             if(tutorial_key==1)
             {
@@ -141,6 +158,104 @@ public class Tutorial_Manager : MonoBehaviour
             }
             else if(tutorial_key==17){
                 text.text="가장 높은 클래스이며, 어떤 위치에 있어도 전범위 공격이 가능합니다! 갓클래스의 유닛들은 당신의 생존에 큰 도움이 될것입니다!";
+            }
+            else if(tutorial_key==18){
+                character_manager.SetActive(true);
+                character_manager.GetComponent<Character_Manager>().first_random=0;
+                text.text="유닛들의 클래스를 다 알아봤으니 이제는 리롤버튼을 알아볼거에요";
+            }
+            else if(tutorial_key==19){
+                arrow_ui.SetActive(true);
+                text.text="가리키고 있는 버튼이 리롤버튼이에요. 한번 눌러보세요";
+            }
+            else if(tutorial_key==20){
+                text.text="가리키고 있는 버튼이 리롤버튼이에요. 한번 눌러보세요";
+            }
+            else if(tutorial_key==21){
+                text.text="가리키고 있는 버튼이 리롤버튼이에요. 한번 눌러보세요";
+            }
+            else if(tutorial_key==22){
+                text.text="가리키고 있는 버튼이 리롤버튼이에요. 한번 눌러보세요";
+            }
+            else if(tutorial_key==23){
+                text.text="가리키고 있는 버튼이 리롤버튼이에요. 한번 눌러보세요";
+            }
+            else if(tutorial_key==24){
+                text.text="가리키고 있는 버튼이 리롤버튼이에요. 한번 눌러보세요";
+            }
+            else if(tutorial_key==25){
+                text.text="가리키고 있는 버튼이 리롤버튼이에요. 한번 눌러보세요";
+            }
+            else if(tutorial_key==26){
+                arrow_ui.SetActive(false);
+                click_manager.SetActive(true);
+                text.text="캐릭터를 한번 눌러보세요!";
+            }
+            else if(tutorial_key==27){
+                text.text="왼쪽버튼을 눌러보세요!";
+            }
+            else if(tutorial_key==28){
+                text.text="초록색 영역은 우리가 이동할수 있는 곳이에요! 빨간색영역은 우리가 이동할수 없는 곳이니 주의하세요!";
+            }
+            else if(tutorial_key==29){
+                text.text="이동해보세요!";
+            }
+            else if(tutorial_key==30){
+                text.text="이동해보세요!";
+            }
+            else if(tutorial_key==31){
+                text.text="캐릭터를 눌러보세요!";
+            }
+            else if(tutorial_key==32){
+                text.text="오른쪽버튼을 누르면 캐릭터를 판매 할수 있어요. 판매금액은 처음엔 20원이지만 뒤에나올 카드로 판매금액을 증가시킬수 있어요!";
+            }
+            else if(tutorial_key==33){
+                text.text="판매금액과 리롤금액의 차이가 크니 이점 유의하세요!";
+            }
+            else if(tutorial_key==34){
+                text.text="판매금액과 리롤금액의 차이가 크니 이점 유의하세요!";
+            }
+            else if(tutorial_key==35){
+                text.text="판매금액과 리롤금액의 차이가 크니 이점 유의하세요!";
+            }
+            else if(tutorial_key==36){
+                text.text="적이 나타났어요!";
+                GameObject cat=Instantiate(Resources.Load<GameObject>("Prefabs/Cat"));
+            }
+            else if(tutorial_key==37){
+                text.text="적을 죽일때마다 일정확률로 코인을 얻을수있어요!";
+            }
+            else if(tutorial_key==38){
+                text.text="코인을 얻을수 있는방법은 총 두가지에요. 적을 죽여서 일정확률로 코인을 얻거나 유닛을 판매하여 코인을 얻는방법이 있어요.";
+            }
+            else if(tutorial_key==39){
+                arrow_ui.transform.position=new Vector2(0,6);
+                arrow_ui.transform.localEulerAngles=new Vector3(0,0,90);
+                arrow_ui.SetActive(true);
+                time_table.SetActive(true);
+                time_text.SetActive(true);
+                text.text="스테이지마다 주어진 시간이 있습니다.";
+            }
+            else if(tutorial_key==40){
+                text.text="주어진 시간안에 적을 모두 죽이지 못하면 여러분의 패배입니다.";
+            }
+            else if(tutorial_key==41){
+                text.text="제한된 시간안에 적을 모두 섬멸하여 끝까지 살아남으세요!";
+            }
+            else if(tutorial_key==42){
+                text.text="제한된 시간안에 적을 모두 섬멸하여 끝까지 살아남으세요!";
+            }
+            else if(tutorial_key==43){
+                StageEndPanel.SetActive(true);
+                for(int i = 0; i < cardList.Count ; i++) {
+                    GameObject Card = Instantiate(Resources.Load("Prefabs/Cards/Card"+Random.Range(0,cardIndex + 1)) as GameObject, cardList[i].transform.position, Quaternion.identity);
+                    Card.transform.parent = cardList[i].transform.parent;
+                }
+                text.text="3스테이지 마다 스테이지를 클리어하면 3개의 카드가 나옵니다.";
+            }
+            else if(tutorial_key==44){
+                text.text="카드의 별의 갯수는 등급이고, 카드의 최대등급은 3등급입니다. 등급이 높을수록 효과가 증가하며, 카드를 활용하여 여러분만의 유닛을 만들어보세요!";
+                SceneManager.LoadScene("1-0");
             }
         }
     }
