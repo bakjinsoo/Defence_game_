@@ -59,4 +59,8 @@ public class Enermy : MonoBehaviour
         
         spawnManager.leftCount--; // 현재 몹 수를 하나 줄여준다.
     }
+
+    public Vector2 returnPos(){
+        return transform.position;
+    }
 }

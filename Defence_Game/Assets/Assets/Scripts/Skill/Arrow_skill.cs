@@ -8,6 +8,8 @@ public class Arrow_skill : MonoBehaviour
     public GameObject archer;
     public GameObject enermy;
     public float speed=1f;
+
+
     public int num;
     
     // Start is called before the first frame update
@@ -30,8 +32,8 @@ public class Arrow_skill : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        
-        transform.Translate(enermy.transform.position*speed*Time.deltaTime);
+        Vector2  pos = enermy.GetComponent<Enermy>().returnPos();
+        transform.Translate(pos*speed*Time.deltaTime);
         
     }
 
