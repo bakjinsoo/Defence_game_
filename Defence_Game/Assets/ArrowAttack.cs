@@ -37,8 +37,10 @@ public class ArrowAttack : MonoBehaviour
                     GetComponent<AudioSource>().Play();
                 }
                 else{
+                    if(gameObject.GetComponentInChildren<archer_attack>().Monster_List.Count == 0) return;
                     tmp=Instantiate(arrow,this.transform.position,Quaternion.identity);
                     tmp.GetComponent<Arrow_skill>().num=gameObject.GetComponentInChildren<archer_attack>().unit;
+                    tmp.GetComponent<Arrow_skill>().enermy = gameObject.GetComponentInChildren<archer_attack>().Monster_List[num];
                     GetComponent<AudioSource>().Play();
                 }
                 tmp.GetComponent<Arrow_skill>().num=gameObject.GetComponentInChildren<archer_attack>().unit;

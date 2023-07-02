@@ -148,7 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 10000
   center: {fileID: 6920509752499997102, guid: a2a9019c082c0be4fb97c018f335e23c, type: 3}
-  speed: 0.5
+  speed: 0.75
   radius: 4.8
 --- !u!50 &4409836615025499458
 Rigidbody2D:

@@ -21,6 +21,13 @@ public class Spawn_Manager : MonoBehaviour
     private GameObject StageStartPanel;
     List<GameObject> cardList = new List<GameObject>();
     private TimeManager timeManager;
+
+
+    int[] oneObjStage = {10,20,30,36,37,38};
+    int[] fiftyObjStage = {21,22};
+    int[] eightObjStage = {31,32,33};
+    int[] threeObjStage = {34,35};
+
     void Start()
     {
         // StartCoroutine(spawn());
@@ -61,14 +68,27 @@ public class Spawn_Manager : MonoBehaviour
                 if((round+1) == 11 || (round+1) == 21){ // 맵 변경 스테이지
                     Instantiate(Resources.Load("Prefabs/FadeOut") as GameObject); // 삭제는 애니메이션 끝나면 자동으로 삭제된다.
                 } 
+                
 
-                if((round+1) % 10 != 0){ // 10의 배수가 아닐때 (즉 1,2,3,4,6,7,8,9 스테이지)
-                    enermyCount = 1;
-                }
-                else{ // 5,10,15,.. 스테이지
+                /* 여기는 스테이지마다 나오는 몬스터 수 관리해주기*/
+
+
+                if ((round + 1) == 10 || (round +1) == 20 || (round + 1 ) == 30 || round+1 == 36 || round + 1 == 37 || round + 1 == 38){ // 5,10,15,.. 스테이지
                     // 보스 portrait등록해주기
                     enermyCount = 1;
+                }else if(round+1 == 21 || round +1 == 22){ // 50마리 스테이지
+                    enermyCount = 50;
+                }else if(round+1 == 31 || round +1 == 32 || round +1 == 33){ // 8마리 스테이지
+                    enermyCount = 8;
+                }else if(round+1 == 34 || round +1 == 35){ // 3마리 스테이지
+                    enermyCount = 3;
+                }else{ // 10의 배수가 아닐때 (즉 1,2,3,4,6,7,8,9 스테이지)
+                    enermyCount = 30;
                 }
+
+
+
+                //////////////////////////////////////////////////////////////////
 
                 if(round % 3 == 0){
                     Time.timeScale = 0.1f;

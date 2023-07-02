@@ -72,6 +72,13 @@ public class archer_attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        for(int i=0;i<Monster_List.Count;i++)
+        {
+            if(Monster_List[i]==null)
+            {
+                Monster_List.RemoveAt(i);
+            }
+        }
         try{
         characterAura.transform.position = new Vector2(transform.position.x - 0.5f, transform.position.y);
         }catch{
