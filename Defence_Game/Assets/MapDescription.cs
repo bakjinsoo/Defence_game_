@@ -9,7 +9,7 @@ public class MapDescription : MonoBehaviour
         Debug.Log("MapChange");
         int stageNum = GameObject.Find("SpawnManager").GetComponent<Spawn_Manager>().round;
         Debug.Log("stageNum" + stageNum);
-        if(stageNum == 11)
+        if(stageNum == 10)
         {
             Debug.Log("MapChange to BrightForest");
             GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
@@ -22,7 +22,7 @@ public class MapDescription : MonoBehaviour
             Destroy(tmp);
             Instantiate(Resources.Load("Prefabs/DarkForest") as GameObject);
         }
-        else if(stageNum == 21)
+        else if(stageNum == 20)
         {
             GameObject tmp = GameObject.Find("DarkForest(Clone)");
             Debug.Log("MapName" + tmp.name);
@@ -34,7 +34,7 @@ public class MapDescription : MonoBehaviour
             Destroy(tmp);
             Instantiate(Resources.Load("Prefabs/Temple") as GameObject);
         }
-        else if(stageNum == 31)
+        else if(stageNum == 30)
         {
             GameObject tmp = GameObject.Find("Temple(Clone)");
             Debug.Log("MapName" + tmp.name);

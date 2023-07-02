@@ -22,7 +22,7 @@ public class Spawn_Manager : MonoBehaviour
     List<GameObject> cardList = new List<GameObject>();
     private TimeManager timeManager;
 
-
+    public GameObject ClearPanel;
     int[] oneObjStage = {10,20,30,36,37,38};
     int[] fiftyObjStage = {21,22};
     int[] eightObjStage = {31,32,33};
@@ -82,7 +82,11 @@ public class Spawn_Manager : MonoBehaviour
                     enermyCount = 8;
                 }else if(round+1 == 34 || round +1 == 35){ // 3마리 스테이지
                     enermyCount = 3;
-                }else{ // 10의 배수가 아닐때 (즉 1,2,3,4,6,7,8,9 스테이지)
+                }else if(round+1 ==39)
+                {
+                    ClearPanel.SetActive(true);
+                }
+                else{ // 10의 배수가 아닐때 (즉 1,2,3,4,6,7,8,9 스테이지)
                     enermyCount = 30;
                 }
 

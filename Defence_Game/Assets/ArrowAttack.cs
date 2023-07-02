@@ -7,6 +7,8 @@ public class ArrowAttack : MonoBehaviour
     // Start is called before the first frame update
     public GameObject Legendary_Arrow;
     AudioSource audio;
+
+    public float offsetArrowAngle = 30;
     void Start()
     {
         audio = GetComponent<AudioSource>();
@@ -38,7 +40,18 @@ public class ArrowAttack : MonoBehaviour
                 }
                 else{
                     if(gameObject.GetComponentInChildren<archer_attack>().Monster_List.Count == 0) return;
-                    tmp=Instantiate(arrow,this.transform.position,Quaternion.identity);
+
+
+                    /// 화살의 생성 각도 수정해주기
+                    Vector3 targetPos = gameObject.GetComponentInChildren<archer_attack>().Monster_List[num].transform.position;
+                    Vector3 dir = targetPos - transform.position;
+                    float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - offsetArrowAngle;
+                
+                    Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+                    /////
+                    tmp=Instantiate(arrow,this.transform.position, rotation);
+
+
                     tmp.GetComponent<Arrow_skill>().num=gameObject.GetComponentInChildren<archer_attack>().unit;
                     tmp.GetComponent<Arrow_skill>().enermy = gameObject.GetComponentInChildren<archer_attack>().Monster_List[num];
                     GetComponent<AudioSource>().Play();

@@ -9,7 +9,7 @@ public class StartMenuButton : MonoBehaviour
         Time.timeScale=1;
     }
     public void startGame(){
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Tutorial");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Jinsu-Tutorial");
     }
     public void exitGame(){
         Application.Quit();
