@@ -161,7 +161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   archer: {fileID: 8221690389239697893, guid: 7a66f781c8da67d45a9518abd350451e, type: 3}
   enermy: {fileID: 473233725591726437, guid: 3cb50544dde2f0e448db386acf7d1872, type: 3}
-  speed: 22
+  speed: 25
   num: 0
   offset: 0.3
 --- !u!50 &4764200674885002625

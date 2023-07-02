@@ -8,4 +8,8 @@ public class stop : MonoBehaviour
     {
         Time.timeScale=0;
     }
+    public void DestroyObj(){
+        Destroy(this.gameObject, 0.1f);
+    }
+
 }

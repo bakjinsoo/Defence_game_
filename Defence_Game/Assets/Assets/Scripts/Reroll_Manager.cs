@@ -45,6 +45,7 @@ public class Reroll_Manager : MonoBehaviour
                 coin-=50;
                 able_reroll=true;
                 isreroll=false;
+                
             }
         }
     }

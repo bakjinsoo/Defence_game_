@@ -104,17 +104,73 @@ public class Spawn_Manager : MonoBehaviour
                 }else{
                     // if(GameObject.Find("StageEnd") != null){
                     //     GameObject.Find("StageEnd").SetActive(false);
-                    // }
-                    if((round+1) % 10 != 0 ){ // 일반몹 Stage
-                        GameObject tmp = Instantiate(Resources.Load("Prefabs/StartStagePanel") as GameObject);
-                        GameObject.Find("StageIndicateText").GetComponent<Text>().text = stageName[stageIdx] +"\n Stage " + (GameObject.Find("SpawnManager").GetComponent<Spawn_Manager>().round + 1).ToString(); // 스테이지 시작 패널에 스테이지 표시
-                        Destroy(tmp,3f);
-                    }else{
-                        GameObject tmp = Instantiate(Resources.Load("Prefabs/BOSSStageStart") as GameObject);
-                        Destroy(tmp,3f);
-                    }
+                    // }..
+
+
+                    
+        if(round+1 == 31)
+        {
+            GameObject tmp = Instantiate(Resources.Load("Prefabs/BOSSStageStart") as GameObject);
+            GameObject.Find("Stage_Text_Map").GetComponent<Text>().text = "사이클롭스";
+            Destroy(tmp,3f);
+        }else if(round+1 == 32)
+        {
+            GameObject tmp = Instantiate(Resources.Load("Prefabs/BOSSStageStart") as GameObject);
+            GameObject.Find("Stage_Text_Map").GetComponent<Text>().text = "네크로멘서";
+            Destroy(tmp,3f);
+        }
+        else if(round + 1 == 33){
+            GameObject tmp = Instantiate(Resources.Load("Prefabs/BOSSStageStart") as GameObject);
+            GameObject.Find("Stage_Text_Map").GetComponent<Text>().text = "타락한 기사";
+            Destroy(tmp,3f);
+        }else if(round + 1 == 34){
+            GameObject tmp = Instantiate(Resources.Load("Prefabs/BOSSStageStart") as GameObject);
+            GameObject.Find("Stage_Text_Map").GetComponent<Text>().text = "좀비 킹";
+            Destroy(tmp,3f);
+        }else if(round + 1 == 35){
+            GameObject tmp = Instantiate(Resources.Load("Prefabs/BOSSStageStart") as GameObject);
+            GameObject.Find("Stage_Text_Map").GetComponent<Text>().text = "오염된 나무";
+            Destroy(tmp,3f);
+        }else if(round + 1 == 36){
+            GameObject tmp = Instantiate(Resources.Load("Prefabs/BOSSStageStart") as GameObject);
+            GameObject.Find("Stage_Text_Map").GetComponent<Text>().text = "올드 가디언";
+            Destroy(tmp,3f);
+        }else if(round + 1 == 37){
+            GameObject tmp = Instantiate(Resources.Load("Prefabs/BOSSStageStart") as GameObject);
+            GameObject.Find("Stage_Text_Map").GetComponent<Text>().text = "데몬";
+            Destroy(tmp,3f);
+        }else if(round + 1 == 38){
+            GameObject tmp = Instantiate(Resources.Load("Prefabs/BOSSStageStart") as GameObject);
+            GameObject.Find("Stage_Text_Map").GetComponent<Text>().text = "얼음";
+            Destroy(tmp,3f);
+        }
+
+        else if((round + 1) % 10 == 0){
+            GameObject tmp = Instantiate(Resources.Load("Prefabs/BOSSStageStart") as GameObject);
+            Debug.Log("STAGE"+round + 1);
+            if(round + 1 == 10){
+                GameObject.Find("Stage_Text_Map").GetComponent<Text>().text = "밝은 숲";
+            }
+            else if(round + 1 == 20){
+                GameObject.Find("Stage_Text_Map").GetComponent<Text>().text = "어둠의 숲";
+            }
+            else if(round + 1 == 30){
+            GameObject.Find("Stage_Text_Map").GetComponent<Text>().text = "사원";
+            }
+
+            Destroy(tmp,3f);
+        }else{
+                if((round+1) % 10 != 0 ){ // 일반몹 Stage
+                    GameObject tmp = Instantiate(Resources.Load("Prefabs/StartStagePanel") as GameObject);
+                    GameObject.Find("StageIndicateText").GetComponent<Text>().text = stageName[stageIdx] +"\n Stage " + (round + 1).ToString(); // 스테이지 시작 패널에 스테이지 표시
+                    Destroy(tmp,3f);
+                }else{
+                    GameObject tmp = Instantiate(Resources.Load("Prefabs/BOSSStageStart") as GameObject);
+                    Destroy(tmp,3f);
                 }
             }
+                }
+        }
             StartCoroutine(spawn());
         }
     }
