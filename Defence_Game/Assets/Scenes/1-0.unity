@@ -9461,46 +9461,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 6371720485908070681, guid: 10e39194256df0741934f285ea5c922a, type: 3}
-  - {fileID: 6101981558369046400, guid: 872680e4b5ae44b48a44771423f7081e, type: 3}
-  - {fileID: 6101309186737793342, guid: a15f6466ceed97644a97f62fd51fa525, type: 3}
-  - {fileID: 6629977508639023634, guid: a38d92f23cddd1f4885661f4dc0e782d, type: 3}
-  - {fileID: 4437285570406469774, guid: 2a7022b4ad200fd49a6797b3ecf05b7d, type: 3}
-  - {fileID: 1840581560836477981, guid: 0efeb01a45d00ff49a2e756afeb12cb3, type: 3}
-  - {fileID: 3611440951737563852, guid: d64dd29d5bf9f8a4896508f13629d626, type: 3}
-  - {fileID: 5775752410778393633, guid: aee7e1d8835670b4cbd0e513d91e5831, type: 3}
-  - {fileID: 7939299353235678401, guid: a41dd66f92cd3b345a2e857d2e1d0d48, type: 3}
-  - {fileID: 1397891184655615313, guid: 30d04e5308da05a45b49bbdd42542e7e, type: 3}
-  - {fileID: 8611593586286262511, guid: 24e7ba31dd78b404aa882b0e9a99befc, type: 3}
-  - {fileID: 2337349491483930962, guid: 31c2fc199be09b041aa08a2f28350ea2, type: 3}
-  - {fileID: 1971509415239668280, guid: 7d75bc112be09456494a88a2c4c6ca34, type: 3}
-  - {fileID: 8943650554387814965, guid: 1e8a09b485a15bc41a18fe29a3f85635, type: 3}
-  - {fileID: 1619155329889809212, guid: 86acabc867d62fe46b74460daad784c4, type: 3}
-  - {fileID: 2655662103565049805, guid: 8eb071d0c6f90934387ca008b1512fc8, type: 3}
-  - {fileID: 518874140102991609, guid: ad13df9145d11f947b54c9626855952e, type: 3}
-  - {fileID: 1833522565177597219, guid: ee165d77e649ddc4b9e9cf9dd5c94bfe, type: 3}
   - {fileID: 4168019252604298375, guid: 2211f862274859c42ab212f76a27d9a6, type: 3}
-  - {fileID: 7220722921104171648, guid: 27bff552fb65d11429784c581863e807, type: 3}
-  - {fileID: 7226370643215393646, guid: ce0379e942f491c4682d95b9d3486103, type: 3}
-  - {fileID: 5459826533143577209, guid: 031dd13a2db38a14f8dae9afec6b9157, type: 3}
-  - {fileID: 1176524364964843472, guid: fca0f35898fcbf84ba5c6d7d8773bd1e, type: 3}
+  - {fileID: 2655662103565049805, guid: 8eb071d0c6f90934387ca008b1512fc8, type: 3}
+  - {fileID: 1619155329889809212, guid: 86acabc867d62fe46b74460daad784c4, type: 3}
+  - {fileID: 518874140102991609, guid: ad13df9145d11f947b54c9626855952e, type: 3}
+  - {fileID: 2337349491483930962, guid: 31c2fc199be09b041aa08a2f28350ea2, type: 3}
+  - {fileID: 8943650554387814965, guid: 1e8a09b485a15bc41a18fe29a3f85635, type: 3}
+  - {fileID: 6629977508639023634, guid: a38d92f23cddd1f4885661f4dc0e782d, type: 3}
+  - {fileID: 1971509415239668280, guid: 7d75bc112be09456494a88a2c4c6ca34, type: 3}
+  - {fileID: 1833522565177597219, guid: ee165d77e649ddc4b9e9cf9dd5c94bfe, type: 3}
+  - {fileID: 6371720485908070681, guid: 10e39194256df0741934f285ea5c922a, type: 3}
   - {fileID: 3249671130618413307, guid: 6ee26b68bf0a53d4393352a6a561f5a3, type: 3}
   - {fileID: 1174383987484700578, guid: 0fb022d429082cd4cb7c49e2432caac2, type: 3}
   - {fileID: 4760556969764005769, guid: 32e379bc5ca1bd0498712ccf25c4df00, type: 3}
+  - {fileID: 719635086681632060, guid: e7ccb2ce77981eb428a1b50b7d0b0429, type: 3}
+  - {fileID: 6308853554338398518, guid: 0ea3dd5f83bcaad4a9c2ea2da40f70bb, type: 3}
   - {fileID: 6699410115098025531, guid: d7b44b2dbf793da419abf0df3ed5b55c, type: 3}
   - {fileID: 3957074286413954095, guid: 7fc101f91d134324590b1c0d2c04ad40, type: 3}
-  - {fileID: 8699310249196750495, guid: 48fa2b9d75d58df45b1b0795d2509751, type: 3}
   - {fileID: 438027025406550297, guid: 81eb9336eee8ce943adfb0c76b029c71, type: 3}
-  - {fileID: 6308853554338398518, guid: 0ea3dd5f83bcaad4a9c2ea2da40f70bb, type: 3}
-  - {fileID: 719635086681632060, guid: e7ccb2ce77981eb428a1b50b7d0b0429, type: 3}
+  - {fileID: 8699310249196750495, guid: 48fa2b9d75d58df45b1b0795d2509751, type: 3}
   - {fileID: 2708859210656841219, guid: 0a7928d8efa576d4f9e9806f60870e89, type: 3}
-  - {fileID: 7534181270246533412, guid: f039a6ecf9c37da4193de218970e56b7, type: 3}
-  - {fileID: 5280142273227203065, guid: fcf4225368d83df4f96ed671add77565, type: 3}
-  - {fileID: 1330933186759139519, guid: b2ae1f3d92990e340944c544413930ed, type: 3}
+  - {fileID: 5459826533143577209, guid: 031dd13a2db38a14f8dae9afec6b9157, type: 3}
+  - {fileID: 2217560395429386656, guid: db1e5ca485458b044812922ae5239609, type: 3}
   - {fileID: 4002119555792522559, guid: af5aa2bd691e36d49966cc6cd8ddde14, type: 3}
+  - {fileID: 1330933186759139519, guid: b2ae1f3d92990e340944c544413930ed, type: 3}
+  - {fileID: 5280142273227203065, guid: fcf4225368d83df4f96ed671add77565, type: 3}
+  - {fileID: 7226370643215393646, guid: ce0379e942f491c4682d95b9d3486103, type: 3}
+  - {fileID: 7220722921104171648, guid: 27bff552fb65d11429784c581863e807, type: 3}
+  - {fileID: 1176524364964843472, guid: fca0f35898fcbf84ba5c6d7d8773bd1e, type: 3}
   - {fileID: 9105200753198868938, guid: e86f318dfa2bb1d4c98221474e5de7e6, type: 3}
   - {fileID: 7478243544583766346, guid: b0610b8a72dccfe44b4ecd6c1ade567f, type: 3}
-  enermyCount: 1
+  - {fileID: 7534181270246533412, guid: f039a6ecf9c37da4193de218970e56b7, type: 3}
+  - {fileID: 6101981558369046400, guid: 872680e4b5ae44b48a44771423f7081e, type: 3}
+  - {fileID: 1840581560836477981, guid: 0efeb01a45d00ff49a2e756afeb12cb3, type: 3}
+  - {fileID: 7939299353235678401, guid: a41dd66f92cd3b345a2e857d2e1d0d48, type: 3}
+  - {fileID: 1397891184655615313, guid: 30d04e5308da05a45b49bbdd42542e7e, type: 3}
+  - {fileID: 5775752410778393633, guid: aee7e1d8835670b4cbd0e513d91e5831, type: 3}
+  - {fileID: 4437285570406469774, guid: 2a7022b4ad200fd49a6797b3ecf05b7d, type: 3}
+  - {fileID: 1220928929978984655, guid: 39bc4c0cb0df4594b8b6c38a4550178d, type: 3}
+  enermyCount: 30
   round: 0
   leftCount: 0
   leftMob: {fileID: 876742577}
@@ -18616,7 +18615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a93a15ccd60bcbd4da31310fb38ab900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coin: 500
+  coin: 100
   button: {fileID: 2092751376}
   able_reroll: 0
 --- !u!114 &2092751376
@@ -18942,26 +18941,26 @@ MonoBehaviour:
   Archer_attackSpeed: 2
   Magician_attackSpeed: 1.5
   GunnerAttackPoints:
+  - 0.25
+  - 0.35
+  - 0.5
   - 1
-  - 2
-  - 4
+  - 1.5
   - 5
-  - 9
-  - 13
   MagicianAttackPoints:
+  - 0.25
+  - 0.35
+  - 0.5
   - 1
-  - 2
-  - 4
+  - 1.5
   - 5
-  - 9
-  - 13
   ArcherAttackPoints:
   - 16
-  - 20
-  - 24
-  - 30
-  - 50
+  - 32
+  - 48
   - 100
+  - 200
+  - 500
   GunnerAttackCoefficient: 1
   MagicianAttackCoefficient: 1
   ArcherAttackCoefficient: 1
