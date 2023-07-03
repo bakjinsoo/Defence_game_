@@ -67,6 +67,7 @@ public class characterData : Singleton<characterData>
                 GameObject[] lists = GameObject.FindGameObjectsWithTag("Player");
                 foreach(GameObject list in lists){   
                     GameObject tmp = Instantiate(Resources.Load("Prefabs/BerserkerMode") as GameObject, list.transform.position, Quaternion.identity);
+                    tmp.transform.parent = list.transform;
                     tmp.transform.position = new Vector3(tmp.transform.position.x -0.5f, tmp.transform.position.y -0.5f, tmp.transform.position.z);
                 }
                 oneTime = false; // update 문이지만 한번만 돌게

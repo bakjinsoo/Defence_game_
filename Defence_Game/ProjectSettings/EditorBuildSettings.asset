@@ -8,6 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/1-0.unity
     guid: ac201ac72ce65504a90c6ad1341dffad
+  - enabled: 1
+    path: Assets/Scenes/StartMenu.unity
+    guid: 3fc8acdd13e6c734bafef6554d6fdbcd
+  - enabled: 1
+    path: Assets/Scenes/Jinsu-Tutorial.unity
+    guid: 0209bf10b82eb1442bebc01b42cbfe0c
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 7166699db9f714af78a7146f134a631f, type: 2}
     com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: 29f6141a6875649bcb02fb10fbe3f5a2, type: 2}

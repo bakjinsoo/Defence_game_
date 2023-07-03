@@ -18,7 +18,6 @@ public class TimeManager : MonoBehaviour
         GameTime-=Time.deltaTime;
         GameTimeText.text="Time : "+(int)GameTime;
         if(GameTime <= 0){
-            Time.timeScale=0;
             GameOverPanel.SetActive(true);
         }
     }

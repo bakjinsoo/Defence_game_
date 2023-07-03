@@ -219,6 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Legendary_Arrow: {fileID: 3628308205063201977, guid: ab44179797ee7ca4988269c6d5812cba, type: 3}
+  offsetArrowAngle: 0
   arrow: {fileID: 1334431019449155468, guid: 6e017c96029fea8418226f986afda977, type: 3}
 --- !u!114 &-1074156744597149625
 MonoBehaviour:

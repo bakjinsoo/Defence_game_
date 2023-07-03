@@ -8,7 +8,6 @@ public class Reroll_Manager : MonoBehaviour
     public Button button;
     bool isreroll = false;
     public bool able_reroll = false;
-    public GameObject character_manager;
     public void Awake()
     {
         button = this.gameObject.GetComponent<Button>();
@@ -36,19 +35,14 @@ public class Reroll_Manager : MonoBehaviour
         if(isreroll)
         {   
             int r = Random.Range(0,100);
-            if(characterData.Instance.freeReroll > r){
-                able_reroll=true;
-                isreroll=false;
-                Debug.Log("사건발생");
-            }
-            else if(coin>=50&&character_manager.GetComponent<Character_Manager>().player_count<72)
+            if(coin>=50)
             {
                 coin-=50;
                 able_reroll=true;
                 isreroll=false;
-            }
-            else{
-                able_reroll=false;
+                
+            }else{
+                isreroll=false;
             }
         }
     }

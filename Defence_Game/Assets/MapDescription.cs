@@ -9,32 +9,22 @@ public class MapDescription : MonoBehaviour
         Debug.Log("MapChange");
         int stageNum = GameObject.Find("SpawnManager").GetComponent<Spawn_Manager>().round;
         Debug.Log("stageNum" + stageNum);
-        if(stageNum == 11)
+        if(stageNum == 10)
         {
             Debug.Log("MapChange to BrightForest");
-            GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-            foreach(GameObject player in players) // HSV 값에서 V 값 70으로 변경
-            {
-                player.GetComponent<SpriteRenderer>().color =  Color.grey;
-            }
             GameObject tmp = GameObject.Find("BrightForest");
             Debug.Log("MapName" + tmp.name);
             Destroy(tmp);
             Instantiate(Resources.Load("Prefabs/DarkForest") as GameObject);
         }
-        else if(stageNum == 21)
+        else if(stageNum == 20)
         {
             GameObject tmp = GameObject.Find("DarkForest(Clone)");
             Debug.Log("MapName" + tmp.name);
-                GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-            foreach(GameObject player in players) // 
-            {
-                player.GetComponent<SpriteRenderer>().color =  Color.white; 
-            }
             Destroy(tmp);
             Instantiate(Resources.Load("Prefabs/Temple") as GameObject);
         }
-        else if(stageNum == 31)
+        else if(stageNum == 30)
         {
             GameObject tmp = GameObject.Find("Temple(Clone)");
             Debug.Log("MapName" + tmp.name);

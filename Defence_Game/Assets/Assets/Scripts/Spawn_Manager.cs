@@ -22,17 +22,18 @@ public class Spawn_Manager : MonoBehaviour
     List<GameObject> cardList = new List<GameObject>();
     private TimeManager timeManager;
 
-
+    public GameObject ClearPanel;
     int[] oneObjStage = {10,20,30,36,37,38};
     int[] fiftyObjStage = {21,22};
     int[] eightObjStage = {31,32,33};
     int[] threeObjStage = {34,35};
+    public GameObject BossHP;
 
     void Start()
     {
         // StartCoroutine(spawn());
         GameObject tmp = Instantiate(StageStartPanel);
-        GameObject.Find("StageIndicateText").GetComponent<Text>().text =stageName[stageIdx] + "\n Stage " + (round + 1).ToString(); // 스테이지 시작 패널에 스테이지 표시
+        GameObject.Find("StageIndicateText").GetComponent<Text>().text = "Stage " + (round + 1).ToString(); // 스테이지 시작 패널에 스테이지 표시
         Destroy(tmp,3f);
         CardsList = GameObject.Find("CardsList");
         cardNum = CardsList.transform.childCount;
@@ -43,7 +44,7 @@ public class Spawn_Manager : MonoBehaviour
         timeManager = GameObject.Find("TimeManager").GetComponent<TimeManager>();
 
     }
-    public string[] stageName;
+
     public int stageIdx = 0;
     // Update is called once per frame
     void Update()
@@ -58,7 +59,6 @@ public class Spawn_Manager : MonoBehaviour
         }
 
         if(isSpawnEnded && leftCount == 0){ // 스폰이 전부 종료되었을때 몹이 0마리면 스테이지 종료 판정
-
 
 
             timeManager.GameTime = 60f;
@@ -82,7 +82,11 @@ public class Spawn_Manager : MonoBehaviour
                     enermyCount = 8;
                 }else if(round+1 == 34 || round +1 == 35){ // 3마리 스테이지
                     enermyCount = 3;
-                }else{ // 10의 배수가 아닐때 (즉 1,2,3,4,6,7,8,9 스테이지)
+                }else if(round+1 ==39)
+                {
+                    ClearPanel.SetActive(true);
+                }
+                else{ // 10의 배수가 아닐때 (즉 1,2,3,4,6,7,8,9 스테이지)
                     enermyCount = 30;
                 }
 
@@ -95,23 +99,95 @@ public class Spawn_Manager : MonoBehaviour
                     StageEndPanel.SetActive(true);
                     for(int i = 0; i < cardList.Count ; i++) {
                         GameObject Card = Instantiate(Resources.Load("Prefabs/Cards/Card"+Random.Range(0,cardIndex + 1)) as GameObject, cardList[i].transform.position, Quaternion.identity);
+                        Card.transform.localScale = new Vector2(0.3f,0.3f);
                         Card.transform.parent = cardList[i].transform.parent;
                     }
                 }else{
                     // if(GameObject.Find("StageEnd") != null){
                     //     GameObject.Find("StageEnd").SetActive(false);
-                    // }
-                    if((round+1) % 10 != 0 ){ // 일반몹 Stage
-                        GameObject tmp = Instantiate(Resources.Load("Prefabs/StartStagePanel") as GameObject);
-                        GameObject.Find("StageIndicateText").GetComponent<Text>().text = stageName[stageIdx] +"\n Stage " + (GameObject.Find("SpawnManager").GetComponent<Spawn_Manager>().round + 1).ToString(); // 스테이지 시작 패널에 스테이지 표시
-                        Destroy(tmp,3f);
-                    }else{
-                        GameObject tmp = Instantiate(Resources.Load("Prefabs/BOSSStageStart") as GameObject);
-                        Destroy(tmp,3f);
-                    }
+                    // }..
+
+
+                    
+   
+                }
+        }
+            StartCoroutine(spawn());
+                 if(round+1 == 31)
+        {
+            // GameObject tmp = Instantiate(Resources.Load("Prefabs/BOSSStageStart") as GameObject);
+            GameObject.Find("Stage_Text_Map").GetComponent<Text>().text = "사이클롭스";
+            // Destroy(tmp,3f);
+        }else if(round+1 == 32)
+        {
+            GameObject tmp = Instantiate(Resources.Load("Prefabs/BOSSStageStart") as GameObject);
+            GameObject.Find("Stage_Text_Map").GetComponent<Text>().text = "네크로멘서";
+            Destroy(tmp,3f);
+        }
+        else if(round + 1 == 33){
+            GameObject tmp = Instantiate(Resources.Load("Prefabs/BOSSStageStart") as GameObject);
+            GameObject.Find("Stage_Text_Map").GetComponent<Text>().text = "타락한 기사";
+            Destroy(tmp,3f);
+        }else if(round + 1 == 34){
+            // GameObject tmp = Instantiate(Resources.Load("Prefabs/BOSSStageStart") as GameObject);
+            GameObject.Find("Stage_Text_Map").GetComponent<Text>().text = "좀비 킹";
+            // Destroy(tmp,3f);
+        }else if(round + 1 == 35){
+            GameObject tmp = Instantiate(Resources.Load("Prefabs/BOSSStageStart") as GameObject);
+            GameObject.Find("Stage_Text_Map").GetComponent<Text>().text = "오염된 나무";
+            Destroy(tmp,3f);
+        }else if(round + 1 == 36){
+            GameObject tmp = Instantiate(Resources.Load("Prefabs/BOSSStageStart") as GameObject);
+            GameObject.Find("Stage_Text_Map").GetComponent<Text>().text = "올드 가디언";
+            Destroy(tmp,3f);
+        }else if(round + 1 == 37){
+            // GameObject tmp = Instantiate(Resources.Load("Prefabs/BOSSStageStart") as GameObject);
+            GameObject.Find("Stage_Text_Map").GetComponent<Text>().text = "데몬";
+            BossHP.GetComponent<Slider>().maxValue = 120000;
+            BossHP.GetComponent<Slider>().value = 120000;
+            BossHP.SetActive(true);
+            // Destroy(tmp,3f);
+        }else if(round + 1 == 38){
+            GameObject tmp = Instantiate(Resources.Load("Prefabs/BOSSStageStart") as GameObject);
+            GameObject.Find("Stage_Text_Map").GetComponent<Text>().text = "얼음";
+            BossHP.GetComponent<Slider>().maxValue = 140000;
+            BossHP.GetComponent<Slider>().value = 140000;
+            BossHP.SetActive(true);
+            Destroy(tmp,3f);
+        }
+
+        else if((round + 1) % 10 == 0){
+
+            if(round + 1 == 10){
+                BossHP.GetComponent<Slider>().maxValue = 1000;
+                BossHP.GetComponent<Slider>().value = 1000;
+                BossHP.SetActive(true);
+            }
+            else if(round + 1 == 20){
+                GameObject tmp = Instantiate(Resources.Load("Prefabs/BOSSStageStart") as GameObject);
+                GameObject.Find("Stage_Text_Map").GetComponent<Text>().text = "어둠의 숲";
+                BossHP.GetComponent<Slider>().maxValue = 7500;
+                BossHP.GetComponent<Slider>().value = 7500;
+                BossHP.SetActive(true);
+                Destroy(tmp,3f);
+            }
+            else if(round + 1 == 30){
+            GameObject tmp = Instantiate(Resources.Load("Prefabs/BOSSStageStart") as GameObject);
+            GameObject.Find("Stage_Text_Map").GetComponent<Text>().text = "사원";
+            BossHP.GetComponent<Slider>().maxValue = 10000;
+            BossHP.GetComponent<Slider>().value = 10000;
+            BossHP.SetActive(true);
+            Destroy(tmp,3f);
+            }
+
+            
+        }else{
+                if((round) % 3 != 0 ){ // 일반몹 Stage
+                    GameObject tmp = Instantiate(Resources.Load("Prefabs/StartStagePanel") as GameObject);
+                    GameObject.Find("StageIndicateText").GetComponent<Text>().text = "Stage " + (round + 1).ToString(); // 스테이지 시작 패널에 스테이지 표시
+                    Destroy(tmp,3f);
                 }
             }
-            StartCoroutine(spawn());
         }
     }
     IEnumerator spawn()
