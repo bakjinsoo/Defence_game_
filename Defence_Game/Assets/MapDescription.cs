@@ -12,11 +12,6 @@ public class MapDescription : MonoBehaviour
         if(stageNum == 10)
         {
             Debug.Log("MapChange to BrightForest");
-            GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-            foreach(GameObject player in players) // HSV 값에서 V 값 70으로 변경
-            {
-                player.GetComponent<SpriteRenderer>().color =  Color.grey;
-            }
             GameObject tmp = GameObject.Find("BrightForest");
             Debug.Log("MapName" + tmp.name);
             Destroy(tmp);
@@ -26,11 +21,6 @@ public class MapDescription : MonoBehaviour
         {
             GameObject tmp = GameObject.Find("DarkForest(Clone)");
             Debug.Log("MapName" + tmp.name);
-                GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-            foreach(GameObject player in players) // 
-            {
-                player.GetComponent<SpriteRenderer>().color =  Color.white; 
-            }
             Destroy(tmp);
             Instantiate(Resources.Load("Prefabs/Temple") as GameObject);
         }

@@ -35,17 +35,14 @@ public class Reroll_Manager : MonoBehaviour
         if(isreroll)
         {   
             int r = Random.Range(0,100);
-            if(characterData.Instance.freeReroll > r){
-                able_reroll=true;
-                isreroll=false;
-                Debug.Log("사건발생");
-            }
-            else if(coin>=50)
+            if(coin>=50)
             {
                 coin-=50;
                 able_reroll=true;
                 isreroll=false;
                 
+            }else{
+                isreroll=false;
             }
         }
     }

@@ -1632,9 +1632,9 @@ TextureImporter:
       name: Pixel UI pack 1_72
       rect:
         serializedVersion: 2
-        x: 0
-        y: 340
-        width: 80
+        x: 48
+        y: 324
+        width: 32
         height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1990,12 +1990,12 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 324
-        width: 80
-        height: 8
+        y: 325
+        width: 48
+        height: 7
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 2, y: 1, z: 2, w: 2}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -3354,10 +3354,10 @@ TextureImporter:
       name: Pixel UI pack 1_154
       rect:
         serializedVersion: 2
-        x: 32
-        y: 192
-        width: 48
-        height: 46
+        x: 47
+        y: 208
+        width: 17
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4368,7 +4368,7 @@ TextureImporter:
         height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 6, y: 7, z: 6, w: 5}
       outline: []
       physicsShape: []
       tessellationDetail: 0
