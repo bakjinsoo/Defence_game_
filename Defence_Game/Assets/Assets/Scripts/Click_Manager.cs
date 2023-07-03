@@ -25,7 +25,7 @@ public class Click_Manager : MonoBehaviour
     public bool sell_btn_check;
     int move_btn_key=0;
     int ui_key=0;
-    bool[,] banPos = new bool[13,7];
+    bool[,] banPos = new bool[12,7];
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +33,7 @@ public class Click_Manager : MonoBehaviour
         move_btn_check=false;
         cam=GetComponent<Camera>();
         coroutine=StartCoroutine(first_click());
-        for(int i = 0; i < 13; i++)
+        for(int i = 0; i < 12; i++)
         {
             for (int j = 0; j < 7; j++)
             {
@@ -118,7 +118,7 @@ public class Click_Manager : MonoBehaviour
                         ui_selected.transform.position=new Vector2(tmp.transform.position.x,tmp.transform.position.y);
                         ui_selected.SetActive(true);
                         show_area.SetActive(true);
-                        for(int i=0;i<13;i++)
+                        for(int i=0;i<12;i++)
                         {
                             
                             for(int j=0;j<7;j++)
@@ -165,7 +165,7 @@ public class Click_Manager : MonoBehaviour
                     mousePos.y=Mathf.CeilToInt(mousePos.y);
                     mousePos=new Vector2(mousePos.x,mousePos.y);
                 
-                if((int)mousePos.x < 13 && (int)mousePos.y < 7 && (int)mousePos.x >= 0 && (int)mousePos.y >= 0){
+                if((int)mousePos.x < 12 && (int)mousePos.y < 7 && (int)mousePos.x >= 0 && (int)mousePos.y >= 0){
                     Debug.Log("마우스 클릭" + (int)mousePos.x + "  " + (int)(mousePos.y));
                     if(banPos[(int)mousePos.x,(int)mousePos.y]){
                             if(banPos[(int)mousePos.x, (int) mousePos.y]){
@@ -189,7 +189,7 @@ public class Click_Manager : MonoBehaviour
                             show_area.SetActive(true);
                             ui_selected.transform.position=new Vector2(tmp.transform.position.x,tmp.transform.position.y);
                             ui_selected.SetActive(true);
-                            for(int i=0;i<13;i++)
+                            for(int i=0;i<12;i++)
                             {
                                 for(int j=0;j<7;j++)
                                 {
@@ -213,7 +213,7 @@ public class Click_Manager : MonoBehaviour
                 //     touchPos.x = Mathf.CeilToInt(touchPos.x);
                 //     touchPos.y = Mathf.CeilToInt(touchPos.y);
                 //     Vector2 touchPos2D = new Vector2(touchPos.x, touchPos.y);
-                //     if((int)touchPos.x < 13 && (int)touchPos.y < 7 && (int)touchPos.x >= 0 && (int)touchPos.y >= 0 ){
+                //     if((int)touchPos.x < 12 && (int)touchPos.y < 7 && (int)touchPos.x >= 0 && (int)touchPos.y >= 0 ){
                 //         Debug.Log("터치 클릭" + (int)touchPos.x + "  " + (int)touchPos.y + banPos[(int)touchPos.x, (int)touchPos.y]);
                 //         if(banPos[(int)touchPos.x, (int)touchPos.y]) {
                 //             Debug.Log("False");
