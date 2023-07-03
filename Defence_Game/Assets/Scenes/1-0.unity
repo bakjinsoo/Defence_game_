@@ -19768,6 +19768,7 @@ MonoBehaviour:
   coin: 100
   button: {fileID: 2092751376}
   able_reroll: 0
+  character_manager: {fileID: 1127760268}
 --- !u!114 &2092751376
 MonoBehaviour:
   m_ObjectHideFlags: 0
