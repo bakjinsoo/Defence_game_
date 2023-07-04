@@ -255,6 +255,14 @@ public class Tutorial_Manager : MonoBehaviour
             }
             else if(tutorial_key==44){
                 text.text="카드의 별의 갯수는 등급이고, 카드의 최대등급은 3등급입니다. 등급이 높을수록 효과가 증가하며, 카드를 활용하여 여러분만의 유닛을 만들어보세요!";
+            }
+            else if(tutorial_key==45){
+                text.text="자 이제 튜토리얼은 끝났어요! 여러분만의 조합은 만들어 살아남으세요! 행운을 빌어요!";
+            }
+            else if(tutorial_key==46){
+                text.text="자 이제 튜토리얼은 끝났어요! 여러분만의 조합은 만들어 살아남으세요! 행운을 빌어요!";
+            }
+            else if(tutorial_key==47){
                 SceneManager.LoadScene("1-0");
             }
         }
