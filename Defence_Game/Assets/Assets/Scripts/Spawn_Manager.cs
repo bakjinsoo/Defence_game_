@@ -60,9 +60,11 @@ public class Spawn_Manager : MonoBehaviour
 
         if(isSpawnEnded && leftCount == 0){ // 스폰이 전부 종료되었을때 몹이 0마리면 스테이지 종료 판정
 
-
+            try{
             timeManager.GameTime = 60f;
-            
+            }catch{
+                Debug.Log("timeManager is null");
+            }
 
             if(round > 0){ //0라운드에는 카드뽑기 진행 X
                 if((round+1) == 11 || (round+1) == 21){ // 맵 변경 스테이지

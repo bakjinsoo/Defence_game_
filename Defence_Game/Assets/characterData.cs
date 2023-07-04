@@ -74,15 +74,19 @@ public class characterData : Singleton<characterData>
             }
 
         }
-        if(timeManager.GameTime > 10 && BerserkerMode && !oneTime2){
-            Gunner_attackSpeed = _tmpGunnerAttackSpeed;
-            Archer_attackSpeed = _tmpArcherAttackSpeed;
-            Magician_attackSpeed = _tmpMagicianAttackSpeed;
-            GameObject[] lists = GameObject.FindGameObjectsWithTag("Berserker");
-            foreach(GameObject list in lists){   
-                Destroy(list);
+        try{
+            if(timeManager.GameTime > 10 && BerserkerMode && !oneTime2){
+                Gunner_attackSpeed = _tmpGunnerAttackSpeed;
+                Archer_attackSpeed = _tmpArcherAttackSpeed;
+                Magician_attackSpeed = _tmpMagicianAttackSpeed;
+                GameObject[] lists = GameObject.FindGameObjectsWithTag("Berserker");
+                foreach(GameObject list in lists){   
+                    Destroy(list);
+                }
+                oneTime = true;
             }
-            oneTime = true;
+        }catch(System.Exception e){
+            Debug.Log(e);
         }
     }
 }

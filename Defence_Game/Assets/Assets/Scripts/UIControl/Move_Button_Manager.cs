@@ -26,11 +26,13 @@ public class Move_Button_Manager : MonoBehaviour
     {
         button = gameObject.GetComponent<Button>();
         button.onClick.AddListener(onClick_up_move);
+        tutorial_Manager = GameObject.Find("Tutorial Manager").GetComponent<Tutorial_Manager>();
     }
-
+    Tutorial_Manager tutorial_Manager;
     // Update is called once per frame
     void Update()
     {
         
     }
+
 }
