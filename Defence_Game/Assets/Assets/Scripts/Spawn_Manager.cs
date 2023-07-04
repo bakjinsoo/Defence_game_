@@ -197,7 +197,7 @@ public class Spawn_Manager : MonoBehaviour
         isSpawnEnded = false;
         for(int i=0;i<enermyCount;i++)
         {
-            Instantiate(enemies[round], new Vector3(Random.Range(-5f, 5f), Random.Range(-5f, 5f), 0), Quaternion.identity);
+            Instantiate(enemies[round], spawnPoint.position, Quaternion.identity);
             leftCount++;
             leftMob.text = leftCount.ToString();
             yield return new WaitForSeconds(0.5f);
@@ -206,4 +206,5 @@ public class Spawn_Manager : MonoBehaviour
         round++;
         isSpawnEnded = true;
     }
+    public Transform spawnPoint; 
 }

@@ -32,7 +32,13 @@ public class Tutorial_Manager : MonoBehaviour
         {
             Destroy(aura);
         }
+        try{
         characterAura.transform.position=new Vector2(GameObject.Find("hamster_gunner_1").transform.position.x,GameObject.Find("hamster_gunner_1").transform.position.y);
+        }catch{
+            
+        }
+
+        
     }
     GameObject ui_class_one;
     GameObject ui_class_two;
@@ -227,9 +233,8 @@ public class Tutorial_Manager : MonoBehaviour
                 text.text="코인을 얻을수 있는방법은 총 두가지에요. 적을 죽여서 일정확률로 코인을 얻거나 유닛을 판매하여 코인을 얻는방법이 있어요.";
             }
             else if(tutorial_key==31){
-                arrow_ui.transform.position=new Vector2(0,6);
-                arrow_ui.transform.localEulerAngles=new Vector3(0,0,90);
-                arrow_ui.SetActive(true);
+
+                Arrow2.SetActive(true);
                 time_table.SetActive(true);
                 time_text.SetActive(true);
                 text.text="스테이지마다 주어진 시간이 있습니다.";
@@ -265,4 +270,5 @@ public class Tutorial_Manager : MonoBehaviour
             }
         }
     }
+    public GameObject Arrow2;
 }
