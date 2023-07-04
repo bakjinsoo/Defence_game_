@@ -189,7 +189,7 @@ public class Click_Manager : MonoBehaviour
                             show_area.SetActive(true);
                             ui_selected.transform.position=new Vector2(tmp.transform.position.x,tmp.transform.position.y);
                             ui_selected.SetActive(true);
-                            for(int i=0;i<13;i++)
+                            for(int i=0;i<12;i++)
                             {
                                 for(int j=0;j<7;j++)
                                 {
