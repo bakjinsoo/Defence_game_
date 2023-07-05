@@ -123,7 +123,7 @@ MonoBehaviour:
   hp: 310
   center: {fileID: 6920509752499997102, guid: a2a9019c082c0be4fb97c018f335e23c, type: 3}
   speed: 0.75
-  radius: 5.5
+  radius: 5
 --- !u!61 &719635086681632050
 BoxCollider2D:
   m_ObjectHideFlags: 0

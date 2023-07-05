@@ -19,6 +19,7 @@ public class ArrowAttack : MonoBehaviour
     {
         
     }
+    float[] ranges = { 1f, 1.5f, 2f, 2.5f, 3.2f, 5f };
     public GameObject arrow;
     public void arrow_skill()
     {

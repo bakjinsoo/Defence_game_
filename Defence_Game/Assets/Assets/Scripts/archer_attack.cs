@@ -180,21 +180,41 @@ public class archer_attack : MonoBehaviour
             }
         }
     }
-    void OnTriggerEnter2D(Collider2D other)
+    int stay = 0;
+    // public List<GameObject> gameObjects = new List<GameObject>();
+
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if(other.gameObject.tag=="Enermy")
+        if (collision.attachedRigidbody != null) 
         {
-            Monster_List.Add(other.gameObject);
+            GameObject go = collision.gameObject;
+            if (!Monster_List.Contains(go))
+            {
+                Monster_List.Add(go);
+            }
         }
-        
     }
-    void OnTriggerExit2D(Collider2D other)
+
+    void OnTriggerStay2D(Collider2D collision)
     {
-        if(other.gameObject.tag=="Enermy")
+        foreach (GameObject go in Monster_List.ToArray())
         {
-            Monster_List.RemoveAt(0);
-        }        
+            if ((go.GetComponent<Collider2D>().bounds.center - GetComponent<Collider2D>().bounds.center).magnitude > GetComponent<Collider2D>().bounds.extents.magnitude)
+            {
+                Monster_List.Remove(go);
+            }
+        }
+        Debug.Log("Number of objects in trigger area: " + Monster_List.Count.ToString());
     }
+
+
+    // void OnTriggerExit2D(Collider2D other)
+    // {
+    //     if(other.gameObject.tag=="Enermy")
+    //     {
+    //         Monster_List.RemoveAt(0);
+    //     }        
+    // }
     void OnDestroy(){    
         Destroy(characterAura);
     }
