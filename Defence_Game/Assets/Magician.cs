@@ -5,6 +5,7 @@ using UnityEngine;
 public class Magician : MonoBehaviour
 {
     public GameObject fireball;
+    public GameObject Legendary_spell;
     AudioSource audio;
     void Start(){
         audio = GetComponent<AudioSource>();
@@ -29,6 +30,12 @@ public class Magician : MonoBehaviour
                         audio.Play();
 
                     }
+                }
+            }
+            else{
+                for(int i=0;i<GetComponentInChildren<gunner_attack>().Monster_List.Count;i++)
+                {
+                    Instantiate(Legendary_spell,GetComponentInChildren<magician_attack>().Monster_List[i].transform.position,Quaternion.identity);
                 }
             }
         }
