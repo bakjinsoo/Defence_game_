@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class Tutorial_Manager : MonoBehaviour
 {
+    public GameObject MoveButton;
     public GameObject range;
     public int tutorial_key;
     public GameObject text_panel;
@@ -31,7 +32,13 @@ public class Tutorial_Manager : MonoBehaviour
         {
             Destroy(aura);
         }
+        try{
         characterAura.transform.position=new Vector2(GameObject.Find("hamster_gunner_1").transform.position.x,GameObject.Find("hamster_gunner_1").transform.position.y);
+        }catch{
+            
+        }
+
+        
     }
     GameObject ui_class_one;
     GameObject ui_class_two;
@@ -42,6 +49,25 @@ public class Tutorial_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(tutorial_key > 19){
+            GameObject[] tmps = GameObject.FindGameObjectsWithTag("Aura");
+            foreach(GameObject tmp in tmps){
+                Destroy(tmp);
+            }
+        }
+        if(tutorial_key == 20 && MoveButton.transform.position.x < 13 && MoveButton.transform.position.x > -1 ){
+            text.text = "왼쪽버튼을 눌러보세요!";
+        }
+        try{
+            if(GameObject.Find("StartStagePanel(Clone)").activeSelf==true)
+            {
+                Destroy(GameObject.Find("StartStagePanel(Clone)"));
+            }
+            
+        }catch{
+
+        }
+        
         if(Input.GetMouseButtonDown(0))
         {
             try{
@@ -50,7 +76,7 @@ public class Tutorial_Manager : MonoBehaviour
             catch{
                 
             }
-            tutorial_key++;
+            if(tutorial_key != 19 && tutorial_key !=20 && tutorial_key != 21) tutorial_key++;
             if(tutorial_key==1)
             {
                 text.text="안녕하세요, 저는 햄찌에요! 랜덤디펜스 전투에서 유닛들로 여러분만의 조합을 완성해 전투에서 살아남으세요. 끝까지 살아남아 승리하세요!";
@@ -168,103 +194,81 @@ public class Tutorial_Manager : MonoBehaviour
                 arrow_ui.SetActive(true);
                 text.text="가리키고 있는 버튼이 리롤버튼이에요. 한번 눌러보세요";
             }
+            
             else if(tutorial_key==20){
-                text.text="가리키고 있는 버튼이 리롤버튼이에요. 한번 눌러보세요";
-            }
-            else if(tutorial_key==21){
-                text.text="가리키고 있는 버튼이 리롤버튼이에요. 한번 눌러보세요";
-            }
-            else if(tutorial_key==22){
-                text.text="가리키고 있는 버튼이 리롤버튼이에요. 한번 눌러보세요";
-            }
-            else if(tutorial_key==23){
-                text.text="가리키고 있는 버튼이 리롤버튼이에요. 한번 눌러보세요";
-            }
-            else if(tutorial_key==24){
-                text.text="가리키고 있는 버튼이 리롤버튼이에요. 한번 눌러보세요";
-            }
-            else if(tutorial_key==25){
-                text.text="가리키고 있는 버튼이 리롤버튼이에요. 한번 눌러보세요";
-            }
-            else if(tutorial_key==26){
                 arrow_ui.SetActive(false);
                 click_manager.SetActive(true);
                 text.text="캐릭터를 한번 눌러보세요!";
+                if(MoveButton.transform.position.x < 13 && MoveButton.transform.position.x > -1) 
+                {
+                    tutorial_key=21;
+                    text.text="왼쪽버튼을 눌러보세요!";
+                }
             }
-            else if(tutorial_key==27){
-                text.text="왼쪽버튼을 눌러보세요!";
-            }
-            else if(tutorial_key==28){
+            else if(tutorial_key==21){
                 text.text="초록색 영역은 우리가 이동할수 있는 곳이에요! 빨간색영역은 우리가 이동할수 없는 곳이니 주의하세요!";
+                if(GameObject.FindWithTag("Area") != null)
+                {
+                    tutorial_key=22;
+                    text.text="초록색 영역은 우리가 이동할수 있는 곳이에요! 빨간색영역은 우리가 이동할수 없는 곳이니 주의하세요!";
+                }
             }
-            else if(tutorial_key==29){
-                text.text="이동해보세요!";
-            }
-            else if(tutorial_key==30){
-                text.text="이동해보세요!";
-            }
-            else if(tutorial_key==31){
+            else if(tutorial_key==24){
                 text.text="캐릭터를 눌러보세요!";
             }
-            else if(tutorial_key==32){
+            else if(tutorial_key==25){
                 text.text="오른쪽버튼을 누르면 캐릭터를 판매 할수 있어요. 판매금액은 처음엔 20원이지만 뒤에나올 카드로 판매금액을 증가시킬수 있어요!";
             }
-            else if(tutorial_key==33){
+            else if(tutorial_key==26){
                 text.text="판매금액과 리롤금액의 차이가 크니 이점 유의하세요!";
             }
-            else if(tutorial_key==34){
-                text.text="판매금액과 리롤금액의 차이가 크니 이점 유의하세요!";
-            }
-            else if(tutorial_key==35){
-                text.text="판매금액과 리롤금액의 차이가 크니 이점 유의하세요!";
-            }
-            else if(tutorial_key==36){
+            else if(tutorial_key==28){
                 text.text="적이 나타났어요!";
                 GameObject cat=Instantiate(Resources.Load<GameObject>("Prefabs/Cat"));
             }
-            else if(tutorial_key==37){
+            else if(tutorial_key==29){
                 text.text="적을 죽일때마다 일정확률로 코인을 얻을수있어요!";
             }
-            else if(tutorial_key==38){
+            else if(tutorial_key==30){
                 text.text="코인을 얻을수 있는방법은 총 두가지에요. 적을 죽여서 일정확률로 코인을 얻거나 유닛을 판매하여 코인을 얻는방법이 있어요.";
             }
-            else if(tutorial_key==39){
-                arrow_ui.transform.position=new Vector2(0,6);
-                arrow_ui.transform.localEulerAngles=new Vector3(0,0,90);
-                arrow_ui.SetActive(true);
+            else if(tutorial_key==31){
+
+                Arrow2.SetActive(true);
                 time_table.SetActive(true);
                 time_text.SetActive(true);
                 text.text="스테이지마다 주어진 시간이 있습니다.";
             }
-            else if(tutorial_key==40){
+            else if(tutorial_key==32){
                 text.text="주어진 시간안에 적을 모두 죽이지 못하면 여러분의 패배입니다.";
             }
-            else if(tutorial_key==41){
+            else if(tutorial_key==33){
                 text.text="제한된 시간안에 적을 모두 섬멸하여 끝까지 살아남으세요!";
             }
-            else if(tutorial_key==42){
+            else if(tutorial_key==34){
                 text.text="제한된 시간안에 적을 모두 섬멸하여 끝까지 살아남으세요!";
             }
-            else if(tutorial_key==43){
+            else if(tutorial_key==35){
                 StageEndPanel.SetActive(true);
                 for(int i = 0; i < cardList.Count ; i++) {
-                    GameObject Card = Instantiate(Resources.Load("Prefabs/Cards/Card"+Random.Range(0,cardIndex + 1)) as GameObject, cardList[i].transform.position, Quaternion.identity);
+                    GameObject Card = Instantiate(Resources.Load("Prefabs/Cards/Card"+Random.Range(0,cardIndex)) as GameObject, cardList[i].transform.position, Quaternion.identity);
                     Card.transform.parent = cardList[i].transform.parent;
                 }
                 text.text="3스테이지 마다 스테이지를 클리어하면 3개의 카드가 나옵니다.";
             }
-            else if(tutorial_key==44){
+            else if(tutorial_key==36){
                 text.text="카드의 별의 갯수는 등급이고, 카드의 최대등급은 3등급입니다. 등급이 높을수록 효과가 증가하며, 카드를 활용하여 여러분만의 유닛을 만들어보세요!";
             }
-            else if(tutorial_key==45){
+            else if(tutorial_key==37){
                 text.text="자 이제 튜토리얼은 끝났어요! 여러분만의 조합은 만들어 살아남으세요! 행운을 빌어요!";
             }
-            else if(tutorial_key==46){
-                text.text="자 이제 튜토리얼은 끝났어요! 여러분만의 조합은 만들어 살아남으세요! 행운을 빌어요!";
-            }
-            else if(tutorial_key==47){
+            else if(tutorial_key==38){
                 SceneManager.LoadScene("1-0");
+            }
+            else if(tutorial_key==39){
+                
             }
         }
     }
+    public GameObject Arrow2;
 }

@@ -33,8 +33,7 @@ public class Reroll_Manager : MonoBehaviour
     void Update()
     {
         if(isreroll)
-        {   
-            int r = Random.Range(0,100);
+        { 
             if(coin>=50)
             {
                 coin-=50;

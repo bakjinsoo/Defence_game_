@@ -33,7 +33,7 @@ public class Enermy : MonoBehaviour
             {
                 CoinGetter = GameObject.Find("Reroll_Button").GetComponent<Reroll_Manager>();
                 CoinGetter.coin+= GameObject.Find("SpawnManager").GetComponent<Spawn_Manager>().round + 1;
-                Instantiate(Resources.Load("Prefabs/ui_coin"),transform.position,Quaternion.identity);
+                // Instantiate(Resources.Load("Prefabs/ui_coin"),transform.position,Quaternion.identity);
                 
             }            
             OneTime = false;   

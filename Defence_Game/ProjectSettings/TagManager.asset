@@ -9,6 +9,7 @@ TagManager:
   - Aura
   - Berserker
   - Map
+  - Area
   layers:
   - Default
   - TransparentFX
