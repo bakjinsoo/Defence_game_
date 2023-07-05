@@ -11,9 +11,9 @@ public class characterData : Singleton<characterData>
     public float Magician_attackSpeed = 1.5f;
 
     /* 공격력 */
-    public float[] GunnerAttackPoints = {0.05f, 0.15f, 0.33f, 0.8f, 1.5f, 5f};
-    public float[] MagicianAttackPoints = {0.05f, 0.15f, 0.33f, 0.8f, 1.5f, 5f};
-    public float[] ArcherAttackPoints = {16, 32, 48, 100, 200, 500};
+    public float[] GunnerAttackPoints = {25,50,120,250,400,600};
+    public float[] MagicianAttackPoints = {25,50,120,250,400,600};
+    public float[] ArcherAttackPoints = {45,1010,200,350,500,1000};
 
     /* 공격계수 */
     public float GunnerAttackCoefficient = 1.0f; 

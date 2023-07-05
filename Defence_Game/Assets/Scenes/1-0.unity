@@ -20215,26 +20215,26 @@ MonoBehaviour:
   Archer_attackSpeed: 2
   Magician_attackSpeed: 1.3
   GunnerAttackPoints:
-  - 12
-  - 36
-  - 80
-  - 160
-  - 200
+  - 25
+  - 45
+  - 120
   - 250
+  - 400
+  - 600
   MagicianAttackPoints:
-  - 12
-  - 36
-  - 80
-  - 160
-  - 200
+  - 25
+  - 45
+  - 120
   - 250
+  - 400
+  - 600
   ArcherAttackPoints:
-  - 24
-  - 68
+  - 45
   - 100
-  - 140
-  - 300
+  - 200
+  - 350
   - 500
+  - 1000
   GunnerAttackCoefficient: 1
   MagicianAttackCoefficient: 1
   ArcherAttackCoefficient: 1

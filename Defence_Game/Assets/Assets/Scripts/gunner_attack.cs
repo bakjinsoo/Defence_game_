@@ -16,6 +16,7 @@ public class gunner_attack : MonoBehaviour
     public List<GameObject> Monster_List=new List<GameObject>();
     GameObject characterAura;
     public GameObject Legendary_bullet;
+    public int unit;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +28,7 @@ public class gunner_attack : MonoBehaviour
             this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", characterData.Instance.Gunner_attackSpeed * 1.5f);
             characterAura = Instantiate(Resources.Load("Prefabs/Aura/BlackAura"), transform.position, Quaternion.identity) as GameObject;
             GameObject tmp = Instantiate(Resources.Load("Prefabs/GradeAlarm") as GameObject);
+            unit = 5;
             tmp.transform.GetChild(0).gameObject.GetComponent<Text>().text = "갓 유닛이 필드에 등장했습니다!";
         }
         else if(unit_class>=3&&unit_class<13)
@@ -36,6 +38,7 @@ public class gunner_attack : MonoBehaviour
             this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", characterData.Instance.Gunner_attackSpeed * 1.25f);
             characterAura = Instantiate(Resources.Load("Prefabs/Aura/RedAura"), transform.position, Quaternion.identity) as GameObject;
             GameObject tmp = Instantiate(Resources.Load("Prefabs/GradeAlarm") as GameObject);
+            unit= 4;
             tmp.transform.GetChild(0).gameObject.GetComponent<Text>().text = "히어로 유닛이 필드에 등장했습니다!";
         }
         else if(unit_class>=13&&unit_class<64)
@@ -45,6 +48,7 @@ public class gunner_attack : MonoBehaviour
             this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", characterData.Instance.Gunner_attackSpeed);
             characterAura = Instantiate(Resources.Load("Prefabs/Aura/BlueAura"), transform.position, Quaternion.identity) as GameObject;
             GameObject tmp = Instantiate(Resources.Load("Prefabs/GradeAlarm") as GameObject);
+            unit = 3;
             tmp.transform.GetChild(0).gameObject.GetComponent<Text>().text = "레전더리 유닛이 필드에 등장했습니다!";
         }
         else if(unit_class>=64&&unit_class<565)
@@ -54,6 +58,7 @@ public class gunner_attack : MonoBehaviour
             this.GetComponentInParent<Animator>().SetFloat("AttackSpeed",  characterData.Instance.Gunner_attackSpeed * 0.75f);
             characterAura = Instantiate(Resources.Load("Prefabs/Aura/GreenAura"), transform.position, Quaternion.identity) as GameObject;
             GameObject tmp = Instantiate(Resources.Load("Prefabs/GradeAlarm") as GameObject);
+            unit = 2;
             tmp.transform.GetChild(0).gameObject.GetComponent<Text>().text = "유니크 유닛이 필드에 등장했습니다!";
         }
         else if(unit_class>=565&&unit_class<3566)
@@ -63,6 +68,7 @@ public class gunner_attack : MonoBehaviour
             this.GetComponentInParent<Animator>().SetFloat("AttackSpeed", characterData.Instance.Gunner_attackSpeed * 0.5f);
             characterAura = Instantiate(Resources.Load("Prefabs/Aura/PurpleAura"), transform.position, Quaternion.identity) as GameObject;
             GameObject tmp = Instantiate(Resources.Load("Prefabs/GradeAlarm") as GameObject);
+            unit = 1;
             tmp.transform.GetChild(0).gameObject.GetComponent<Text>().text = "에픽 유닛이 필드에 등장했습니다!";
         }
         else{
@@ -70,6 +76,7 @@ public class gunner_attack : MonoBehaviour
             gunner_grade=6;
             this.GetComponentInParent<Animator>().SetFloat("AttackSpeed",  characterData.Instance.Gunner_attackSpeed * 0.25f);
             GameObject tmp = Instantiate(Resources.Load("Prefabs/GradeAlarm") as GameObject);
+            unit = 0;
             tmp.transform.GetChild(0).gameObject.GetComponent<Text>().text = "레어 유닛이 필드에 등장했습니다!";
         }
     }
