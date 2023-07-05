@@ -189,6 +189,7 @@ public class gunner_attack : MonoBehaviour
         }        
     }
 
+
     void OnDestroy()
     {
         Destroy(characterAura);

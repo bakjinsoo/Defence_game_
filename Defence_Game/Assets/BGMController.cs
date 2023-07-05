@@ -5,14 +5,18 @@ using UnityEngine;
 public class BGMController : MonoBehaviour
 {
 
+    TimeManager t;
     Spawn_Manager spawn_manager;
     void Start(){
         spawn_manager = GameObject.Find("SpawnManager").GetComponent<Spawn_Manager>();
+        TimeManager t = GameObject.Find("TimeManager").GetComponent<TimeManager>();
     }
     void Update()
     {
-        if((spawn_manager.round + 1 == 10 || spawn_manager.round + 1 == 20 || spawn_manager.round + 1 == 30) && spawn_manager.leftCount == 0)
-        {
+        Debug.Log("spawnMAnager"+spawn_manager.round + " " + spawn_manager.leftCount);
+        if((spawn_manager.round + 1 == 10 || spawn_manager.round + 1 == 20 || spawn_manager.round + 1 == 30) && t.GameTime > 58)
+        {   
+            Debug.Log("Audio Play");
             AudioClip clip = Resources.Load<AudioClip>("Prefabs/sound/BossBGM");
             GetComponent<AudioSource>().clip = clip;
             GetComponent<AudioSource>().Play();

@@ -11167,8 +11167,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 600453513}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.74, y: 2.94, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 13.740001, y: 2.94, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18249,6 +18249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb76c8603d6c61446a0f42ba20edb1fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CreditPanel: {fileID: 0}
 --- !u!114 &1565663790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19535,6 +19536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb76c8603d6c61446a0f42ba20edb1fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CreditPanel: {fileID: 0}
 --- !u!114 &1787866038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20209,36 +20211,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 595acf6406e53ef4e95e2d705339fb0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Gunner_attackSpeed: 1.5
+  Gunner_attackSpeed: 1.3
   Archer_attackSpeed: 2
-  Magician_attackSpeed: 1.5
+  Magician_attackSpeed: 1.3
   GunnerAttackPoints:
-  - 0.25
-  - 0.35
-  - 0.5
-  - 1
-  - 1.5
-  - 5
-  MagicianAttackPoints:
-  - 0.25
-  - 0.35
-  - 0.5
-  - 1
-  - 1.5
-  - 5
-  ArcherAttackPoints:
-  - 16
-  - 32
-  - 48
-  - 100
+  - 12
+  - 36
+  - 80
+  - 160
   - 200
+  - 250
+  MagicianAttackPoints:
+  - 12
+  - 36
+  - 80
+  - 160
+  - 200
+  - 250
+  ArcherAttackPoints:
+  - 24
+  - 68
+  - 100
+  - 140
+  - 300
   - 500
   GunnerAttackCoefficient: 1
   MagicianAttackCoefficient: 1
   ArcherAttackCoefficient: 1
   goldGetPercentage: 10
   BerserkerMode: 0
-  burserkerAmount: 1.5
+  burserkerAmount: 1.8
   moneyGet: 20
   freeReroll: 0
 --- !u!4 &2103839491

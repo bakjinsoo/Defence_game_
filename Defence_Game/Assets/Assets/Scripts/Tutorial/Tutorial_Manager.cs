@@ -40,6 +40,12 @@ public class Tutorial_Manager : MonoBehaviour
 
         
     }
+
+    public void SkipButton()
+    {
+        SceneManager.LoadScene("1-0");
+    }
+
     GameObject ui_class_one;
     GameObject ui_class_two;
     GameObject ui_class_three;
@@ -116,6 +122,10 @@ public class Tutorial_Manager : MonoBehaviour
                 GameObject.Find("hamster_archer_1").SetActive(false);
                 spawn_manager.SetActive(true);
                 text.text="유닛의 등급은 총 6가지가 있습니다.";
+                GameObject[] Auras = GameObject.FindGameObjectsWithTag("Aura");
+                foreach(GameObject Aura in Auras){
+                    Destroy(Aura);
+                }
             }
             else if(tutorial_key==10){
                 GameObject.Find("hamster_gunner_1").GetComponentInChildren<gunner_attack>().gunner_grade=6;

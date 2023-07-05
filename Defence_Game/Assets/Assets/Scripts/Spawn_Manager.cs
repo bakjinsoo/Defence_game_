@@ -49,14 +49,7 @@ public class Spawn_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(round >= 21 && round <= 30)
-        {
-            GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-            foreach(GameObject player in players) // 
-            {
-                player.GetComponent<SpriteRenderer>().color =  Color.grey; 
-            }
-        }
+
 
         if(isSpawnEnded && leftCount == 0){ // 스폰이 전부 종료되었을때 몹이 0마리면 스테이지 종료 판정
 

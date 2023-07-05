@@ -156,6 +156,7 @@ public class Character_Manager : MonoBehaviour
             try{
                 if(player_check==true)
                 {
+                    Debug.Log(target.transform.position.x+1 + "<- x 판매버튼 y =>" + (target.transform.position.y+1));
                     if(target.transform.position.x==(int)mousePos.x&&target.transform.position.y+1==(int)mousePos.y){
                         click_manager.GetComponent<Click_Manager>().move_btn_check=true;
                     }
@@ -205,7 +206,7 @@ public class Character_Manager : MonoBehaviour
                 }
                 else if(click_manager.GetComponent<Click_Manager>().move_btn_first==true&&character[(int)mousePos.x+1,(int)mousePos.y+1]==1)
                 {
-                    click_manager.GetComponent<Click_Manager>().sell_btn_check=true;
+                    // click_manager.GetComponent<Click_Manager>().sell_btn_check=true;
                     target=null;
                 }
                 else{

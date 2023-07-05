@@ -10,7 +10,12 @@ public class CardEffects : MonoBehaviour
         level = GetLevel(); 
         lists = GameObject.FindGameObjectsWithTag("Player");
     }
-
+    public void Update(){
+        if(GameObject.Find("StartStagePanel(Clone)") != null)
+        {
+            Destroy(GameObject.Find("StartStagePanel(Clone)"));
+        }
+    }
     public void TimeResetToOne(){
         Time.timeScale = 1;
         GameObject[] Cards = GameObject.FindGameObjectsWithTag("Card");
@@ -88,7 +93,7 @@ public class CardEffects : MonoBehaviour
     int level;
     GameObject[] lists;
     public void ArcherAttackCoefficientUp(){ // 궁수 공격력 증가
-        characterData.Instance.ArcherAttackCoefficient += 0.5f * level;  
+        characterData.Instance.ArcherAttackCoefficient += 1.5f * level;  
         
         foreach(GameObject list in lists){
             if(list.GetComponent<Player_id>().player_id == 3){
@@ -98,7 +103,7 @@ public class CardEffects : MonoBehaviour
         }
     }
     public void GunnerAttackCoefficientUp(){ // 거너 공격력 증가
-        characterData.Instance.GunnerAttackCoefficient += 0.5f * level;
+        characterData.Instance.GunnerAttackCoefficient += 0.8f * level;
         foreach(GameObject list in lists){
             if(list.GetComponent<Player_id>().player_id == 2){
                 GameObject tmp = Instantiate(Resources.Load("Prefabs/PowerUp") as GameObject, list.transform.position, Quaternion.identity);
@@ -107,7 +112,7 @@ public class CardEffects : MonoBehaviour
         }
     }
     public void MagicianAttackCoefficientUp(){ // 마법사 공격력 증가
-        characterData.Instance.MagicianAttackCoefficient += 0.5f * level;
+        characterData.Instance.MagicianAttackCoefficient += 0.8f * level;
         foreach(GameObject list in lists){
             if(list.GetComponent<Player_id>().player_id == 1){
                 GameObject tmp = Instantiate(Resources.Load("Prefabs/PowerUp") as GameObject, list.transform.position, Quaternion.identity);

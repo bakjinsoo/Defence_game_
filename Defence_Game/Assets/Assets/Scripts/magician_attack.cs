@@ -183,7 +183,7 @@ public class magician_attack : MonoBehaviour
         }
         
     }
-    
+        
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.tag=="Enermy")
@@ -197,9 +197,9 @@ public class magician_attack : MonoBehaviour
         if(other.gameObject.tag=="Enermy")
         {
             Monster_List.RemoveAt(0);
-            Debug.Log("EXIT" + other.gameObject.GetInstanceID());
         }        
     }
+
     // IEnumerator magicattack()
     // {
     //     yield return new WaitForSeconds(0.1f);
