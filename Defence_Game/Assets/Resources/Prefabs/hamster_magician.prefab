@@ -68,6 +68,7 @@ MonoBehaviour:
   is_selected: 0
   Legendary_Spell: {fileID: 4474015230499086401, guid: 5a5e56492fdcd264182524c64af4580c, type: 3}
   Monster_List: []
+  unit: 0
 --- !u!1 &6970258249651476110
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,7 +148,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 2147387819, guid: b98ca5e4355ceaf4fa74d30f0eea392d, type: 3}
+  m_Sprite: {fileID: 2015290678, guid: 34df7c39184395b4dbe5d8879b6c3ce5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -194,8 +195,8 @@ BoxCollider2D:
   m_Offset: {x: 0.01573512, y: 0.044540405}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.6900881, y: 0.6188052}
+    oldSize: {x: 1.5, y: 1.5}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

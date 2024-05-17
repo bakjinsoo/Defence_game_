@@ -126,23 +126,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6668360960305975792, guid: 71bd48e2eb0e65d41bb7213bb60bc474, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 22.481
+      value: -0.00012207031
       objectReference: {fileID: 0}
     - target: {fileID: 6668360960305975792, guid: 71bd48e2eb0e65d41bb7213bb60bc474, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 16.123
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 6668360960305975793, guid: 71bd48e2eb0e65d41bb7213bb60bc474, type: 3}
       propertyPath: m_Text
       value: "\uCE90\uB9AD\uD130 \uC124\uBA85"
       objectReference: {fileID: 0}
     - target: {fileID: 6668360960305975793, guid: 71bd48e2eb0e65d41bb7213bb60bc474, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e21acf8a394d58a449e369b3bffaa928, type: 3}
+    - target: {fileID: 6668360960305975793, guid: 71bd48e2eb0e65d41bb7213bb60bc474, type: 3}
       propertyPath: m_FontData.m_MaxSize
-      value: 150
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 6668360960305975793, guid: 71bd48e2eb0e65d41bb7213bb60bc474, type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 150
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 6668360960305975793, guid: 71bd48e2eb0e65d41bb7213bb60bc474, type: 3}
       propertyPath: m_FontData.m_FontStyle
@@ -161,6 +165,14 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6668360961069309524, guid: 71bd48e2eb0e65d41bb7213bb60bc474, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1347.7949
+      objectReference: {fileID: 0}
+    - target: {fileID: 6668360961069309524, guid: 71bd48e2eb0e65d41bb7213bb60bc474, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 455.9692
+      objectReference: {fileID: 0}
+    - target: {fileID: 6668360961069309524, guid: 71bd48e2eb0e65d41bb7213bb60bc474, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.1
       objectReference: {fileID: 0}
@@ -170,11 +182,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6668360961069309524, guid: 71bd48e2eb0e65d41bb7213bb60bc474, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000012397766
+      value: -0.00000095367
       objectReference: {fileID: 0}
     - target: {fileID: 6668360961069309524, guid: 71bd48e2eb0e65d41bb7213bb60bc474, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -0.0000047684
       objectReference: {fileID: 0}
     - target: {fileID: 6668360961069309525, guid: 71bd48e2eb0e65d41bb7213bb60bc474, type: 3}
       propertyPath: m_Type
@@ -183,7 +195,7 @@ PrefabInstance:
     - target: {fileID: 6668360961069309525, guid: 71bd48e2eb0e65d41bb7213bb60bc474, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1cddbb1da8505da409aae35fc5707171, type: 3}
+      objectReference: {fileID: 21300000, guid: f365a67195308754eb31b84f38fda968, type: 3}
     - target: {fileID: 6668360961609851533, guid: 71bd48e2eb0e65d41bb7213bb60bc474, type: 3}
       propertyPath: m_Name
       value: StageStart
