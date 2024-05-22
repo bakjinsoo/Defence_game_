@@ -1442,6 +1442,9 @@ MonoBehaviour:
   quizbackground: {fileID: 1561071245}
   response: {fileID: 1365786443}
   timerpannel: {fileID: 647546154}
+  stage_count: 0
+  quiz_stage: 1
+  quiz_expression: {fileID: 1522371924}
 --- !u!4 &250154896
 Transform:
   m_ObjectHideFlags: 0
@@ -1565,6 +1568,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 1833522565177597219, guid: 9877f7ae05264b048a928b9cc11a26cd, type: 3}
+  - {fileID: 1833522565177597219, guid: c6cebb385c068c0449e538a8af0ec34c, type: 3}
+  - {fileID: 1833522565177597219, guid: 338a92c3f5126e3498e5d04c226a5617, type: 3}
+  - {fileID: 1833522565177597219, guid: 1b2228152511a5848b2c933a88982f70, type: 3}
+  - {fileID: 1833522565177597219, guid: f71e65f5d8e48704ca5ae619a113c142, type: 3}
+  - {fileID: 1833522565177597219, guid: da6c1a9fcc2f9874db329148e67d7ee6, type: 3}
+  - {fileID: 1833522565177597219, guid: 066ad7685a9737b4ead5750b3d4cc97c, type: 3}
+  - {fileID: 1833522565177597219, guid: 2d25a7d1606d9cc4d8ae043f135660a3, type: 3}
+  - {fileID: 1833522565177597219, guid: fcf0abebce34e4a499810a8361c90058, type: 3}
+  - {fileID: 1220928929978984655, guid: 39bc4c0cb0df4594b8b6c38a4550178d, type: 3}
   - {fileID: 4168019252604298375, guid: 2211f862274859c42ab212f76a27d9a6, type: 3}
   - {fileID: 2655662103565049805, guid: 8eb071d0c6f90934387ca008b1512fc8, type: 3}
   - {fileID: 1619155329889809212, guid: 86acabc867d62fe46b74460daad784c4, type: 3}
@@ -1602,7 +1614,6 @@ MonoBehaviour:
   - {fileID: 1397891184655615313, guid: 30d04e5308da05a45b49bbdd42542e7e, type: 3}
   - {fileID: 5775752410778393633, guid: aee7e1d8835670b4cbd0e513d91e5831, type: 3}
   - {fileID: 4437285570406469774, guid: 2a7022b4ad200fd49a6797b3ecf05b7d, type: 3}
-  - {fileID: 1220928929978984655, guid: 39bc4c0cb0df4594b8b6c38a4550178d, type: 3}
   enermyCount: 30
   round: 0
   leftCount: 0
@@ -10820,7 +10831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1127247350305405035, guid: 53aacd41579e63347b372d94948c8883, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -600.00006
+      value: -600.0001
       objectReference: {fileID: 0}
     - target: {fileID: 1127247350937555548, guid: 53aacd41579e63347b372d94948c8883, type: 3}
       propertyPath: m_Pivot.x
@@ -10940,7 +10951,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1127247351164957883, guid: 53aacd41579e63347b372d94948c8883, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 600.00006
+      value: 600.0001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53aacd41579e63347b372d94948c8883, type: 3}
